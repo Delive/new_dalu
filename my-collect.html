@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-  <link rel="stylesheet" href="./css/common.css">
   <style>
       .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover,.silder a:hover,.list-wrap a:not(.del-btn):hover{color: #005bac !important;}
       .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
@@ -35,7 +34,16 @@
       .silder ul li{height: 48px;line-height: 48px;padding: 0 20px;border: 1px solid #ccc;border-top: none;}
       .silder ul li.active a,.silder .layui-icon{color: #005bac;font-weight: bold;}
       .silder .layui-icon{float: right;}
+      .list-wrap{margin-bottom: 15px;}
+      @media screen and (max-width: 768px){
+        .content{padding-top: 20px;}
+        .content .center{padding: 0 20px;}
+        .content .center form{padding: 0;width: 100%;}
+        .content .center .top{text-align: center;margin-top: 30px;}
+        .list-wrap.mobile li{display: flex;flex-direction: column;justify-content: space-between;padding:15px 0;}
+      }
   </style>
+<link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
     <div class="head">
@@ -81,6 +89,10 @@
                 <div class="banner-wrap"></div>
         </div>
     </div>
+    <div class="tc member-title-wrap mobile">
+            <div class="title fz18">会员中心</div>
+            <div class="remark fz12">The member center</div>
+    </div>
     <div class="content">
             <div class="silder">
                     <div class="top flex-between">
@@ -99,10 +111,20 @@
                 </ul>
             </div>
         <div class="center">
+            <div class="member-center-nav mobile">
+                    <div class="mt20 btn-container">
+                            <a type="button" class="layui-btn layui-btn-primary" href="member-center.html">会员信息</a>
+                            <a type="button" class="layui-btn" href="javascript:;">我的收藏</a>
+                            <a type="button" class="layui-btn layui-btn-primary" href="my-product.html">我的产品</a>
+                            <a type="button" class="layui-btn layui-btn-primary" href="my-question.html">我的提问</a>
+                            <a type="button" class="layui-btn layui-btn-primary" href="my-message.html">我的通知</a>
+                            <a href="javaciript:;"></a>
+                    </div>
+            </div>
             <div class="top">
                         我的收藏
             </div>
-            <ul class="list-wrap">
+            <ul class="list-wrap pc">
                 <li class="flex-between">
                     <div class="left">
                         <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
@@ -155,6 +177,48 @@
                                     <div><a href="javascript:;" class="del-btn">删除</a></div>
                                 </div>
                             </li>
+            </ul>
+            <ul class="list-wrap mobile">
+                    <li>
+                            <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
+                            <div class="mt10">
+                                    面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                            </div>
+                            <div class="flex-between mt10">
+                                <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
+                                <a  class="del-btn" javascript="javaciript:;">删除</a>
+                            </div>
+                    </li>
+                    <li>
+                            <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
+                            <div class="mt10">
+                                    面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                            </div>
+                            <div class="flex-between mt10">
+                                <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
+                                <a  class="del-btn" javascript="javaciript:;">删除</a>
+                            </div>
+                    </li>
+                    <li>
+                            <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
+                            <div class="mt10">
+                                    面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                            </div>
+                            <div class="flex-between mt10">
+                                <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
+                                <a  class="del-btn" javascript="javaciript:;">删除</a>
+                            </div>
+                    </li>
+                    <li>
+                            <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
+                            <div class="mt10">
+                                    面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                            </div>
+                            <div class="flex-between mt10">
+                                <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
+                                <a  class="del-btn" javascript="javaciript:;">删除</a>
+                            </div>
+                    </li>
             </ul>
             <div id="page" class="tc"></div>
         </div>

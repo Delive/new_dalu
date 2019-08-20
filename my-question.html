@@ -34,7 +34,21 @@
       .form-wrap{padding-top: 40px;background-color: #efefef;padding: 20px;}
       .form-wrap .submit{width: 220px;margin-top: 20px;}
       .history-question{font-size: 20px;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;color: #005bac;}
+      .list-wrap{margin-bottom: 15px;}
+      @media screen and (max-width: 768px){
+        .content{padding-top: 20px;}
+        .content .center .top{margin-bottom: 0;border: none;}
+        .content .center{padding: 0 20px;}
+        .center .form-wrap{margin: 0 -20px;}
+        .content .form-wrap .layui-form-label{width: 90px;}
+        .large-form .layui-form-item .layui-input-block{width: 100% !important;}
+        .content .center form{padding: 0;width: 100%;}
+        .content .center .top{text-align: center;margin-top: 30px;}
+        .content .center .btn-block .layui-form-label{display: none;}
+        .content .center .btn-block .layui-btn{width: 100%;}
+      }
   </style>
+  <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
     <div class="head">
@@ -80,6 +94,10 @@
                 <div class="banner-wrap"></div>
         </div>
     </div>
+    <div class="tc member-title-wrap mobile">
+        <div class="title fz18">会员中心</div>
+        <div class="remark fz12">The member center</div>
+   </div>
     <div class="content">
             <div class="silder">
                     <div class="top flex-between">
@@ -98,6 +116,16 @@
                 </ul>
             </div>
         <div class="center">
+            <div class="member-center-nav mobile">
+                <div class="mt20 btn-container">
+                        <a type="button" class="layui-btn layui-btn-primary" href="member-center.html">会员信息</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-collect.html">我的收藏</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-product.html">我的产品</a>
+                        <a type="button" class="layui-btn" href="javascript:;">我的提问</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-message.html">我的通知</a>
+                        <a href="javaciript:;"></a>
+                </div>
+            </div>
             <div class="top">
                         我的提问
             </div>
@@ -135,7 +163,7 @@
                                        </button>
                                </div>
                         </div>
-                        <div class="layui-form-item layui-form-text">
+                        <div class="layui-form-item layui-form-text btn-block">
                                 <label class="layui-form-label"></label>
                                 <div class="layui-input-block">
                                         <button type="button" class="layui-btn submit">

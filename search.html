@@ -65,6 +65,28 @@
       .silder ul li{line-height: 36px;list-style: disc;}
       .silder a{color: #999;}
       #page{height: 200px;line-height: 200px;}
+      @media screen and (max-width: 768px){
+        .content{padding: 20px 0 0 0;}
+        .center .top-message{padding-bottom: 20px;padding-left: 20px;}
+        .silder{display: none;}
+        .search-form{height: auto;}
+        .search-form .product-detail{width: auto;height: auto;}
+        .product-detail h4{color: #005bac;font-size: 16px;}
+        .product-detail .remark{font-size: 16px;color: #000;}
+        .product-detail .content{color: #9f9f9f;margin-top: 5px;overflow: hidden;}
+        .product-detail .nav-wrap{color: #9f9f9f;width: 250px;display: flex;justify-content: space-between;height: 20px;line-height: 20px;}
+        .product-detail .nav-wrap a{color: #9f9f9f;}
+        .search-result{margin-top: 0;}
+        .result-list,.download{padding: 0 20px;}
+        .list-wrap.mobile li{display: flex;flex-direction: column;justify-content: space-between;padding:15px 0;}
+        .content .form-wrap{width: auto;}
+        .content .form-wrap .layui-form-label{width: 90px;}
+        .form-wrap .layui-input, .form-wrap .layui-textarea{width: 100%;}
+        .layui-input-block{margin-left: 100px;}
+        .content .center .btn-block .layui-form-label{display: none;}
+        .content .center .btn-block .layui-btn{width: 100%;}
+        .content .center .btn-block .layui-input-block{margin-left: 0;}
+      }
   </style>
    <link rel="stylesheet" href="./css/common.css">
 </head>
@@ -116,12 +138,12 @@
         <div class="center">
             <div class="top-message flex-between">
                 <div class="module-name">产品支持</div>
-                <div class="nav-wrap">
+                <div class="nav-wrap pc">
                     <img src="./images/home.png" alt="" class="mr10"></span>您所在的位置是:  <span class="nav flex-between"><a href="">首页</a>><a href="">技术支持</a>><a href="">产品支持</a></span>
                 </div>
             </div>
             <div class="search-form center">
-                    <form class="layui-form" action="">
+                    <form class="layui-form pc" action="">
                         <div class="layui-form-item radio-wrap">
                                 <div class="layui-input-block">
                                     <input type="radio" name="sex" value="男" title="全部产品" checked>
@@ -184,10 +206,93 @@
                                 </div>
                          </div>
                     </form>
+                    <form class="layui-form mobile-form" action="">
+                                <div class="layui-form-item radio-wrap layui-input-block">
+                                        <div class="layui-input-block">
+                                           <div>
+                                                <input type="radio" name="sex" value="男" title="全部产品" checked>
+                                                <input type="radio" name="sex" value="女" title="我的产品">
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="cols-title">
+                                    产品树图
+                                </div>
+                                <div class="layui-input-block">
+                                        <div class="search-input mb10">
+                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                                <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
+                                        </div>
+                                        <select name="city" lay-verify="required">
+                                                <option value=""></option>
+                                                <option value="0">测试1</option>
+                                                <option value="1">测试2</option>
+                                        </select>
+                                </div>
+                                <div class="cols-title">
+                                        产品
+                                </div>
+                                 <div class="layui-input-block">
+                                        <div class="search-input">
+                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                                <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
+                                        </div>
+                                </div>
+                                <div class="cols-title">
+                                        文档类型
+                                </div>
+                                <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                            <option value=""></option>
+                                            <option value="0">测试1</option>
+                                            <option value="1">测试2</option>
+                                    </select>
+                                </div>
+                                <div class="cols-title">
+                                        日期
+                                </div>
+                                <div class="layui-input-block">
+                                        <div class="flex-between">
+                                                <input type="text" class="layui-input" id="date-start" placeholder="从">
+                                                <span class="line">-</span>
+                                                <input type="text" class="layui-input" id="date-end" placeholder="至">
+                                        </div>
+                                </div>
+                                <div class="cols-title">
+                                        特别推荐
+                                </div>
+                                <div class="layui-input-block">
+                                        <select name="city" lay-verify="required">
+                                                <option value=""></option>
+                                                <option value="0">测试1</option>
+                                                <option value="1">测试2</option>
+                                        </select>
+                                </div>
+                                <div class="layui-input-block">
+                                        <button type="button" class="layui-btn layui-btn-normal mt20">删除所有筛选条件</button>
+                                </div>
+                                 <div class="layui-input-block">
+                                        <div class="flex-between save-wrap mt10">
+                                            <a href="javascript:;" class="white"><img src="./images/save.png">保存筛选条件</a>
+                                            <a href="javascript:;" class="white"><img src="./images/load.png">加载筛选条件</a>
+                                        </div>
+                                 </div>
+                                 <div class="cols-title">
+                                        <i class="layui-icon layui-icon-right mr10"></i>搜索产品
+                                 </div>
+                                 <div class="layui-input-block">
+                                    <div class="product-detail">
+                                        <h4>3RK1005-0LB00-0AA0</h4>
+                                        <div class="remark">IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</div>
+                                        <div class="content">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</div>
+                                        <div class="nav-wrap"><a href="javascript:;">产品信息</a>><a href="javascript:;">全部产品</a>><a href="javascript:;">产品列表信息</a></div>
+                                    </div>
+                                 </div>
+                            </form>
             </div>
             <div class="search-result flex-between">
                 <div class="result-list">
-                        <ul class="list-wrap">
+                        <ul class="list-wrap pc">
                                 <li class="flex-between">
                                     <div class="left">
                                         <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
@@ -249,6 +354,48 @@
                                                         </div>
                                                 </li>
                             </ul>
+                            <ul class="list-wrap mobile">
+                                        <li>
+                                                <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
+                                                <div class="mt10">
+                                                        面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                                                </div>
+                                                <div class="flex-between mt10">
+                                                    <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
+                                                    <a  class="del-btn" javascript="javaciript:;">删除</a>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
+                                                <div class="mt10">
+                                                        面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                                                </div>
+                                                <div class="flex-between mt10">
+                                                    <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
+                                                    <a  class="del-btn" javascript="javaciript:;">删除</a>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
+                                                <div class="mt10">
+                                                        面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                                                </div>
+                                                <div class="flex-between mt10">
+                                                    <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
+                                                    <a  class="del-btn" javascript="javaciript:;">删除</a>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
+                                                <div class="mt10">
+                                                        面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                                                </div>
+                                                <div class="flex-between mt10">
+                                                    <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
+                                                    <a  class="del-btn" javascript="javaciript:;">删除</a>
+                                                </div>
+                                        </li>
+                                </ul>
                             <div id="page" class="tc"></div>
                 </div>
                 <div class="silder">
@@ -322,7 +469,7 @@
                                    </button>
                            </div>
                     </div>
-                    <div class="layui-form-item layui-form-text">
+                    <div class="layui-form-item layui-form-text btn-block">
                             <label class="layui-form-label"></label>
                             <div class="layui-input-block">
                                     <button type="button" class="layui-btn submit">

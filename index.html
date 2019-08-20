@@ -59,6 +59,10 @@
       .footer .title::after{content: " ";position: absolute;bottom: 0;left: 0;right: 220px;border-bottom: 3px solid #ccc;border-radius: 1px;}
       .footer .item{line-height: 30px;}
       .footer .center ul li.item a{color: #999;}
+      @media screen and (max-width: 768px){
+          .head .nav-container{position: initial;}
+          .nav-item-container{top: 114px !important;}
+      }
   </style>
   <link rel="stylesheet" href="./css/common.css">
 </head>
@@ -250,7 +254,7 @@
                                     </select>
                             </div>
                             <div class="layui-input-block">
-                                    <button type="button" class="layui-btn layui-btn-normal mt10">删除所有筛选条件</button>
+                                    <button type="button" class="layui-btn layui-btn-normal mt20">删除所有筛选条件</button>
                             </div>
                              <div class="layui-input-block">
                                     <div class="flex-between save-wrap mt10">

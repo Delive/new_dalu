@@ -34,7 +34,11 @@
       .silder ul li.active a,.silder .layui-icon{color: #005bac;font-weight: bold;}
       .silder .layui-icon{float: right;}
       @media screen and (max-width: 768px){
-        .content .center form{padding: 0 20px;}
+        .content{padding-top: 20px;}
+        .content .center{padding: 0 20px;}
+        .content .center form{padding: 0;width: 100%;}
+        .content .center .top{text-align: center;margin-top: 30px;}
+        .submit-wrap .layui-form-label{display: none;}
       }
   </style>
    <link rel="stylesheet" href="./css/common.css">
@@ -83,6 +87,10 @@
                 <div class="banner-wrap"></div>
         </div>
     </div>
+    <div class="tc member-title-wrap mobile">
+            <div class="title fz18">会员中心</div>
+            <div class="remark fz12">The member center</div>
+    </div>
     <div class="content">
             <div class="silder">
                     <div class="top flex-between">
@@ -101,6 +109,16 @@
                 </ul>
             </div>
         <div class="center">
+            <div class="member-center-nav">
+                <div class="mt20 btn-container mobile">
+                        <a type="button" class="layui-btn" href="javascript:;">会员信息</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-collect.html">我的收藏</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-product.html">我的产品</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-question.html">我的提问</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-message.html">我的通知</a>
+                        <a href="javaciript:;"></a>
+                </div>
+            </div>
             <div class="top">
                         会员信息
             </div>
@@ -153,7 +171,7 @@
                             <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在国家" autocomplete="off" class="layui-input" disabled>
                         </div>
                     </div>
-                    <div class="layui-form-item">
+                    <div class="layui-form-item submit-wrap">
                             <label class="layui-form-label"></label>
                         <div class="layui-input-block">
                                 <button class="layui-btn">确定</button>

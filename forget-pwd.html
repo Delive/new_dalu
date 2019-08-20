@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-  <link rel="stylesheet" href="./css/common.css">
   <style>
       .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover{color: #005bac !important;}
       .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
@@ -19,12 +18,16 @@
       .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
       .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
       .head .banner-wrap{height: 300px;}
-      .content .center{padding-top: 45px;}
+      .content .center{padding: 80px 0;}
       .content .center form{width: 350px;margin: 64px auto 20px;}
       .content .center form .layui-input-block{margin: 0;}
       .content .center form .layui-btn{width: 100%;margin: 20px 0;}
       .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;}
+      @media screen and (max-width: 768px){
+        .content .center{padding: 20px 0 40px;}
+      }
   </style>
+  <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
     <div class="head">

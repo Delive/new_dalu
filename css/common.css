@@ -1,4 +1,6 @@
 *{box-sizing: border-box;}
+.fz12px{font-size: 12px;}
+.fz18{font-size: 18px;}
 .ml10{margin-left: 10px;}
 .mr10{margin-right: 10px;}
 .mb10{margin-bottom: 10px;}
@@ -6,11 +8,13 @@
 .mt20{margin-top: 20px;}
 .tc{text-align: center;}
 .tl{text-align: left;}
+.tr{text-align: right;}
 .fb{font-weight: bold;}
 .w200{width: 200px;}
 /* .w270,.w270+.layui-form-select{width: 270px !important;} */
 .w270,.w270+.layui-form-select{width: 270px;}
 .flex-between{display: flex;justify-content: space-between;}
+.flex-column-between{display: flex;flex-direction: column;justify-content: space-between;}
 .white{color: white;}
 .fz16{font-size: 16px;}
 .center{width: 1200px;margin: 0 auto;}
@@ -34,10 +38,17 @@
 .mobile-form{display: none;}
 .mobile-nav{display: none;}
 .tools-wrap .login-wrap{display: none;}
+.member-center-nav{display: none;}
+.member-title-wrap{display: none;}
+.mobile{display: none;}
 @media screen and (max-width: 768px){
     /* 手机导航 */
+    .pc{display: none !important;}
+    .mobile{display: block;}
     .mobile-nav{display: block;}
     .tools-wrap .login-wrap{display: block;}
+    .member-center-nav{display: block;}
+    .member-title-wrap{display: block;}
     .head>.title{display: none;}
     .content>.silder{display: none;}
     .nav-container{height: 70px;position: relative;}
@@ -83,4 +94,11 @@
     .copyright-wrap br{display: block;}
     /* .document-wrap .form-wrap .form-item{display: flex;flex-direction: column;}
     .document-wrap .form-wrap .form-item>div{width: 100%;} */
+
+    /* 会员导航 */
+    .member-title-wrap{padding: 20px 0;color: #fff;background-color: #005bac;}
+    .member-title-wrap .title{line-height: 36px;font-weight: bold;}
+    .member-center-nav .layui-btn+.layui-btn{margin-left: 0;}
+    .member-center-nav .btn-container{height: 70px;display: flex;justify-content: space-between;align-content: space-between;flex-wrap: wrap;}
+    .member-center-nav .btn-container>a{width: 100px;height: 30px;line-height: 30px;font-size: 13px;}
 }
