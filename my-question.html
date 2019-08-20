@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>新大陆自动识别</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+      .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover,.silder a:hover,.list-wrap a:not(.del-btn):hover{color: #005bac !important;}
+      .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
+      .head .tools-wrap .center{display: flex;justify-content:flex-end;}
+      .head .tools a{color: #999;}
+      .head .title{height: 100px;display:flex;align-items: center;}
+      .head .title .center{display: flex;justify-content: space-between;align-items: center;}
+      .head .title a{color: #666;}
+      .head .sign-wrap{width: 300px;display: flex;justify-content: space-between;}
+      .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
+      .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
+      .head .banner-wrap{height: 300px;}
+      .content{padding: 45px 0 20px;display: flex;justify-content: center;}
+      .content .center{width: 900px;margin: 0;padding-left: 30px;}
+      .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;margin-bottom: 20px;}
+      .content .list-wrap li{padding: 20px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
+      .silder{width: 240px;}
+      .silder .top{height: 60px;background-color: #005bac;color: #fff;padding: 20px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+      .silder .item{padding: 30px 10px 0 30px;}
+      .silder h4{font-size: 16px;color: #333;line-height: 48px;position: relative;}
+      .silder h4::after{content:" ";position: absolute;bottom: 0;left: 0;right: 200px;border-bottom: 2px solid #ccc;}
+      .silder ul li{height: 48px;line-height: 48px;padding: 0 20px;border: 1px solid #ccc;border-top: none;}
+      .silder ul li.active a,.silder .layui-icon{color: #005bac;font-weight: bold;}
+      .silder .layui-icon{float: right;}
+      .form-wrap{padding-top: 40px;background-color: #efefef;padding: 20px;}
+      .form-wrap .submit{width: 220px;margin-top: 20px;}
+      .history-question{font-size: 20px;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;color: #005bac;}
+  </style>
+</head>
+<body>
+    <div class="head">
+        <div class="tools-wrap">
+            <div class="center">
+                <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
+            </div>
+        </div>
+        <div class="title">
+                <div class="center">
+                        <img src="./images/logo.png" alt="">
+                        <div class="sign-wrap">
+                           <a href="login.html"><img src="./images/user.png" alt="" class="mr10">登录</a>
+                           <a href="register.html"><img src="./images/register.png" alt="" class="mr10">注册</a>
+                           <a href="search.html"><img src="./images/search.png" alt="" class="mr10">搜索</a>
+                        </div>
+                </div>
+        </div>
+        <div class="nav-wrap">
+                <div class="nav">
+                        <ul class="layui-nav center" lay-filter="">
+                                <li class="layui-nav-item"><a href="index.html">首页</a></li>
+                                <li class="layui-nav-item"><a href="technical-support.html">技术支持</a></li>
+                                <li class="layui-nav-item"><a href="">论坛</a></li>
+                                <li class="layui-nav-item"><a href="">提交问题</a></li>
+                        </ul>
+                </div>
+                <div class="banner-wrap">
+                    <img src="./images//technical-banner.png" alt="">
+                </div>
+        </div>
+    </div>
+    <div class="content">
+            <div class="silder">
+                    <div class="top flex-between">
+                        <div>
+                            <div>会员中心</div>
+                            <div>The member center</div>
+                        </div>
+                    <img src="./images/play.png" alt="">
+                </div>
+                <ul>
+                    <li><a href="member-center.html">会员信息</a></li>  
+                    <li><a href="my-collect.html">我的收藏</a></li>  
+                    <li><a href="my-product.html">我的产品</a></li>  
+                    <li class="active"><a href="javascript:;">我的提问</a><i class="layui-icon layui-icon-right"></i> </li>  
+                    <li><a href="my-message.html">我的通知</a></li>  
+                </ul>
+            </div>
+        <div class="center">
+            <div class="top">
+                        我的提问
+            </div>
+            <div class="form-wrap">
+                    <form action="" class="layui-form large-form">
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">名称</label>
+                                <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">电话号码</label>
+                                <div class="layui-input-block">
+                                <input type="number" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">电子邮箱</label>
+                                <div class="layui-input-block">
+                                <input type="email" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">说明</label>
+                                <div class="layui-input-block">
+                                  <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                                </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">视频</label>
+                                <div class="layui-input-block">
+                                        <button type="button" class="layui-btn layui-btn-primary" id="upload">
+                                                <i class="layui-icon">&#xe67c;</i>上传视频
+                                       </button>
+                               </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label"></label>
+                                <div class="layui-input-block">
+                                        <button type="button" class="layui-btn submit">
+                                                提交
+                                       </button>
+                               </div>
+                        </div>
+                    </form>
+            </div>
+            <div class="history-question">
+                    历史问题
+            </div>
+            <ul class="list-wrap">
+                <li>
+                        <p class="fb">关于TIA PORATL硬件安装失败原因</p>
+                        <p>为什么安装失败?</p>
+                </li>
+                <li>
+                        <p class="fb">关于TIA PORATL硬件安装失败原因</p>
+                        <p>为什么安装失败?</p>
+                </li>
+                <li>
+                        <p class="fb">关于TIA PORATL硬件安装失败原因</p>
+                        <p>为什么安装失败?</p>
+                </li>
+                <li>
+                        <p class="fb">关于TIA PORATL硬件安装失败原因</p>
+                        <p>为什么安装失败?</p>
+                </li>
+            </ul>
+            <div id="page" class="tc"></div>
+        </div>
+    </div>
+    <div class="copyright-wrap">版权所有：新大陆自动识别 全国服务热线 4006080591<br> © Copyright 2019 Newland Auto-ID Tech.<br>All Rights Reserved闽ICP备16006951号</div>
+<script src="./layui/layui.all.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    ;!function(){
+    var upload = layui.upload;
+   
+    //执行实例
+    var uploadInst = upload.render({
+        elem: '#upload' //绑定元素
+        ,url: '/upload/' //上传接口
+        ,done: function(res){
+        //上传完毕回调
+        }
+        ,error: function(){
+        //请求异常回调
+        }
+    });
+
+     var laypage = layui.laypage;
+  
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+        });
+   }()
+</script>
+</body>
+</html>

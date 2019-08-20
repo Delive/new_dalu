@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>新大陆自动识别</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+      .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover{color: #005bac !important;}
+      .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
+      .head .tools-wrap .center{display: flex;justify-content:flex-end;}
+      .head .tools a{color: #999;}
+      .head .title{height: 100px;display:flex;align-items: center;}
+      .head .title .center{display: flex;justify-content: space-between;align-items: center;}
+      .head .title a{color: #666;}
+      .head .sign-wrap{width: 180px;display: flex;justify-content: space-between;}
+      .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
+      .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
+      .head .banner-wrap{height: 300px;}
+      .content{position: relative;}
+      .content .center{padding-top: 45px;}
+      .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;}
+      .content form{margin: 64px 0 20px;}
+      .content form .layui-btn{width: 350px;}
+      .copyright-wrap{height: 50px;background-color: #333;text-align: center;line-height: 50px;color: #999;}
+      .qrcode-wrap{position: absolute;bottom: 10px;right: 50px;}
+  </style>
+</head>
+<body>
+    <div class="head">
+        <div class="tools-wrap">
+            <div class="center">
+                <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
+            </div>
+        </div>
+        <div class="title">
+                <div class="center">
+                        <img src="./images/logo.png" alt="">
+                        <div class="sign-wrap">
+                           <a href="login.html"><img src="./images/user.png" alt="" class="mr10">登录</a>
+                           <a href="search.html"><img src="./images/search.png" alt="" class="mr10">搜索</a>
+                        </div>
+                </div>
+        </div>
+        <div class="nav-wrap">
+                <div class="nav">
+                        <ul class="layui-nav center" lay-filter="">
+                                <li class="layui-nav-item"><a href="index.html">首页</a></li>
+                                <li class="layui-nav-item"><a href="technical-support.html">技术支持</a></li>
+                                <li class="layui-nav-item"><a href="">论坛</a></li>
+                                <li class="layui-nav-item"><a href="">提交问题</a></li>
+                        </ul>
+                </div>
+                <div class="banner-wrap">
+                    <img src="./images//technical-banner.png" alt="">
+                </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="center ">
+            <div class="top tc">
+                注册
+            </div>
+            <form action="" class="layui-form middle-form">
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">电子邮箱</label>
+                        <div class="layui-input-block">
+                            <input type="email" name="title" required  lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">登录名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入登录名" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="title" required  lay-verify="required" placeholder="请输入登录密码" autocomplete="off" class="layui-input">
+                        </div>
+                        <span class="gray ml10">密码至少包含，大小写字母、数字、符合中的两种</span>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">确认密码</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="title" required  lay-verify="required" placeholder="请确认密码" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">论坛昵称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入论坛昵称" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机号</label>
+                        <div class="layui-input-block">
+                            <input type="tel" name="title" required  lay-verify="required" placeholder="请输入手机号" maxlength="11" autocomplete="off" class="layui-input">
+                        </div>
+                        <span class="gray ml10">留下正确的练习方式方式我们联系您</span>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">公司</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入公司" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">邮政编码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在地邮政编码" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">国家</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在国家" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label"></label>
+                        <div class="layui-input-block">
+                                <button class="layui-btn">发送</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"></label>
+                    <div class="layui-input-block tc">
+                        <a href="login.html" class="primary-color">已有账号,去登录</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="qrcode-wrap">
+            <img src="./images/public.png" alt="">
+            <img src="./images/mini.png" alt="" class="ml10">
+        </div>
+    </div>
+    <div class="copyright-wrap">版权所有：新大陆自动识别 全国服务热线 4006080591<br> © Copyright 2019 Newland Auto-ID Tech.<br>All Rights Reserved闽ICP备16006951号</div>
+<script src="./layui/layui.all.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

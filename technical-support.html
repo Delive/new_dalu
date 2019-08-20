@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>新大陆自动识别</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <style>
+      .head .tools a:hover,.head .title a:hover,.content .top-message a:hover{color: #005bac;}
+      .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
+      .head .tools-wrap .center{display: flex;justify-content:flex-end;}
+      .head .tools a{color: #999;}
+      .head .title{height: 100px;display:flex;align-items: center;}
+      .head .title .center{display: flex;justify-content: space-between;align-items: center;}
+      .head .title a{color: #666;}
+      .head .sign-wrap{width: 300px;display: flex;justify-content: space-between;}
+      .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
+      .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
+      .head .banner-wrap{height: 300px;}
+      .content{padding-top: 40px;position: relative;padding-bottom: 20px;}
+      .content .article-wrap{width: 900px;}
+      .content .top-message{line-height: 40px;border-bottom: 1px solid #ccc;}
+      .content .top-message .module-name{font-size: 26px;color: #005bac;}
+      .content .nav-wrap{width: 400px;display: flex;justify-content: flex-end;align-items: center;}
+      .content .nav{width: 200px;}
+      .content .top-message,.content .top-message a{color: #7d7c7c;}
+      .content .article{padding-top: 40px;}
+      .content h3{font-size: 30px;}
+      .content .author-info{color: #818181;line-height: 40px;border-bottom: 1px solid #ccc;}
+      .content .article p{line-height: 24px;padding: 20px 0;}
+      .content .article-detail{border-bottom: 1px solid #ccc;}
+      .content .download{color: #494949;}
+      .content .download h4{font-size: 16px;line-height: 40px;font-weight: bold;}
+      .content .download .file{line-height: 48px;}
+      .content .download .file a{text-decoration: underline;color: #005bac;}
+      .content .download img{position: relative;top: -2px;}
+      .content .form-wrap .layui-form-label{width: 120px;}
+      .form-wrap{padding-top: 40px;background-color: #efefef;padding: 20px;}    
+      .form-wrap .layui-input, .form-wrap .layui-textarea{width: 90%;}
+      .form-wrap .submit{width: 220px;margin-top: 20px;}
+      .silder{width: 260px;height: 790px;background-color: #efefef;}
+      .silder .top{height: 60px;background-color: #005bac;line-height: 60px;color: #fff;padding: 10px 10px 10px 30px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+      .silder .item{padding: 30px 10px 0 30px;}
+      .silder h4{font-size: 16px;color: #333;line-height: 48px;position: relative;}
+      .silder h4::after{content:" ";position: absolute;bottom: 0;left: 0;right: 200px;border-bottom: 2px solid #ccc;}
+      .silder ul li{line-height: 36px;list-style: disc;}
+      .silder a{color: #999;}
+      @media screen and (max-width: 768px){
+          .content{padding: 0;}
+          .content .center{padding: 0 10px;}
+          .content .top-message .module-name{padding: 10px 0;}
+          .content .article-wrap{width: 100%;}
+          .content .nav-wrap,.content .silder{display: none;}
+          .content .article{padding-top: 20px;}
+          .article-detail img{width: 100%;height: auto;}
+          .form-wrap{margin: 0 -10px;}
+          .content .form-wrap .layui-form-label{width: 90px;}
+          .form-wrap .layui-input, .form-wrap .layui-textarea{width: 100%;}
+          .form-wrap .layui-input-block{margin-left:100px;}
+          .form-wrap .layui-textarea{min-height: 70px;}
+          .form-wrap .btn-block{margin-left: 0;}
+          .form-wrap .btn-block button{width: 100%;margin-top: 0;}
+      }
+  </style>
+   <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <div class="head">
+        <div class="tools-wrap">
+            <div class="center">
+                <div class="login-wrap">
+                            <img src="./images/user.png" alt="" class="mr10"><a href="login.html">登录</a>
+                </div>
+                <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
+            </div>
+        </div>
+        <div class="title">
+                <div class="center">
+                        <img src="./images/logo.png" alt="">
+                        <div class="sign-wrap login-wrap">
+                           <a href="login.html"><img src="./images/user.png" alt="" class="mr10">登录</a>
+                           <a href="register.html"><img src="./images/register.png" alt="" class="mr10">注册</a>
+                           <a href="search.html"><img src="./images/search.png" alt="" class="mr10">搜索</a>
+                        </div>
+                </div>
+        </div>
+        <div class="nav-container mobile-nav">
+                <div class="nav-btn-wrap">
+                        <div class="title"><img src="./images/logo.png" alt=""></div>
+                        <a href="javascript:;" class="nav-btn"><img src="./images/mobile-nav-btn.png" alt=""></a>
+                </div>
+                <ul class="nav-item-container">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="technical-support.html">技术支持</a></li>
+                    <li><a href="javascript:;">论坛</a></li>
+                    <li><a href="javascript:;">提交问题</a></li>
+                </ul>
+        </div>
+        <div class="nav-wrap">
+                <div class="nav">
+                        <ul class="layui-nav center" lay-filter="">
+                                <li class="layui-nav-item"><a href="index.html">首页</a></li>
+                                <li class="layui-nav-item"><a href="">技术支持</a></li>
+                                <li class="layui-nav-item"><a href="">论坛</a></li>
+                                <li class="layui-nav-item"><a href="">提交问题</a></li>
+                        </ul>
+                </div>
+                <div class="banner-wrap">
+                    <img src="./images//technical-banner.png" alt="">
+                </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="center flex-between">
+            <div class="article-wrap">
+                <div class="top-message flex-between">
+                    <div class="module-name">产品支持</div>
+                    <div class="nav-wrap">
+                        <img src="./images/home.png" alt="" class="mr10"></span>您所在的位置是:  <span class="nav flex-between"><a href="">首页</a>><a href="">技术支持</a>><a href="">产品支持</a></span>
+                    </div>
+                </div>
+                <div class="article">
+                    <h3>NLS-开始接受预定</h3>
+                    <div class="author-info">新大陆产品发布： 2019年11月11日</div>
+                    <div class="article-detail">
+                        <p>
+                            NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。
+                        </p>
+                        <img src="./images/article.png" alt="">
+                        <p>
+                            NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。
+                        </p>
+                        <p>
+                            NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。NLS-CM60条码识读引擎定位为高端软解引擎产品，主要面向物流、仓储、医疗等行业，主攻纸质条码，兼容屏幕识读。
+                        </p>
+                    </div>
+                    <div class="download">
+                        <h4>操作说明</h4>
+                        <div class="remark">Aw35235-Z1124</div>
+                        <div class="file"><img src="./images/download.png" alt="" class="mr10"><a href="">下载（1243KB）</a></div>
+                    </div>
+                </div>
+                <div class="form-wrap">
+                    <form action="" class="layui-form">
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">名称</label>
+                                <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">电话号码</label>
+                                <div class="layui-input-block">
+                                <input type="tel" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">电子邮箱</label>
+                                <div class="layui-input-block">
+                                <input type="email" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">说明</label>
+                                <div class="layui-input-block">
+                                  <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                                </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">视频</label>
+                                <div class="layui-input-block">
+                                        <button type="button" class="layui-btn layui-btn-primary" id="upload">
+                                                <i class="layui-icon">&#xe67c;</i>上传视频
+                                       </button>
+                               </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label"></label>
+                                <div class="layui-input-block btn-block">
+                                        <button type="button" class="layui-btn submit">
+                                                提交
+                                       </button>
+                               </div>
+                        </div>
+                     </form>
+                 </div>
+            </div>
+            <div class="silder">
+                <div class="top flex-between">相关链接<img src="./images/play.png" alt=""></div>
+                <div class="item">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                        <h4>产品中心</h4>
+                        <ul>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                            <h4>产品中心</h4>
+                            <ul>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                            </ul>
+                        </div>
+            </div>
+        </div>
+        </div>
+       
+        <div class="copyright-wrap">版权所有：新大陆自动识别 全国服务热线 4006080591<br> © Copyright 2019 Newland Auto-ID Tech.<br>All Rights Reserved闽ICP备16006951号</div>
+<script src="./layui/layui.all.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    
+
+   ;!function(){
+    var upload = layui.upload;
+   
+    //执行实例
+    var uploadInst = upload.render({
+        elem: '#upload' //绑定元素
+        ,url: '/upload/' //上传接口
+        ,done: function(res){
+        //上传完毕回调
+        }
+        ,error: function(){
+        //请求异常回调
+        }
+    });
+   }()
+
+</script> 
+</body>
+</html>

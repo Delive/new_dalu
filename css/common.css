@@ -1,0 +1,83 @@
+*{box-sizing: border-box;}
+.ml10{margin-left: 10px;}
+.mr10{margin-right: 10px;}
+.mb10{margin-bottom: 10px;}
+.mt10{margin-top: 10px;}
+.mt20{margin-top: 20px;}
+.tc{text-align: center;}
+.tl{text-align: left;}
+.fb{font-weight: bold;}
+.w200{width: 200px;}
+/* .w270,.w270+.layui-form-select{width: 270px !important;} */
+.w270,.w270+.layui-form-select{width: 270px;}
+.flex-between{display: flex;justify-content: space-between;}
+.white{color: white;}
+.fz16{font-size: 16px;}
+.center{width: 1200px;margin: 0 auto;}
+.primary-color{color: #005bac;}
+.gray{color: #bdbdbd;}
+.del-btn:hover{color: #FF5722 !important;}
+#upload{color: #005bac;}
+.head .center .tools {width: 200px; display: flex;justify-content: space-around; color: #999;}
+.head .banner-wrap{height: 100%;overflow: hidden;}
+.copyright-wrap{background-color: #333;text-align: center;line-height: 50px;color: #999;}
+.copyright-wrap br{display: none;}
+/* 重写主题UI */
+.layui-nav{background-color: #005bac;padding: 0;}
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{background-color: #ea9978;}
+.layui-form-radio>i:hover, .layui-form-radioed>i{color: #fff;}
+.layui-form-select dl dd.layui-this{background-color: #005bac;}
+.middle-form .layui-form-item,.large-form .layui-form-item{display: flex;justify-content: flex-start;align-items: center;}
+.middle-form .layui-form-item .layui-form-label,.large-form .layui-form-item .layui-form-label{width: 120px;}
+.middle-form .layui-form-item .layui-input-block{width: 350px;margin-left: 0;}
+.large-form .layui-form-item .layui-input-block{width: 750px;margin-left: 0;}
+.mobile-form{display: none;}
+.mobile-nav{display: none;}
+.tools-wrap .login-wrap{display: none;}
+@media screen and (max-width: 768px){
+    /* 手机导航 */
+    .mobile-nav{display: block;}
+    .tools-wrap .login-wrap{display: block;}
+    .head>.title{display: none;}
+    .nav-container{height: 70px;position: relative;}
+    .nav-container .nav-btn-wrap{height: 70px;display: flex;justify-content: space-between;align-items: center;padding: 0 10px;}
+    .nav-container ul{background-color: #666;line-height: 40px;text-align: right;position: absolute;right: 0;top: 70px;width: 100px;}
+    .nav-container .nav-btn{height: 40px;width: 40px;display: flex;}
+    .nav-container .nav-btn:active{background-color: #e3e3e3;}
+    .nav-container .title img{height: 40px;}
+    .nav-container img{margin: auto;}
+    .nav-container ul{position: absolute;right: -100px;transition: all .5s;z-index: 1000;}
+    .nav-container ul li{padding: 0 10px;}
+    .nav-container ul li:active{background-color: #555;}
+    .nav-container ul li>a{color: #fff}
+    .nav-container ul.active{right: 0;}
+
+    .center{width: 100%;}
+    .head .tools-wrap{padding: 0 10px;height: 44px !important;line-height: 44px;}
+    .head .tools-wrap .center{justify-content:space-between;}
+    .head .tools-wrap .center a{color: #666;}
+    .head .tools-wrap .login-wrap>img{width: 30px;height: 30px;}
+    .head .layui-carousel img{height: 137px;width: 100%;}
+    .head .layui-carousel{height: 137px !important;}
+    .head .nav-wrap{padding-top: 0 !important;}
+    .head .banner-wrap{height: 160px;overflow: hidden;}
+    .head .nav{display: none;}
+    .content .document-wrap{padding-top: 20px;}
+    .content .document-wrap{height: auto;}
+    .content .document-wrap .form-wrap{height: auto;}
+    .document-wrap .form-wrap{margin-top: 20px;}
+    .pc-form{display: none;}
+    .mobile-form{display:block;}
+    .mobile-form .layui-input-block{display: flex;flex-direction: column;}
+    .form-wrap .product-detail{width: auto;height: auto;}
+    .mobile-form .cols-title{text-align: left;}
+    #date-start, #date-end{width: 140px;}
+    .product-wrap{height: auto;padding: 20px 0;background-size: cover;}
+    .product-wrap .layui-container{margin-top: 20px;}
+    .product-wrap button{width: 100%;margin-top: 10px;}
+    .footer{display: none;}
+    .copyright-wrap{line-height: 20px;padding: 10px 0;}
+    .copyright-wrap br{display: block;}
+    /* .document-wrap .form-wrap .form-item{display: flex;flex-direction: column;}
+    .document-wrap .form-wrap .form-item>div{width: 100%;} */
+}

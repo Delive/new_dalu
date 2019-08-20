@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>新大陆自动识别</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <style>
+      .head .tools a:hover,.head .title a:hover,.content .top-message a:hover{color: #005bac;}
+      .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
+      .head .tools-wrap .center{display: flex;justify-content:flex-end;}
+      .head .tools a{color: #999;}
+      .head .title{height: 100px;display:flex;align-items: center;}
+      .head .title .center{display: flex;justify-content: space-between;align-items: center;}
+      .head .title a{color: #666;}
+      .head .sign-wrap{width: 180px;display: flex;justify-content: space-between;}
+      .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
+      .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
+      .head .banner-wrap{height: 300px;}
+      .content{padding-top: 40px;position: relative;padding-bottom: 20px;}
+      .content .center{width: 1200px;}
+      .content .top-message{line-height: 40px;border-bottom: 1px solid #ccc;}
+      .content .top-message .module-name{font-size: 26px;color: #005bac;}
+      .content .nav-wrap{width: 400px;display: flex;justify-content: flex-end;align-items: center;}
+      .content .nav{width: 200px;}
+      .content .top-message,.content .top-message a{color: #7d7c7c;}
+      .content .article{padding-top: 40px;}
+      .content h3{font-size: 30px;}
+      .content .download{color: #494949;border-top: 1px solid #ccc;}
+      .content .download h4{font-size: 16px;line-height: 40px;font-weight: bold;}
+      .content .download .file{line-height: 48px;}
+      .content .download .file a{text-decoration: underline;color: #005bac;}
+      .content .download img{position: relative;top: -2px;}
+      .content .form-wrap .layui-form-label{width: 120px;}
+      .form-wrap{padding-top: 40px;background-color: #efefef;padding: 20px;width: 900px;}
+      .form-wrap .layui-input, .form-wrap .layui-textarea{width: 90%;}
+      .form-wrap .submit{width: 220px;margin-top: 20px;}
+
+      .search-form{height: 350px;background-color: #005bac;margin-top: 30px;padding: 25px;color: #fff;}
+      .search-form .layui-input-block{margin: 0;text-align: left;color: #fff;display: flex;justify-content: space-between;}
+      .search-form .cols-title{line-height: 36px;}
+      .search-form .layui-anim-upbit{color: #999;}
+      .search-form .w570{width: 570px;}
+      .search-form .w270{width: 270px;}
+      .search-form .radio-wrap{width: 220px;}
+      .search-form .search-input a{position: absolute;right: 8px;top: 10px;font-size: 18px;color: #999;}
+      .search-form .search-input{position: relative;}
+      .search-form .btn-wrap{display: flex;justify-content: flex-end;}
+      .search-form .btn-wrap .layui-btn{background-color: #aed9ff;color: #000;border-radius: 4px;}
+      .search-form .line{line-height: 38px;}
+      #date-start,#date-end{width: 120px;position: relative;}
+      .save-wrap a{width: 120px;display: flex;align-items: center;justify-content: space-between;}
+      .save-wrap a:hover{color: aqua;}
+      .search-form .product-detail{height: 130px;width: 860px;background-color: #fff;border-radius: 5px;padding: 10px;display: flex;flex-direction: column;justify-content: space-between;}
+      .search-result{margin-top: 40px;}
+      .result-list{width: 900px;}
+      .content .search-result .list-wrap li{padding: 30px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
+      .content .search-result .list-wrap li .right{width: 150px;}
+      .silder{width: 260px;height: 790px;background-color: #efefef;}
+      .silder .top{height: 60px;background-color: #005bac;line-height: 60px;color: #fff;padding: 10px 10px 10px 30px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+      .silder .item{padding: 30px 10px 0 30px;}
+      .silder h4{font-size: 16px;color: #333;line-height: 48px;position: relative;}
+      .silder h4::after{content:" ";position: absolute;bottom: 0;left: 0;right: 200px;border-bottom: 2px solid #ccc;}
+      .silder ul li{line-height: 36px;list-style: disc;}
+      .silder a{color: #999;}
+      #page{height: 200px;line-height: 200px;}
+  </style>
+   <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <div class="head">
+        <div class="tools-wrap">
+            <div class="center">
+                <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
+            </div>
+        </div>
+        <div class="title">
+                <div class="center">
+                        <img src="./images/logo.png" alt="">
+                        <div class="sign-wrap">
+                           <a href="login.html"><img src="./images/user.png" alt="" class="mr10">登录</a>
+                           <a href="register.html"><img src="./images/register.png" alt="" class="mr10">注册</a>
+                           <!-- <a href="search.html"><img src="./images/search.png" alt="" class="mr10">搜索</a> -->
+                        </div>
+                </div>
+        </div>
+        <div class="nav-wrap">
+                <div class="nav">
+                        <ul class="layui-nav center" lay-filter="">
+                                <li class="layui-nav-item"><a href="index.html">首页</a></li>
+                                <li class="layui-nav-item"><a href="">技术支持</a></li>
+                                <li class="layui-nav-item"><a href="">论坛</a></li>
+                                <li class="layui-nav-item"><a href="">提交问题</a></li>
+                        </ul>
+                </div>
+                <div class="banner-wrap">
+                    <img src="./images//technical-banner.png" alt="">
+                </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="center">
+            <div class="top-message flex-between">
+                <div class="module-name">产品支持</div>
+                <div class="nav-wrap">
+                    <img src="./images/home.png" alt="" class="mr10"></span>您所在的位置是:  <span class="nav flex-between"><a href="">首页</a>><a href="">技术支持</a>><a href="">产品支持</a></span>
+                </div>
+            </div>
+            <div class="search-form center">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item radio-wrap">
+                                <div class="layui-input-block">
+                                    <input type="radio" name="sex" value="男" title="全部产品" checked>
+                                    <input type="radio" name="sex" value="女" title="我的产品">
+                                </div>
+                        </div>
+                        <div class="tl cols-title">
+                            产品树图
+                        </div>
+                         <div>
+                                <div class="layui-input-block">
+                                        <select name="city" lay-verify="required" class="w270">
+                                          <option value=""></option>
+                                          <option value="0">测试1</option>
+                                          <option value="1">测试2</option>
+                                        </select>
+                                        <div class="search-input w570">
+                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                                <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
+                                        </div>
+                                        <div class="w270 btn-wrap">
+                                                <button type="button" class="layui-btn layui-btn-normal">删除所有筛选条件</button>
+                                        </div>
+                                </div>
+                         </div>
+                         <div class="tl cols-title flex-between mt20">
+                                <div class="w270">产品</div>
+                                <div class="w570 flex-between">
+                                    <div class="w270">文档类型</div>
+                                    <div class="w270">日期</div>
+                                </div>
+                                <div class="w270">特别推荐</div>
+                         </div>
+                         <div>
+                                <div class="layui-input-block">
+                                        <div class="search-input w270">
+                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                                <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
+                                        </div>
+                                        <div class="w570 flex-between">
+                                                <select name="city" lay-verify="required" class="w270">
+                                                        <option value=""></option>
+                                                        <option value="0">测试1</option>
+                                                        <option value="1">测试2</option>
+                                                </select>
+                                                <div class="w270 flex-between">
+                                                        <input type="text" class="layui-input" id="date-start" placeholder="从">
+                                                        <span class="line">-</span>
+                                                        <input type="text" class="layui-input" id="date-end" placeholder="至">
+                                                </div>
+                                        </div>
+                                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input w270">
+                                </div>
+                         </div>
+                         <div class="tl cols-title flex-between mt20">
+                                <div class="w270"><i class="layui-icon layui-icon-right mr10"></i>搜索产品</div>
+                                <div class="w270 flex-between save-wrap">
+                                    <a href="javascript:;" class="white"><img src="./images/save.png">保存筛选条件</a>
+                                    <a href="javascript:;" class="white"><img src="./images/load.png">加载筛选条件</a>
+                                </div>
+                         </div>
+                    </form>
+            </div>
+            <div class="search-result flex-between">
+                <div class="result-list">
+                        <ul class="list-wrap">
+                                <li class="flex-between">
+                                    <div class="left">
+                                        <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                                        <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                    </div>
+                                    <div class="right">
+                                            <p>2019年5月20日</p>
+                                            <p>ID：5956523523</p>
+                                    </div>
+                                </li>
+                                <li class="flex-between">
+                                        <div class="left">
+                                            <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                        </div>
+                                        <div class="right">
+                                                <p>2019年5月20日</p>
+                                                <p>ID：5956523523</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex-between">
+                                            <div class="left">
+                                                <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                                                <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                            </div>
+                                            <div class="right">
+                                                    <p>2019年5月20日</p>
+                                                    <p>ID：5956523523</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex-between">
+                                                <div class="left">
+                                                    <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                                                    <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                                </div>
+                                                <div class="right">
+                                                        <p>2019年5月20日</p>
+                                                        <p>ID：5956523523</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex-between">
+                                                    <div class="left">
+                                                        <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                                                        <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                                    </div>
+                                                    <div class="right">
+                                                            <p>2019年5月20日</p>
+                                                            <p>ID：5956523523</p>
+                                                    </div>
+                                                </li>
+                                                <li class="flex-between">
+                                                        <div class="left">
+                                                            <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                                        </div>
+                                                        <div class="right">
+                                                                <p>2019年5月20日</p>
+                                                                <p>ID：5956523523</p>
+                                                        </div>
+                                                </li>
+                            </ul>
+                            <div id="page" class="tc"></div>
+                </div>
+                <div class="silder">
+                        <div class="top flex-between">相关链接<img src="./images/play.png" alt=""></div>
+                        <div class="item">
+                            <h4>产品中心</h4>
+                            <ul>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                                <h4>产品中心</h4>
+                                <ul>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                </ul>
+                            </div>
+                            <div class="item">
+                                    <h4>产品中心</h4>
+                                    <ul>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                    </ul>
+                                </div>
+                    </div>
+            </div>
+            <div class="download">
+                <h4>操作说明</h4>
+                <div class="remark">Aw35235-Z1124</div>
+                <div class="file"><img src="./images/download.png" alt="" class="mr10"><a href="">下载（1243KB）</a></div>
+            </div>
+           
+            <div class="form-wrap">
+                <form action="" class="layui-form">
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">名称</label>
+                            <div class="layui-input-block">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                    </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">电话号码</label>
+                            <div class="layui-input-block">
+                            <input type="tel" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    <div class="layui-form-item">
+                            <label class="layui-form-label">电子邮箱</label>
+                            <div class="layui-input-block">
+                            <input type="email" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">说明</label>
+                            <div class="layui-input-block">
+                              <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                            </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">视频</label>
+                            <div class="layui-input-block">
+                                    <button type="button" class="layui-btn layui-btn-primary" id="upload">
+                                            <i class="layui-icon">&#xe67c;</i>上传视频
+                                   </button>
+                           </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-block">
+                                    <button type="button" class="layui-btn submit">
+                                            提交
+                                   </button>
+                           </div>
+                    </div>
+                 </form>
+             </div>
+        </div>
+    </div>
+    <div class="copyright-wrap">版权所有：新大陆自动识别 全国服务热线 4006080591<br> © Copyright 2019 Newland Auto-ID Tech.<br>All Rights Reserved闽ICP备16006951号</div>
+<script src="./layui/layui.all.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    
+
+   ;!function(){
+    var upload = layui.upload;
+   
+    //执行实例
+    var uploadInst = upload.render({
+        elem: '#upload' //绑定元素
+        ,url: '/upload/' //上传接口
+        ,done: function(res){
+        //上传完毕回调
+        }
+        ,error: function(){
+        //请求异常回调
+        }
+    });
+
+    var laypage = layui.laypage;
+  
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+        });
+   }()
+
+</script> 
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>新大陆自动识别</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <style>
+      .head .tools a:hover,.head .title a:hover{color: #005bac;}
+      .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
+      .head .tools-wrap .center{display: flex;justify-content:flex-end;}
+      .head .tools a{color: #999;}
+      .head .title{height: 100px;display:flex;align-items: center;}
+      .head .title .center{display: flex;justify-content: space-between;align-items: center;}
+      .head .title a{color: #666;}
+      .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
+      .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
+      .head .layui-carousel img{height: 700px;width: auto;}
+      .content .document-wrap{height: 645px;padding-top: 55px;}
+      .document-wrap h3,.product-wrap h3{font-size: 35px;color: #005bac;}
+      .document-wrap .description,.product-wrap .description{font-size: 16px;color: #999;line-height: 36px;}
+      .document-wrap .form-wrap{height: 455px;background-color: #005bac;margin-top: 30px;padding: 25px;color: #fff;}
+      .form-wrap .layui-input-block{margin: 0;text-align: left;color: #fff;display: flex;justify-content: space-between;}
+      .form-wrap .cols-title{line-height: 36px;}
+      .form-wrap .layui-anim-upbit{color: #999;}
+      .form-wrap .w570{width: 570px;}
+      .form-wrap .w270{width: 270px;}
+      .form-wrap .search-input{position: relative;}
+      .form-wrap .btn-wrap{display: flex;justify-content: flex-end;}
+      .form-wrap .layui-btn{background-color: #aed9ff;color: #000;border-radius: 4px;}
+      .form-wrap .line{line-height: 38px;}
+      .form-wrap .product-detail{height: 130px;width: 860px;background-color: #fff;border-radius: 5px;padding: 10px;display: flex;flex-direction: column;justify-content: space-between;}
+      .product-detail h4{color: #005bac;font-size: 16px;}
+      .product-detail .remark{font-size: 16px;color: #000;}
+      .product-detail .content{color: #9f9f9f;margin-top: 5px;overflow: hidden;}
+      .product-detail .nav-wrap{color: #9f9f9f;width: 250px;display: flex;justify-content: space-between;height: 20px;line-height: 20px;}
+      .product-detail .nav-wrap a{color: #9f9f9f;}
+      .search-input a{position: absolute;right: 8px;top: 10px;font-size: 18px;color: #999;}
+      .radio-wrap{width: 220px;}
+      .more-title{display: flex;justify-content: space-between;margin-top: 20px;}
+      #date-start,#date-end{width: 120px;position: relative;}
+      .save-wrap a{width: 120px;display: flex;align-items: center;justify-content: space-between;}
+      .save-wrap a:hover{color: aqua;}
+      .product-wrap{height: 728px;background: url(./images/product-bg.png) center no-repeat;padding-top: 55px;}
+      .product-wrap .layui-row .item{display: flex;height: 156px;transition:all 1s;transition-property: left top;}
+      /* .product-wrap .layui-row .item:hover .left,.product-wrap .layui-row .item:hover .right{position: relative;left: 2px;top: 2px;box-shadow: 2px 2px 2px #ccc;} */
+      .product-wrap .layui-row .left{width: 100px;background-color: #005bac;padding: 10px;display: flex;flex-direction: column;justify-content: space-between;}
+      .product-wrap .layui-row .left .title{line-height: 50px;position: relative;}
+      .product-wrap .layui-row .left .title::after{content: "";bottom: 0;left: 10px;right: 10px;border-bottom: 1px solid #fff;position: absolute;}
+      .product-wrap .layui-row .left .date{line-height: 25px;}
+      .product-wrap .layui-row .right{flex: 1;background-color: #fff;padding: 10px;}
+      .product-wrap .layui-row .right p{height: 70px;line-height: 24px;overflow: hidden;margin-top: 15px;color: #999;}
+      .product-wrap .layui-container{margin-top: 40px;}
+      .product-wrap button{background-color: #eb9978;margin-top: 30px;border-radius: 4px;}
+      .footer .center{height: 310px;display: flex;padding-top: 55px;width: 800px;}
+      .footer ul{flex: 1;}
+      .footer .title{font-size: 16px;color: #333;line-height: 40px;position: relative;margin-bottom: 20px;}
+      .footer .title::after{content: " ";position: absolute;bottom: 0;left: 0;right: 220px;border-bottom: 3px solid #ccc;border-radius: 1px;}
+      .footer .item{line-height: 30px;}
+      .footer .center ul li.item a{color: #999;}
+  </style>
+  <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <div class="head">
+        <div class="tools-wrap">
+            <div class="center">
+                <div class="login-wrap">
+                            <img src="./images/user.png" alt="" class="mr10"><a href="login.html">登录</a>
+                </div>
+                <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
+            </div>
+        </div>
+        <div class="title">
+                <div class="center">
+                        <img src="./images/logo.png" alt="">
+                        <div class="login-wrap">
+                            <img src="./images/user.png" alt="" class="mr10"><a href="login.html">登录</a>
+                        </div>
+                </div>
+        </div>
+        <div class="nav-container mobile-nav">
+                <div class="nav-btn-wrap">
+                        <div class="title"><img src="./images/logo.png" alt=""></div>
+                        <a href="javascript:;" class="nav-btn"><img src="./images/mobile-nav-btn.png" alt=""></a>
+                </div>
+                <ul class="nav-item-container">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="technical-support.html">技术支持</a></li>
+                    <li><a href="javascript:;">论坛</a></li>
+                    <li><a href="javascript:;">提交问题</a></li>
+                </ul>
+        </div>
+        <div class="nav-wrap">
+                <div class="nav">
+                        <ul class="layui-nav center" lay-filter="">
+                                <li class="layui-nav-item"><a href="javascript:;">首页</a></li>
+                                <li class="layui-nav-item"><a href="technical-support.html">技术支持</a></li>
+                                <li class="layui-nav-item"><a href="">论坛</a></li>
+                                <li class="layui-nav-item"><a href="">提交问题</a></li>
+                        </ul>
+                </div>
+                <div class="layui-carousel" id="banner-wrap">
+                        <div carousel-item="">
+                            <div><img src="./images/banner1.png" alt=""></div>
+                            <div><img src="./images/banner1.png" alt=""></div>
+                            <div><img src="./images/banner1.png" alt=""></div>
+                        </div>
+                </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="document-wrap">
+            <div class="tc">
+                <h3>文件筛选标准</h3>
+                <p class="description">DOCUMENT SCREENING CRITERIA</p>
+                <div class="form-wrap center">
+                        <form class="layui-form pc-form" action="">
+                            <div class="layui-form-item radio-wrap">
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="sex" value="男" title="全部产品" checked>
+                                        <input type="radio" name="sex" value="女" title="我的产品">
+                                    </div>
+                            </div>
+                            <div class="tl cols-title">
+                                产品树图
+                            </div>
+                             <div>
+                                    <div class="layui-input-block">
+                                            <select name="city" lay-verify="required" class="w270">
+                                              <option value=""></option>
+                                              <option value="0">测试1</option>
+                                              <option value="1">测试2</option>
+                                            </select>
+                                            <div class="search-input w570">
+                                                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                                    <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
+                                            </div>
+                                            <div class="w270 btn-wrap">
+                                                    <button type="button" class="layui-btn layui-btn-normal">删除所有筛选条件</button>
+                                            </div>
+                                    </div>
+                             </div>
+                             <div class="tl cols-title flex-between mt20">
+                                    <div class="w270">产品</div>
+                                    <div class="w570 flex-between">
+                                        <div class="w270">文档类型</div>
+                                        <div class="w270">日期</div>
+                                    </div>
+                                    <div class="w270">特别推荐</div>
+                             </div>
+                             <div>
+                                    <div class="layui-input-block">
+                                            <div class="search-input w270">
+                                                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                                    <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
+                                            </div>
+                                            <div class="w570 flex-between">
+                                                    <select name="city" lay-verify="required" class="w270">
+                                                            <option value=""></option>
+                                                            <option value="0">测试1</option>
+                                                            <option value="1">测试2</option>
+                                                    </select>
+                                                    <div class="w270 flex-between">
+                                                            <input type="text" class="layui-input" id="date-start" placeholder="从">
+                                                            <span class="line">-</span>
+                                                            <input type="text" class="layui-input" id="date-end" placeholder="至">
+                                                    </div>
+                                            </div>
+                                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input w270">
+                                    </div>
+                             </div>
+                             <div class="tl cols-title flex-between mt20">
+                                    <div class="w270"><i class="layui-icon layui-icon-right mr10"></i>搜索产品</div>
+                                    <div class="w270 flex-between save-wrap">
+                                        <a href="javascript:;" class="white"><img src="./images/save.png">保存筛选条件</a>
+                                        <a href="javascript:;" class="white"><img src="./images/load.png">加载筛选条件</a>
+                                    </div>
+                             </div>
+                             <div class="layui-input-block">
+                                <div class="product-detail">
+                                    <h4>3RK1005-0LB00-0AA0</h4>
+                                    <div class="remark">IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</div>
+                                    <div class="content">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</div>
+                                    <div class="nav-wrap"><a href="javascript:;">产品信息</a>><a href="javascript:;">全部产品</a>><a href="javascript:;">产品列表信息</a></div>
+                                </div>
+                             </div>
+                        </form>
+                        <form class="layui-form mobile-form" action="">
+                            <div class="layui-form-item radio-wrap layui-input-block">
+                                    <div class="layui-input-block">
+                                       <div>
+                                            <input type="radio" name="sex" value="男" title="全部产品" checked>
+                                            <input type="radio" name="sex" value="女" title="我的产品">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="cols-title">
+                                产品树图
+                            </div>
+                            <div class="layui-input-block">
+                                    <div class="search-input mb10">
+                                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                            <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
+                                    </div>
+                                    <select name="city" lay-verify="required">
+                                            <option value=""></option>
+                                            <option value="0">测试1</option>
+                                            <option value="1">测试2</option>
+                                    </select>
+                            </div>
+                            <div class="cols-title">
+                                    产品
+                            </div>
+                             <div class="layui-input-block">
+                                    <div class="search-input">
+                                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                            <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
+                                    </div>
+                            </div>
+                            <div class="cols-title">
+                                    文档类型
+                            </div>
+                            <div class="layui-input-block">
+                                <select name="city" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">测试1</option>
+                                        <option value="1">测试2</option>
+                                </select>
+                            </div>
+                            <div class="cols-title">
+                                    日期
+                            </div>
+                            <div class="layui-input-block">
+                                    <div class="flex-between">
+                                            <input type="text" class="layui-input" id="date-start" placeholder="从">
+                                            <span class="line">-</span>
+                                            <input type="text" class="layui-input" id="date-end" placeholder="至">
+                                    </div>
+                            </div>
+                            <div class="cols-title">
+                                    特别推荐
+                            </div>
+                            <div class="layui-input-block">
+                                    <select name="city" lay-verify="required">
+                                            <option value=""></option>
+                                            <option value="0">测试1</option>
+                                            <option value="1">测试2</option>
+                                    </select>
+                            </div>
+                            <div class="layui-input-block">
+                                    <button type="button" class="layui-btn layui-btn-normal mt10">删除所有筛选条件</button>
+                            </div>
+                             <div class="layui-input-block">
+                                    <div class="flex-between save-wrap mt10">
+                                        <a href="javascript:;" class="white"><img src="./images/save.png">保存筛选条件</a>
+                                        <a href="javascript:;" class="white"><img src="./images/load.png">加载筛选条件</a>
+                                    </div>
+                             </div>
+                             <div class="cols-title">
+                                    <i class="layui-icon layui-icon-right mr10"></i>搜索产品
+                             </div>
+                             <div class="layui-input-block">
+                                <div class="product-detail">
+                                    <h4>3RK1005-0LB00-0AA0</h4>
+                                    <div class="remark">IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</div>
+                                    <div class="content">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</div>
+                                    <div class="nav-wrap"><a href="javascript:;">产品信息</a>><a href="javascript:;">全部产品</a>><a href="javascript:;">产品列表信息</a></div>
+                                </div>
+                             </div>
+                        </form>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-wrap">
+            <div class="tc">
+                <h3>产品通知</h3>
+                 <p class="description">PRODUCT NOTIFICATION</p>
+            </div>
+            <div class="center layui-container">
+                <div class="layui-row layui-col-space20">
+                    <div class="layui-col-sm6 layui-col-xs12 item">
+                        <div class="left tc white fz16">
+                            <div class="title">产品发布</div>
+                            <div class="date">07-16<br>2019</div>
+                        </div>
+                        <div class="right">
+                            <h4 class="fz16">NLC-条码引擎订购</h4>
+                            <p>
+                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                            </p>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-xs12 item">
+                        <div class="left tc white fz16">
+                            <div class="title">产品发布</div>
+                            <div class="date">07-16<br>2019</div>
+                        </div>
+                        <div class="right">
+                            <h4 class="fz16">NLC-条码引擎订购</h4>
+                            <p>
+                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space20">
+                    <div class="layui-col-sm6 layui-col-xs12 item">
+                        <div class="left tc white fz16">
+                            <div class="title">产品发布</div>
+                            <div class="date">07-16<br>2019</div>
+                        </div>
+                        <div class="right">
+                            <h4 class="fz16">NLC-条码引擎订购</h4>
+                            <p>
+                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                            </p>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-xs12 item">
+                        <div class="left tc white fz16">
+                            <div class="title">产品发布</div>
+                            <div class="date">07-16<br>2019</div>
+                        </div>
+                        <div class="right">
+                            <h4 class="fz16">NLC-条码引擎订购</h4>
+                            <p>
+                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space20">
+                    <div class="layui-col-sm6 layui-col-xs12 item">
+                        <div class="left tc white fz16">
+                            <div class="title">产品发布</div>
+                            <div class="date">07-16<br>2019</div>
+                        </div>
+                        <div class="right">
+                            <h4 class="fz16">NLC-条码引擎订购</h4>
+                            <p>
+                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                            </p>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-xs12 item">
+                        <div class="left tc white fz16">
+                            <div class="title">产品发布</div>
+                            <div class="date">07-16<br>2019</div>
+                        </div>
+                        <div class="right">
+                            <h4 class="fz16">NLC-条码引擎订购</h4>
+                            <p>
+                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tc btn-wrap">
+                    <button type="button" class="layui-btn layui-btn layui-btn-norma">查看更多>></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="center">
+            <ul>
+                <li class="title">产品中心</li>
+                <li class="item"><a href="javascript:;">数据采集</a></li>
+                <li class="item"><a href="javascript:;">数据采集</a></li>
+                <li class="item"><a href="javascript:;">数据采集</a></li>
+                <li class="item"><a href="javascript:;">数据采集</a></li>
+                <li class="item"><a href="javascript:;">数据采集</a></li>
+            </ul>
+            <ul>
+                <li class="title">行业应用</li>
+                <li class="item"><a href="javascript:;">物流快递</a></li>
+                <li class="item"><a href="javascript:;">物流快递</a></li>
+                <li class="item"><a href="javascript:;">物流快递</a></li>
+                <li class="item"><a href="javascript:;">物流快递</a></li>
+                <li class="item"><a href="javascript:;">物流快递</a></li>
+                <li class="item"><a href="javascript:;">物流快递</a></li>
+            </ul>
+            <ul>
+                <li class="title">关于我们</li>
+                <li class="item"><a href="javascript:;">公司概况</a></li>
+                <li class="item"><a href="javascript:;">公司概况</a></li>
+                <li class="item"><a href="javascript:;">公司概况</a></li>
+                <li class="item"><a href="javascript:;">公司概况</a></li>
+                <li class="item"><a href="javascript:;">公司概况</a></li>
+            </ul>
+            <ul>
+                <li class="title">商城</li>
+                <li class="item"><a href="javascript:;">公司商城</a></li>
+                <li class="item"><a href="javascript:;">公司商城</a></li>
+                <li class="item"><a href="javascript:;">公司商城</a></li>
+                <li class="item"><a href="javascript:;">公司商城</a></li>
+                <li class="item"><a href="javascript:;">公司商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright-wrap">版权所有：新大陆自动识别 全国服务热线 4006080591<br> © Copyright 2019 Newland Auto-ID Tech.<br>All Rights Reserved闽ICP备16006951号</div>
+<script src="./layui/layui.all.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    ;!function(){
+        layui.carousel.render({
+            elem: '#banner-wrap'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'hover' //始终显示箭头
+            ,height: '700px'
+            //,anim: 'updown' //切换动画方式
+        });
+        layui.laydate.render({
+            elem: '#date-start' //指定元素
+        });
+        layui.laydate.render({
+            elem: '#date-end' //指定元素
+        });
+    }();
+
+</script> 
+</body>
+</html>
