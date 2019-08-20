@@ -35,6 +35,8 @@
 .middle-form .layui-form-item .layui-form-label,.large-form .layui-form-item .layui-form-label{width: 120px;}
 .middle-form .layui-form-item .layui-input-block{width: 350px;margin-left: 0;}
 .large-form .layui-form-item .layui-input-block{width: 750px;margin-left: 0;}
+.layui-nav .layui-nav-item+.layui-nav-item{margin-left: 50px;}
+.layui-nav .layui-nav-item a{color: #fff;font-size: 16px;}
 .mobile-form{display: none;}
 .mobile-nav{display: none;}
 .tools-wrap .login-wrap{display: none;}

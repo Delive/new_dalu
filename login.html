@@ -18,7 +18,7 @@
       .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
       .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
       .head .banner-wrap{height: 300px;}
-      .content .center{padding-top: 45px;}
+      .content .center{padding: 45px 0;}
       .content .center form{width: 350px;margin: 64px auto 20px;}
       .content .center form .layui-input-block{margin: 0;}
       .content .center form .layui-btn{width: 100%;margin: 20px 0;}
@@ -26,7 +26,7 @@
       .content .center .forget-pwd{text-align: right;}
       .content .center .forget-pwd a{color: #7d7d7c;}
       @media screen and (max-width: 768px){
-         .content .center{padding-top: 10px;padding-left: 0;}
+         .content .center{padding: 10px 0 0 0;}
          .content .center form{margin: 20px auto;}
       }
   </style>
@@ -44,7 +44,7 @@
         </div>
         <div class="title">
                 <div class="center">
-                        <img src="./images/logo.png" alt="">
+                        <a href="index.html"><img src="./images/logo.png" alt=""></a>
                         <div class="sign-wrap">
                            <a href="login.html"><img src="./images/user.png" alt="" class="mr10">登录</a>
                            <a href="register.html"><img src="./images/register.png" alt="" class="mr10">注册</a>
@@ -54,7 +54,7 @@
         </div>
         <div class="nav-container mobile-nav">
                 <div class="nav-btn-wrap">
-                        <div class="title"><img src="./images/logo.png" alt=""></div>
+                        <div class="title"><a href="index.html"><img src="./images/logo.png" alt=""></a></div>
                         <a href="javascript:;" class="nav-btn"><img src="./images/mobile-nav-btn.png" alt=""></a>
                 </div>
                 <ul class="nav-item-container">
@@ -97,7 +97,8 @@
                     <div class="forget-pwd">
                         <a href="forget-pwd.html">忘记密码？</a>
                     </div>
-                    <button class="layui-btn">登录</button>
+                    <!-- <button class="layui-btn">登录</button> -->
+                    <a href="member-center.html"  class="layui-btn">登录</a>
                     <div><a href="register.html" class="primary-color">没有账号,去注册</a></div>
             </form>
         </div>

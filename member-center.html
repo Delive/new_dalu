@@ -20,11 +20,12 @@
       .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
       .head .banner-wrap{height: 300px;}
       .content{padding: 45px 0 20px;display: flex;justify-content: center;}
-      .content .center{width: 650px;margin: 0;padding-left: 30px;}
+      .content .center{width: 1200px;margin: 0;padding-left: 30px;display: flex;}
       .content .center form{width: 350px;}
       .content .center form .layui-input-block{margin: 0;}
       .content .center form .layui-btn{width: 100%;margin: 20px 0;}
-      .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;margin-bottom: 20px;}
+      .content .center .form-right-wrap .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;margin-bottom: 20px;}
+      .form-right-wrap{padding-left: 20px;flex: 1;}
       .silder{width: 240px;}
       .silder .top{height: 60px;background-color: #005bac;color: #fff;padding: 20px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
       .silder .item{padding: 30px 10px 0 30px;}
@@ -37,7 +38,7 @@
         .content{padding-top: 20px;}
         .content .center{padding: 0 20px;}
         .content .center form{padding: 0;width: 100%;}
-        .content .center .top{text-align: center;margin-top: 30px;}
+        .content .center .form-right-wrap .top{text-align: center;margin-top: 30px;}
         .submit-wrap .layui-form-label{display: none;}
       }
   </style>
@@ -55,7 +56,7 @@
         </div>
         <div class="title">
                 <div class="center">
-                        <img src="./images/logo.png" alt="">
+                        <a href="index.html"><img src="./images/logo.png" alt=""></a>
                         <div class="sign-wrap">
                            <a href="login.html"><img src="./images/user.png" alt="" class="mr10">登录</a>
                            <a href="register.html"><img src="./images/register.png" alt="" class="mr10">注册</a>
@@ -65,7 +66,7 @@
         </div>
         <div class="nav-container mobile-nav">
                 <div class="nav-btn-wrap">
-                        <div class="title"><img src="./images/logo.png" alt=""></div>
+                        <div class="title"><a href="index.html"><img src="./images/logo.png" alt=""></a></div>
                         <a href="javascript:;" class="nav-btn"><img src="./images/mobile-nav-btn.png" alt=""></a>
                 </div>
                 <ul class="nav-item-container">
@@ -92,6 +93,7 @@
             <div class="remark fz12">The member center</div>
     </div>
     <div class="content">
+        <div class="center">
             <div class="silder">
                     <div class="top flex-between">
                         <div>
@@ -108,7 +110,6 @@
                     <li><a href="my-message.html">我的通知</a></li>  
                 </ul>
             </div>
-        <div class="center">
             <div class="member-center-nav">
                 <div class="mt20 btn-container mobile">
                         <a type="button" class="layui-btn" href="javascript:;">会员信息</a>
@@ -119,65 +120,67 @@
                         <a href="javaciript:;"></a>
                 </div>
             </div>
-            <div class="top">
-                        会员信息
+            <div class="form-right-wrap">
+                <div class="top">
+                            会员信息
+                </div>
+                <form action="" class="layui-form middle-form">
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">姓名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">登录名</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入登录名" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">电子邮箱</label>
+                            <div class="layui-input-block">
+                                <input type="email" name="title" required  lay-verify="required" placeholder="请输入电子邮箱" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">论坛昵称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入论坛昵称" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">电话</label>
+                            <div class="layui-input-block">
+                                <input type="tel" name="title" required  lay-verify="required" placeholder="请输入论坛昵称" autocomplete="off" class="layui-input" disabled>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">公司</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入公司" autocomplete="off" class="layui-input" disabled>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">邮政编码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在地邮政编码" autocomplete="off" class="layui-input" disabled>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">国家</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在国家" autocomplete="off" class="layui-input" disabled>
+                            </div>
+                        </div>
+                        <div class="layui-form-item submit-wrap">
+                                <label class="layui-form-label"></label>
+                            <div class="layui-input-block">
+                                    <button class="layui-btn">确定</button>
+                            </div>
+                        </div>
+                </form>
             </div>
-            <form action="" class="layui-form middle-form">
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">姓名</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">登录名</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入登录名" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">电子邮箱</label>
-                        <div class="layui-input-block">
-                            <input type="email" name="title" required  lay-verify="required" placeholder="请输入电子邮箱" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">论坛昵称</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入论坛昵称" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">电话</label>
-                        <div class="layui-input-block">
-                            <input type="tel" name="title" required  lay-verify="required" placeholder="请输入论坛昵称" autocomplete="off" class="layui-input" disabled>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">公司</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入公司" autocomplete="off" class="layui-input" disabled>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">邮政编码</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在地邮政编码" autocomplete="off" class="layui-input" disabled>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">国家</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在国家" autocomplete="off" class="layui-input" disabled>
-                        </div>
-                    </div>
-                    <div class="layui-form-item submit-wrap">
-                            <label class="layui-form-label"></label>
-                        <div class="layui-input-block">
-                                <button class="layui-btn">确定</button>
-                        </div>
-                    </div>
-            </form>
         </div>
     </div>
     <div class="copyright-wrap">版权所有：新大陆自动识别 全国服务热线 4006080591<br> © Copyright 2019 Newland Auto-ID Tech.<br>All Rights Reserved闽ICP备16006951号</div>
