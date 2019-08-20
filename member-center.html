@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-  <link rel="stylesheet" href="./css/common.css">
   <style>
       .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover,.silder a:hover{color: #005bac !important;}
       .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
@@ -34,14 +33,21 @@
       .silder ul li{height: 48px;line-height: 48px;padding: 0 20px;border: 1px solid #ccc;border-top: none;}
       .silder ul li.active a,.silder .layui-icon{color: #005bac;font-weight: bold;}
       .silder .layui-icon{float: right;}
+      @media screen and (max-width: 768px){
+        .content .center form{padding: 0 20px;}
+      }
   </style>
+   <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
     <div class="head">
         <div class="tools-wrap">
             <div class="center">
-                <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的请求</a>|<a href="">CAX下载</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
-            </div>
+                    <div class="login-wrap">
+                            <img src="./images/user.png" alt="" class="mr10"><a href="login.html">登录</a>
+                    </div>
+                    <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
+             </div>
         </div>
         <div class="title">
                 <div class="center">
@@ -53,6 +59,18 @@
                         </div>
                 </div>
         </div>
+        <div class="nav-container mobile-nav">
+                <div class="nav-btn-wrap">
+                        <div class="title"><img src="./images/logo.png" alt=""></div>
+                        <a href="javascript:;" class="nav-btn"><img src="./images/mobile-nav-btn.png" alt=""></a>
+                </div>
+                <ul class="nav-item-container">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="technical-support.html">技术支持</a></li>
+                    <li><a href="javascript:;">论坛</a></li>
+                    <li><a href="javascript:;">提交问题</a></li>
+                </ul>
+        </div>
         <div class="nav-wrap">
                 <div class="nav">
                         <ul class="layui-nav center" lay-filter="">
@@ -62,9 +80,7 @@
                                 <li class="layui-nav-item"><a href="">提交问题</a></li>
                         </ul>
                 </div>
-                <div class="banner-wrap">
-                    <img src="./images//technical-banner.png" alt="">
-                </div>
+                <div class="banner-wrap"></div>
         </div>
     </div>
     <div class="content">
