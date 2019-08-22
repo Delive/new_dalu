@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <title>新大陆自动识别</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+      .head .center{width: 1200px;margin: 0 auto;}
+      .head .center .tools {width: 200px;display: flex;justify-content: space-around;color: #999;}
+      .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
+      .head .tools-wrap .center{display: flex;justify-content:flex-end;}
+      .head .tools a{color: #999;}
+      .head .title{height: 100px;display:flex;align-items: center;}
+      .head .title .center{display: flex;justify-content: space-between;align-items: center;}
+      .head .title a{color: #666;}
+      .head .sign-wrap{width: 280px;display: flex;justify-content: space-between;}
+      .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
+      .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
+      .head .pc.nav,.layui-nav{background-color: #005bac !important;}
+      .head .head-nav-container{height: 60px;line-height: 60px;background-color: var(--themeColor)}
+      .head .head-nav-container ul{display: flex;justify-content: flex-start;}
+      .head .head-nav-container .nav-item{width: 120px;text-align: center;position: relative;}
+      .head .head-nav-container .nav-item::after{content: " ";position:absolute;bottom: 0;left: 20px;right: 100px;;border-bottom: 2px solid #ea9978;transition: all .5s;}
+      .head .head-nav-container .nav-item:hover::after{right: 20px;}
+      .head .head-nav-container .nav-item+.nav-item{margin-left: 50px;}
+      .head .head-nav-container .nav-item a{color: #fff;font-size: 16px;}
+      /* .head .head-nav-container .nav-item:hover{} */
+      @media screen and (max-width: 768px){
+        .head{border: none;}      
+        .head .center,.content .center{width: 100%;}
+        .head .tools-wrap{padding: 0 10px;height: 44px !important;line-height: 44px;}
+        .head .tools-wrap .center{justify-content:space-between;}
+        .head .tools-wrap .center a{color: #666;}
+        .head .tools-wrap .login-wrap img{width: 30px;height: 30px;}
+        .head .layui-carousel img{height: 137px;width: 100%;}
+        .head .layui-carousel{height: 137px !important;}
+        .head .nav-wrap{padding-top: 0 !important;}
+        .head .banner-wrap{height: 160px;}
+        .head .nav-container{height: 70px;position: relative;}
+        .head .nav-container .nav-btn-wrap{height: 70px;display: flex;justify-content: space-between;align-items: center;padding: 0 10px;}
+        .head .nav-container ul{background-color: #666;line-height: 40px;text-align: right;position: absolute;right: 0;top: 70px;width: 100px;}
+        .head .nav-container .nav-btn{height: 40px;width: 40px;display: flex;}
+        .head .nav-container .nav-btn:active{background-color: #e3e3e3;}
+        .head .nav-container .title img{height: 40px;}
+        .head .nav-container img{margin: auto;}
+        .head .nav-container ul{position: absolute;right: -100px;transition: all .5s;z-index: 1000;text-align: center;}
+        .head .nav-container ul li{padding: 0 10px;}
+        .head .nav-container ul li:active{background-color: #555;}
+        .head .nav-container ul li>a{color: #fff}
+        .head .nav-container ul.active{right: 0;}   
+      }
+      
+    </style>
+</head>
+<body>
+    <div class="head">
+           <div class="tools-wrap">
+                    <div class="center">
+                        <div class="login-wrap">
+                                   <a href="../login.html" class="mobile"><img src="../images/user.png" alt="" class="mr10">登录</a>
+                        </div>
+                        <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
+                    </div>
+            </div>
+            <div class="title pc">
+                    <div class="center">
+                            <a href="index.html"><img src="../images/logo.png" alt=""></a>
+                            <div class="sign-wrap">
+                               <a href="../login.html"><img src="../images/user.png" alt="" class="mr10">登录</a>
+                               <a href="../register.html"><img src="../images/register.png" alt="" class="mr10">注册</a>
+                               <a href="../search.html"><img src="../images/search.png" alt="" class="mr10">搜索</a>
+                            </div>
+                    </div>
+            </div>
+            <div class="nav-container mobile-nav mobile">
+                <div class="nav-btn-wrap">
+                        <div class="title"><a href="index.html"><img src="../images/logo.png" alt=""></a></div>
+                        <a href="javascript:;" class="nav-btn"><img src="../images/mobile-nav-btn.png" alt=""></a>
+                </div>
+                <ul class="nav-item-container">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../technical-support.html">技术支持</a></li>
+                    <li><a href="javascript:;">论坛</a></li>
+                    <li><a href="javascript:;">提交问题</a></li>
+                </ul>
+             </div>
+             <div class="head-nav-container pc">
+                <ul class="center" lay-filter="">
+                        <li class="nav-item"><a href="../index.html" class="custom-hover">首页</a></li>
+                        <li class="nav-item"><a href="../technical-support.html" class="custom-hover">技术支持</a></li>
+                        <li class="nav-item"><a href="" class="custom-hover">论坛</a></li>
+                        <li class="nav-item"><a href="" class="custom-hover">提交问题</a></li>
+                </ul>
+            </div>
+    </div>
+    <script>
+            document.querySelector('.nav-btn').onclick = function(){
+
+                const navDom = document.querySelector('.nav-item-container')
+                if(navDom.className.indexOf('active') === -1){
+                        navDom.className = `nav-item-container active`
+                }else{
+                        navDom.className = `nav-item-container`
+                }
+            }
+    </script>
+</body>
+</html>
