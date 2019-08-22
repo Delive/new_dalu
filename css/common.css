@@ -4,6 +4,7 @@
     --delColor: #FF5722;
 }
 *{box-sizing: border-box;}
+html,body{width: 100%;overflow-x:hidden;}
 .fz12px{font-size: 12px;}
 .fz18{font-size: 18px;}
 .ml10{margin-left: 10px;}
@@ -29,11 +30,9 @@ a.custom-hover:hover{color: var(--customColor) !important;}
 .gray{color: #bdbdbd;}
 .del-btn:hover{color: var(--delColor) !important;}
 #upload{color: #005bac;}
-/* .head .center .tools {width: 200px; display: flex;justify-content: space-around; color: #999;}
-.head .banner-wrap{height: 100%;overflow: hidden;background: url(../images/technical-banner.png) center center no-repeat;background-size: cover} */
-.copyright-wrap{background-color: #333;text-align: center;line-height: 50px;color: #999;}
-.copyright-wrap br{display: none;}
-/* 重写主题UI */
+.inner-banner-wrap{height: 300px;width:100%;overflow: hidden;background: url(../images/technical-banner.png) center center no-repeat;background-size: cover} 
+
+/* 重写主题UI 
 /* .layui-nav{background-color: #005bac;padding: 0;}
 .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{background-color: #ea9978;} */
 .layui-form-radio>i:hover, .layui-form-radioed>i{color: #fff;}
@@ -50,6 +49,7 @@ a.custom-hover:hover{color: var(--customColor) !important;}
 .member-center-nav{display: none;}
 .member-title-wrap{display: none;}
 .mobile{display: none;}
+.footer{display: none;}
 @media screen and (max-width: 768px){
     /* 手机导航 */
     .pc{display: none !important;}
@@ -60,16 +60,7 @@ a.custom-hover:hover{color: var(--customColor) !important;}
     .member-title-wrap{display: block;}
     .content>.silder{display: none;}
     .center,.content .center{width: 100%;}
-    /* .head{width: 100%;overflow-x: hidden;} */
-    /* .head .tools-wrap{padding: 0 10px;height: 44px !important;line-height: 44px;}
-    .head .tools-wrap .center{justify-content:space-between;}
-    .head .tools-wrap .center a{color: #666;}
-    .head .tools-wrap .login-wrap>img{width: 30px;height: 30px;}
-    .head .layui-carousel img{height: 137px;width: 100%;}
-    .head .layui-carousel{height: 137px !important;}
-    .head .nav-wrap{padding-top: 0 !important;}
-    .head .banner-wrap{height: 160px;} */
-    /* .head .banner-wrap img{height: 160px;width: auto;} */
+    .inner-banner-wrap{height: 160px;}
     .head .nav{display: none;}
     .content .document-wrap{padding-top: 20px;}
     .content .document-wrap{height: auto;}

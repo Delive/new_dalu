@@ -6,20 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
+   <script src="./js/include.js"></script>
   <style>
-      .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover,.silder a:hover,.list-wrap a:not(.del-btn):hover{color: #005bac !important;}
-      .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
-      .head .tools-wrap .center{display: flex;justify-content:flex-end;}
-      .head .tools a{color: #999;}
-      .head .title{height: 100px;display:flex;align-items: center;}
-      .head .title .center{display: flex;justify-content: space-between;align-items: center;}
-      .head .title a{color: #666;}
-      .head .sign-wrap{width: 300px;display: flex;justify-content: space-between;}
-      .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
-      .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
-      .head .banner-wrap{height: 300px;}
       .content{padding: 45px 0 20px;display: flex;justify-content: center;}
-      .content .center{width: 900px;margin: 0;padding-left: 30px;}
+      .content .center{width: 900px;margin: 0;padding-left: 90px;}
       .content .center form{width: 350px;}
       .content .center form .layui-input-block{margin: 0;}
       .content .center form .layui-btn{width: 100%;margin: 20px 0;}
@@ -33,7 +23,7 @@
       .silder ul li{height: 48px;line-height: 48px;padding: 0 20px;border: 1px solid #ccc;border-top: none;}
       .silder ul li.active a,.silder .layui-icon{color: #005bac;font-weight: bold;}
       .silder .layui-icon{float: right;}
-      .list-wrap{margin-bottom: 15px;}
+      .list-wrap{margin-bottom: 15px;min-height: 450px;}
       @media screen and (max-width: 768px){
         .content{padding-top: 20px;}
         .content .center{padding: 0 20px;}
@@ -47,49 +37,8 @@
   <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <div class="head">
-        <div class="tools-wrap">
-            <div class="center">
-                    <div class="login-wrap">
-                            <img src="./images/user.png" alt="" class="mr10"><a href="login.html">登录</a>
-                </div>
-                <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
-            </div>
-        </div>
-        <div class="title">
-                <div class="center">
-                        <a href="index.html"><img src="./images/logo.png" alt=""></a>
-                        <div class="sign-wrap">
-                           <a href="login.html"><img src="./images/user.png" alt="" class="mr10">登录</a>
-                           <a href="register.html"><img src="./images/register.png" alt="" class="mr10">注册</a>
-                           <a href="search.html"><img src="./images/search.png" alt="" class="mr10">搜索</a>
-                        </div>
-                </div>
-        </div>
-        <div class="nav-container mobile-nav">
-                <div class="nav-btn-wrap">
-                        <div class="title"><a href="index.html"><img src="./images/logo.png" alt=""></a></div>
-                        <a href="javascript:;" class="nav-btn"><img src="./images/mobile-nav-btn.png" alt=""></a>
-                </div>
-                <ul class="nav-item-container">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="technical-support.html">技术支持</a></li>
-                    <li><a href="javascript:;">论坛</a></li>
-                    <li><a href="javascript:;">提交问题</a></li>
-                </ul>
-        </div>
-        <div class="nav-wrap">
-                <div class="nav">
-                        <ul class="layui-nav center" lay-filter="">
-                                <li class="layui-nav-item"><a href="index.html">首页</a></li>
-                                <li class="layui-nav-item"><a href="technical-support.html">技术支持</a></li>
-                                <li class="layui-nav-item"><a href="">论坛</a></li>
-                                <li class="layui-nav-item"><a href="">提交问题</a></li>
-                        </ul>
-                </div>
-                <div class="banner-wrap"></div>
-        </div>
-    </div>
+   <include src="./compontents/head.html"></include>
+    <div class="inner-banner-wrap"></div>
     <div class="tc member-title-wrap mobile">
             <div class="title fz18">会员中心</div>
             <div class="remark fz12">The member center</div>
@@ -166,7 +115,7 @@
             <div id="page" class="tc"></div>
         </div>
     </div>
-    <div class="copyright-wrap">版权所有：新大陆自动识别 全国服务热线 4006080591<br> © Copyright 2019 Newland Auto-ID Tech.<br>All Rights Reserved闽ICP备16006951号</div>
+     <include src="./compontents/footer.html"></include>
 <script src="./layui/layui.all.js"></script>
 <script src="./js/index.js"></script>
 <script>

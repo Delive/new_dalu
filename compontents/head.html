@@ -7,53 +7,7 @@
     <title>新大陆自动识别</title>
     <link rel="stylesheet" href="../layui/css/layui.css">
     <link rel="stylesheet" href="../css/common.css">
-    <style>
-      .head .center{width: 1200px;margin: 0 auto;}
-      .head .center .tools {width: 200px;display: flex;justify-content: space-around;color: #999;}
-      .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
-      .head .tools-wrap .center{display: flex;justify-content:flex-end;}
-      .head .tools a{color: #999;}
-      .head .title{height: 100px;display:flex;align-items: center;}
-      .head .title .center{display: flex;justify-content: space-between;align-items: center;}
-      .head .title a{color: #666;}
-      .head .sign-wrap{width: 280px;display: flex;justify-content: space-between;}
-      .head .nav-wrap{padding-top: 60px;position: relative;background-color: #005bac;}
-      .head .nav-wrap .nav{position: absolute;top: 0;left:0;background-color: #005bac;width: 100%;box-shadow: 0 1px 4px;z-index: 100;}
-      .head .pc.nav,.layui-nav{background-color: #005bac !important;}
-      .head .head-nav-container{height: 60px;line-height: 60px;background-color: var(--themeColor)}
-      .head .head-nav-container ul{display: flex;justify-content: flex-start;}
-      .head .head-nav-container .nav-item{width: 120px;text-align: center;position: relative;}
-      .head .head-nav-container .nav-item::after{content: " ";position:absolute;bottom: 0;left: 20px;right: 100px;;border-bottom: 2px solid #ea9978;transition: all .5s;}
-      .head .head-nav-container .nav-item:hover::after{right: 20px;}
-      .head .head-nav-container .nav-item+.nav-item{margin-left: 50px;}
-      .head .head-nav-container .nav-item a{color: #fff;font-size: 16px;}
-      /* .head .head-nav-container .nav-item:hover{} */
-      @media screen and (max-width: 768px){
-        .head{border: none;}      
-        .head .center,.content .center{width: 100%;}
-        .head .tools-wrap{padding: 0 10px;height: 44px !important;line-height: 44px;}
-        .head .tools-wrap .center{justify-content:space-between;}
-        .head .tools-wrap .center a{color: #666;}
-        .head .tools-wrap .login-wrap img{width: 30px;height: 30px;}
-        .head .layui-carousel img{height: 137px;width: 100%;}
-        .head .layui-carousel{height: 137px !important;}
-        .head .nav-wrap{padding-top: 0 !important;}
-        .head .banner-wrap{height: 160px;}
-        .head .nav-container{height: 70px;position: relative;}
-        .head .nav-container .nav-btn-wrap{height: 70px;display: flex;justify-content: space-between;align-items: center;padding: 0 10px;}
-        .head .nav-container ul{background-color: #666;line-height: 40px;text-align: right;position: absolute;right: 0;top: 70px;width: 100px;}
-        .head .nav-container .nav-btn{height: 40px;width: 40px;display: flex;}
-        .head .nav-container .nav-btn:active{background-color: #e3e3e3;}
-        .head .nav-container .title img{height: 40px;}
-        .head .nav-container img{margin: auto;}
-        .head .nav-container ul{position: absolute;right: -100px;transition: all .5s;z-index: 1000;text-align: center;}
-        .head .nav-container ul li{padding: 0 10px;}
-        .head .nav-container ul li:active{background-color: #555;}
-        .head .nav-container ul li>a{color: #fff}
-        .head .nav-container ul.active{right: 0;}   
-      }
-      
-    </style>
+    <link rel="stylesheet" href="../css/head.css">
 </head>
 <body>
     <div class="head">
