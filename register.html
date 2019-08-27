@@ -23,8 +23,10 @@
       .content .center{padding-top: 45px;}
       .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;}
       .content form{margin: 64px 0 20px;}
-      .content form .layui-btn{width: 350px;}
+      .content form .submit-btn{width: 350px;}
       .qrcode-wrap{position: absolute;bottom: 10px;right: 50px;}
+      .content form .auth-code-wrap .auth-code{flex: 3;}
+      .content form .auth-code-wrap .layui-btn{flex: 2;}
       @media screen and (max-width: 768px){
         .content .center{padding: 0 20px;}
         .content .center .btn-block .layui-form-label{display: none;}
@@ -88,6 +90,13 @@
                         <span class="gray ml10 pc">留下正确的联系方式，方便我们联系您</span>
                     </div>
                     <div class="layui-form-item">
+                        <label class="layui-form-label">验证码</label>
+                        <div class="layui-input-block auth-code-wrap flex-between">
+                            <input type="tel" name="title" required  lay-verify="required" placeholder="请输入验证码" maxlength="6" autocomplete="off" class="layui-input auth-code">
+                            <button class="layui-btn ml10">获取验证码</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
                             <label class="layui-form-label">公司</label>
                         <div class="layui-input-block">
                             <input type="text" name="title" required  lay-verify="required" placeholder="请输入公司" autocomplete="off" class="layui-input">
@@ -108,7 +117,7 @@
                     <div class="layui-form-item btn-block">
                         <label class="layui-form-label"></label>
                         <div class="layui-input-block">
-                                <button class="layui-btn">完成</button>
+                                <button class="layui-btn submit-btn">完成</button>
                         </div>
                     </div>
                     <div class="layui-form-item btn-block">
