@@ -24,8 +24,6 @@
       .content .center form .layui-input-block{margin: 0;}
       .content .center form .submit-btn{width: 100%;margin: 20px 0;}
       .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;}
-      .auth-code-wrap .auth-code{flex: 3;}
-      .auth-code-wrap .layui-btn{flex: 2;}
       @media screen and (max-width: 768px){
         .content .center{padding: 20px 0 40px;}
       }
@@ -38,23 +36,21 @@
     <div class="content">
             <div class="center tc">
             <div class="top">
-                忘记密码
+                设置新密码
             </div>
             <form action="" class="layui-form">
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="tel" name="title" required  lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+                            <input type="password" name="title" required  lay-verify="required" placeholder="请输入新密码" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <div class="layui-input-block auth-code-wrap flex-between">
-                             <input type="number" name="title" required  lay-verify="required" placeholder="请输入验证码" maxlength="6" autocomplete="off" class="layui-input auth-code">
-                            <button class="layui-btn ml10">获取验证码</button>
+                        <div class="layui-input-block">
+                            <input type="password" name="title" required  lay-verify="required" placeholder="请再次确认密码" autocomplete="off" class="layui-input">
                         </div>
                     </div>
-                    <!-- <button class="layui-btn submit-btn">下一步</button> -->
-                    <a href="modify-pwd.html" class="layui-btn submit-btn custom-hover">下一步</a>
-                    <div><a href="register.html" class="primary-color">没有账号,去注册</a></div>
+                    <button class="layui-btn submit-btn">确认</button>
+                    <!-- <div><a href="register.html" class="primary-color">没有账号,去注册</a></div> -->
             </form>
         </div>
     </div>
