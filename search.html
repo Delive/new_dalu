@@ -46,6 +46,7 @@
       .search-result{margin-top: 40px;}
       .result-list{width: 900px;}
       .content .search-result .list-wrap li{padding: 30px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
+      .content .list-wrap.pc{min-height: 654px;}
       .content .search-result .list-wrap li .right{width: 150px;}
       .silder{width: 260px;height: 790px;background-color: #efefef;}
       .silder .top{height: 60px;background-color: #005bac;line-height: 60px;color: #fff;padding: 10px 10px 10px 30px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
@@ -81,7 +82,7 @@
    <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <include src="./compontents/head.html"></include>
+    <include src="./compontents/header.html"></include>
     <div class="inner-banner-wrap"></div>
     <div class="content">
         <div class="center">
@@ -411,11 +412,12 @@
                             </div>
                     </div>
                     <div class="layui-form-item layui-form-text">
-                            <label class="layui-form-label">视频</label>
+                            <label class="layui-form-label">附件</label>
                             <div class="layui-input-block">
                                     <button type="button" class="layui-btn layui-btn-primary" id="upload">
-                                            <i class="layui-icon">&#xe67c;</i>上传视频
+                                            <i class="layui-icon">&#xe67c;</i>上传附件
                                    </button>
+                                   <span class="remark ml10 pc">支持格式：jpg，mp4，rar，word，pdf，excel</span>
                            </div>
                     </div>
                     <div class="layui-form-item layui-form-text btn-block">

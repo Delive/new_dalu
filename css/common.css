@@ -19,7 +19,7 @@ html,body{width: 100%;overflow-x:hidden;}
 .w200{width: 200px;}
 a:not(.custom-hover):hover{color: var(--themeColor) !important;}
 a.custom-hover:hover{color: var(--customColor) !important;}
-
+/*include{height: 202px;width: 100%;display: block;}*/
 .w270,.w270+.layui-form-select{width: 270px;}
 .flex-between{display: flex;justify-content: space-between;}
 .flex-column-between{display: flex;flex-direction: column;justify-content: space-between;}
@@ -28,6 +28,7 @@ a.custom-hover:hover{color: var(--customColor) !important;}
 .center{width: 1200px;margin: 0 auto;}
 .primary-color{color: #005bac;}
 .gray{color: #bdbdbd;}
+.remark{color: #999;}
 .del-btn:hover{color: var(--delColor) !important;}
 #upload{color: #005bac;}
 .inner-banner-wrap{height: 300px;width:100%;overflow: hidden;background: url(../images/technical-banner.png) center center no-repeat;background-size: cover} 
@@ -52,6 +53,7 @@ a.custom-hover:hover{color: var(--customColor) !important;}
 .footer{display: none;}
 @media screen and (max-width: 768px){
     /* 手机导航 */
+    /*include{height: 114px;}*/
     .pc{display: none !important;}
     .mobile{display: block;}
     .mobile-nav{display: block;}

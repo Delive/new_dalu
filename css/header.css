@@ -1,4 +1,4 @@
-.head .center{width: 1200px;margin: 0 auto;}
+      .head .center{width: 1200px;margin: 0 auto;}
       .head .center .tools {width: 200px;display: flex;justify-content: space-around;color: #999;}
       .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
       .head .tools-wrap .center{display: flex;justify-content:flex-end;}
