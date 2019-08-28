@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>新大陆自动识别</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <style>
+      .content{padding: 45px 0 20px;display: flex;justify-content: center;}
+      .content .center{width: 900px;margin: 0;padding-left: 90px;}
+      .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;margin-bottom: 20px;}
+      .content .list-wrap li{padding: 20px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
+      .list-wrap .title{height: 36px;line-height: 36px;display: flex;justify-content:flex-start;color: #005bac;background-color: #efefef;padding-left: 20px;}
+      .list-wrap p{line-height: 30px;padding-left: 20px;display: flex;}
+      .list-wrap p>.item-label{width: 100px;color: #7d7c7c;}
+      .list-wrap p>.item-content{flex:1;}
+      .list-wrap .title>span{flex:1;}
+      .list-wrap .title .question-content{text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+      .silder{width: 240px;}
+      .silder .top{height: 60px;background-color: #005bac;color: #fff;padding: 20px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+      .silder .item{padding: 30px 10px 0 30px;}
+      .silder h4{font-size: 16px;color: #333;line-height: 48px;position: relative;}
+      .silder h4::after{content:" ";position: absolute;bottom: 0;left: 0;right: 200px;border-bottom: 2px solid #ccc;}
+      .silder ul li{height: 48px;line-height: 48px;padding: 0 20px;border: 1px solid #ccc;border-top: none;}
+      .silder ul li.active a,.silder .layui-icon{color: #005bac;font-weight: bold;}
+      .silder .layui-icon{float: right;}
+      .history-question{font-size: 20px;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;color: #005bac;}
+      .list-wrap{margin-bottom: 15px;}
+      .download-file{color: #005bac;text-decoration: underline;}
+      @media screen and (max-width: 768px){
+        .content{padding-top: 20px;}
+        .content .center .top{margin-bottom: 0;border: none;}
+        .content .center{padding: 0 20px;}
+        .center .form-wrap{margin: 0 -20px;}
+        .center .form-wrap .layui-form-item.mobile{display: flex !important;}
+        .content .form-wrap .layui-form-label{width: 90px;}
+        .large-form .layui-form-item .layui-input-block{width: 100% !important;}
+        .content .center form{padding: 0;width: 100%;}
+        .content .center .top{text-align: center;margin-top: 30px;}
+      }
+  </style>
+  <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <div id="header"></div>
+    <div class="inner-banner-wrap"></div>
+    <div class="tc member-title-wrap mobile">
+        <div class="title fz18">会员中心</div>
+        <div class="remark fz12">The member center</div>
+   </div>
+    <div class="content">
+            <div class="silder">
+                    <div class="top flex-between">
+                        <div>
+                            <div>会员中心</div>
+                            <div>The member center</div>
+                        </div>
+                    <img src="./images/play.png" alt="">
+                </div>
+                <ul>
+                    <li><a href="member-center.html">会员信息</a></li>  
+                    <li><a href="my-collect.html">我的收藏</a></li>  
+                    <li><a href="my-product.html">我的产品</a></li>  
+                    <li class="active"><a href="javascript:;">我的提问</a><i class="layui-icon layui-icon-right"></i> </li>  
+                    <li><a href="my-message.html">我的通知</a></li>  
+                </ul>
+            </div>
+        <div class="center">
+            <div class="member-center-nav mobile">
+                <div class="mt20 btn-container">
+                        <a type="button" class="layui-btn layui-btn-primary" href="member-center.html">会员信息</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-collect.html">我的收藏</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-product.html">我的产品</a>
+                        <a type="button" class="layui-btn" href="my-question.html">我的提问</a>
+                        <a type="button" class="layui-btn layui-btn-primary" href="my-message.html">我的通知</a>
+                        <a href="javaciript:;"></a>
+                </div>
+            </div>
+            <div class="top">
+                    历史问题
+            </div>
+            <ul class="list-wrap">
+                <li>
+                        <div class="title mb20"><span>产品：PT85X</span><span class="question-content">提问内容：不能开机</span></div>
+                        <p><span class="item-label">名称：</span><span class="item-content">陈一发</span></p>
+                        <p><span class="item-label">电话号码：</span><span class="item-content">13559939290</span></p>
+                        <p><span class="item-label">电子邮件：</span><span class="item-content">8888@qq.com</span></p>
+                        <p><span class="item-label">说明：</span><span class="item-content">该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。</span></p>
+                        <p><span class="item-label">附件：</span><span class="item-content"><a href="javascript:;" class="download-file">查看附件</a></span></p>
+                </li>
+            </ul>
+            <div id="page" class="tc"></div>
+        </div>
+    </div>
+    <div id="footer"></div>
+<script src="./layui/layui.all.js"></script>
+<script src="./js/jquery-2.0.3.min.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

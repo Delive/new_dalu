@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>新大陆自动识别</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <style>
+      .content{padding-top: 40px;position: relative;padding-bottom: 20px;}
+      .content .center{width: 1200px;}
+      .content .top-message{line-height: 40px;padding-bottom: 20px;}
+      .content .top-message .module-name{font-size: 26px;color: #005bac;}
+      .content .top-message,.content .top-message a{color: #7d7c7c;}
+      .content .form-wrap .layui-form-label{width: 120px;}
+      .layui-form.pc{align-items:center;}
+      .layui-form.pc .item-label{width: 120px;color: #fff;text-align: center;}
+      .layui-form.pc .layui-form-item{flex: 1;margin: 0;}
+      .form-wrap form{padding-top: 40px;background-color: #005bac;padding: 20px;width: 900px;}
+      .content .list-wrap{margin-bottom: 15px;min-height: 450px;padding-top: 30px;}
+      .content .list-wrap li{padding: 20px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
+      .silder{width: 260px;height: 790px;background-color: #efefef;}
+      .silder .top{height: 60px;background-color: #005bac;line-height: 60px;color: #fff;padding: 10px 10px 10px 30px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+      .silder .item{padding: 30px 10px 0 30px;}
+      .silder h4{font-size: 16px;color: #333;line-height: 48px;position: relative;}
+      .silder h4::after{content:" ";position: absolute;bottom: 0;left: 0;right: 200px;border-bottom: 2px solid #ccc;}
+      .silder ul li{line-height: 36px;list-style: disc;}
+      .silder a{color: #999;}
+      #page{height: 200px;line-height: 200px;}
+      .add-btn{color: #005bac;border-color: #005bac;border-radius: 8px;height: 34px;line-height: 34px;padding: 0 12px;}
+      @media screen and (max-width: 768px){
+        .content{padding: 20px 0 0 0;}
+        .center .top-message{padding: 20px;}
+        .silder{display: none;}
+        .layui-form.mobile{display: flex; flex-direction: column; width: 250; height: 220px; justify-content: space-between;}
+        .layui-form.mobile .item-label{color: #fff;}
+        .layui-form.mobile .select-wrap{margin:  0px;}
+        .layui-form.mobile .layui-form-select{width: 100%;}
+        .content .form-wrap,.form-wrap form{width: 100%;}
+        .content .form-wrap .layui-form-label{width: 90px;}
+        .form-wrap .layui-input, .form-wrap .layui-textarea{width: 100%;}
+        .layui-input-block{margin-left: 100px;}
+        .content .center .btn-block .layui-form-label{display: none;}
+        .content .center .btn-block .layui-btn{width: 100%;}
+        .content .center .btn-block .layui-input-block{margin-left: 0;}
+        .content .list-wrap{padding: 30px 20px 0;}
+      }
+  </style>
+   <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <div id="header"></div>
+    <div class="inner-banner-wrap"></div>
+    <div class="content">
+        <div class="center flex-between">    
+                 <div class="form-wrap">
+                        <div class="top-message flex-between">
+                                        <div class="module-name">添加产品</div>
+                                       <button class="layui-btn br8 pc">以后再选</button>
+                        </div>
+                        <form action="" class="layui-form  pc flex-between">
+                                <div class="item-label">产品型号</div>
+                                <div class="layui-form-item flex-between select-wrap">
+                                                <select name="product">
+                                                        <option value=""></option>
+                                                        <option value="PT85X">PT85X</option>
+                                                        <option value="PT80">PT80</option>
+                                                        <option value="PT98X">PT98X</option>
+                                                        <option value="PT30">PT30</option>
+                                                        <option value="MT60">MT60</option>
+                                                        <option value="MT70">MT70</option>
+                                                 </select>
+                                   </div>
+                                   <div class="layui-form-item flex-between select-wrap">
+                                                <select name="product">
+                                                        <option value=""></option>
+                                                        <option value="PT85X">PT85X</option>
+                                                        <option value="PT80">PT80</option>
+                                                        <option value="PT98X">PT98X</option>
+                                                        <option value="PT30">PT30</option>
+                                                        <option value="MT60">MT60</option>
+                                                        <option value="MT70">MT70</option>
+                                                 </select>
+                                   </div>
+                                   <div class="layui-form-item flex-between select-wrap">
+                                                <select name="product">
+                                                        <option value=""></option>
+                                                        <option value="PT85X">PT85X</option>
+                                                        <option value="PT80">PT80</option>
+                                                        <option value="PT98X">PT98X</option>
+                                                        <option value="PT30">PT30</option>
+                                                        <option value="MT60">MT60</option>
+                                                        <option value="MT70">MT70</option>
+                                                 </select>
+                                   </div>
+                         </form>
+                         <form action="" class="layui-form  mobile">
+                                <div class="item-label">产品型号</div>
+                                <div class="layui-form-item flex-between select-wrap">
+                                                <select name="product">
+                                                        <option value=""></option>
+                                                        <option value="PT85X">PT85X</option>
+                                                        <option value="PT80">PT80</option>
+                                                        <option value="PT98X">PT98X</option>
+                                                        <option value="PT30">PT30</option>
+                                                        <option value="MT60">MT60</option>
+                                                        <option value="MT70">MT70</option>
+                                                 </select>
+                                   </div>
+                                   <div class="layui-form-item flex-between select-wrap">
+                                                <select name="product">
+                                                        <option value=""></option>
+                                                        <option value="PT85X">PT85X</option>
+                                                        <option value="PT80">PT80</option>
+                                                        <option value="PT98X">PT98X</option>
+                                                        <option value="PT30">PT30</option>
+                                                        <option value="MT60">MT60</option>
+                                                        <option value="MT70">MT70</option>
+                                                 </select>
+                                   </div>
+                                   <div class="layui-form-item flex-between select-wrap">
+                                                <select name="product">
+                                                        <option value=""></option>
+                                                        <option value="PT85X">PT85X</option>
+                                                        <option value="PT80">PT80</option>
+                                                        <option value="PT98X">PT98X</option>
+                                                        <option value="PT30">PT30</option>
+                                                        <option value="MT60">MT60</option>
+                                                        <option value="MT70">MT70</option>
+                                                 </select>
+                                   </div>
+                         </form>
+                         <ul class="list-wrap">
+                                <li class="flex-between">
+                                    <div class="left">
+                                        <p class="primary-color">3RK1005-0LB00-OAA</p>
+                                        <p>IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</p>
+                                    </div>
+                                    <div class="right tr">
+                                           <button href="javascript:;" class="layui-btn layui-btn-primary add-btn">添加产品</button>
+                                    </div>
+                                </li>
+                                <li class="flex-between">
+                                        <div class="left">
+                                            <p class="primary-color">3RK1005-0LB00-OAA</p>
+                                            <p>IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</p>
+                                        </div>
+                                        <div class="right tr">
+                                               <button href="javascript:;" class="layui-btn layui-btn-primary add-btn">添加产品</button>
+                                        </div>
+                                    </li>
+                                    <li class="flex-between">
+                                            <div class="left">
+                                                <p class="primary-color">3RK1005-0LB00-OAA</p>
+                                                <p>IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</p>
+                                            </div>
+                                            <div class="right tr">
+                                                 <button href="javascript:;" class="layui-btn layui-btn-primary br8" disabled>已添加</button>
+                                        </li>
+                                        <li class="flex-between">
+                                                <div class="left">
+                                                    <p class="primary-color">3RK1005-0LB00-OAA</p>
+                                                    <p>IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</p>
+                                                </div>
+                                                <div class="right tr">
+                                                      <button href="javascript:;" class="layui-btn layui-btn-primary add-btn">添加产品</button>
+                                                </div>
+                                        </li>
+                            </ul>
+                             <div id="page" class="tc"></div>
+                </div>
+                <div class="silder">
+                        <div class="top flex-between">相关链接<img src="./images/play.png" alt=""></div>
+                        <div class="item">
+                            <h4>产品中心</h4>
+                            <ul>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                                <h4>行业应用</h4>
+                                <ul>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                </ul>
+                            </div>
+                            <div class="item">
+                                    <h4>关于我们</h4>
+                                    <ul>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                    </ul>
+                                </div>
+                    </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+<script src="./layui/layui.all.js"></script>
+<script src="./js/jquery-2.0.3.min.js"></script>
+<script src="./js/index.js"></script>
+<script>
+ ;!function(){
+        var laypage = layui.laypage;
+  
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+        });
+    }()
+
+</script> 
+</body>
+</html>

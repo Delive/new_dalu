@@ -12,10 +12,11 @@
       .content .center form{width: 350px;}
       .content .center form .layui-input-block{margin: 0;}
       .content .center form .layui-btn{width: 100%;margin: 20px 0;}
-      .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;}
+      .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;display: flex;justify-content:space-between;align-items:center;}
       .content .list-wrap li{padding: 20px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
       .silder{width: 240px;}
       .silder .top{height: 60px;background-color: #005bac;color: #fff;padding: 20px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+      .add-product-btn{border-radius: 8px;}
       .silder .item{padding: 30px 10px 0 30px;}
       .silder h4{font-size: 16px;color: #333;line-height: 48px;position: relative;}
       .silder h4::after{content:" ";position: absolute;bottom: 0;left: 0;right: 200px;border-bottom: 2px solid #ccc;}
@@ -71,7 +72,8 @@
                     </div>
             </div>
             <div class="top">
-                        我的产品
+                        <span>我的产品</span>
+                        <a class="layui-btn layui-btn-primary add-product-btn" href="./product-center.html">添加产品</a>
             </div>
             <ul class="list-wrap">
                 <li class="flex-between">

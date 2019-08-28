@@ -10,12 +10,14 @@ html,body{width: 100%;overflow-x:hidden;}
 .ml10{margin-left: 10px;}
 .mr10{margin-right: 10px;}
 .mb10{margin-bottom: 10px;}
+.mb20{margin-bottom: 20px;}
 .mt10{margin-top: 10px;}
 .mt20{margin-top: 20px;}
 .tc{text-align: center;}
 .tl{text-align: left;}
 .tr{text-align: right;}
 .fb{font-weight: bold;}
+.br8{border-radius: 8px;}
 .w200{width: 200px;}
 a:not(.custom-hover):hover{color:#005bac !important;}
 a.custom-hover:hover{color: #aed9ff !important;}
@@ -38,7 +40,7 @@ a.custom-hover:hover{color: #aed9ff !important;}
 .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{background-color: #ea9978;} */
 .layui-form-radio>i:hover, .layui-form-radioed>i{color: #fff;}
 .layui-form-select dl dd.layui-this{background-color: #005bac;}
-.middle-form .layui-form-item,.large-form .layui-form-item{display: flex;justify-content: flex-start;align-items: center;}
+.middle-form .layui-form-item,.large-form .layui-form-item:not(.mobile){display: flex;justify-content: flex-start;align-items: center;}
 .middle-form .layui-form-item .layui-form-label,.large-form .layui-form-item .layui-form-label{width: 120px;}
 .middle-form .layui-form-item .layui-input-block{width: 350px;margin-left: 0;}
 .large-form .layui-form-item .layui-input-block{width: 750px;margin-left: 0;}
@@ -50,7 +52,7 @@ a.custom-hover:hover{color: #aed9ff !important;}
 .member-center-nav{display: none;}
 .member-title-wrap{display: none;}
 .mobile{display: none;}
-.footer{display: none;}
+.footer{display: none !important;}
 @media screen and (max-width: 768px){
     /* 手机导航 */
      #header{height: 114px;}
