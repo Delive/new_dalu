@@ -1,55 +1,41 @@
-
-    <link rel="stylesheet" href="../css/header.css">
-    <div class="head">
-           <div class="tools-wrap">
-                    <div class="center">
-                        <div class="login-wrap">
-                                   <a href="../login.html" class="mobile"><img src="../images/user.png" alt="" class="mr10">登录</a>
-                        </div>
-                        <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
-                    </div>
-            </div>
-            <div class="title pc">
-                    <div class="center">
-                            <a href="index.html"><img src="../images/logo.png" alt=""></a>
-                            <div class="sign-wrap">
-                               <a href="../login.html"><img src="../images/user.png" alt="" class="mr10">登录</a>
-                               <a href="../register.html"><img src="../images/register.png" alt="" class="mr10">注册</a>
-                               <a href="../search.html"><img src="../images/search.png" alt="" class="mr10">搜索</a>
-                            </div>
-                    </div>
-            </div>
-            <div class="nav-container mobile-nav mobile">
-                <div class="nav-btn-wrap">
-                        <div class="title"><a href="index.html"><img src="../images/logo.png" alt=""></a></div>
-                        <a href="javascript:;" class="nav-btn"><img src="../images/mobile-nav-btn.png" alt=""></a>
+<link rel="stylesheet" href="../css/header.css">
+<div class="head">
+        <div class="tools-wrap">
+                <div class="center">
+                <div class="login-wrap">
+                                <a href="../login.html" class="mobile"><img src="../images/user.png" alt="" class="mr10">登录</a>
                 </div>
-                <ul class="nav-item-container">
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../technical-support.html">技术支持</a></li>
-                    <li><a href="javascript:;">论坛</a></li>
-                    <li><a href="javascript:;">提交问题</a></li>
-                </ul>
-             </div>
-             <div class="head-nav-container pc">
-                <ul class="center" lay-filter="">
-                        <li class="nav-item"><a href="../index.html" class="custom-hover">首页</a></li>
-                        <li class="nav-item"><a href="../technical-support.html" class="custom-hover">技术支持</a></li>
-                        <li class="nav-item"><a href="" class="custom-hover">论坛</a></li>
-                        <li class="nav-item"><a href="" class="custom-hover">提交问题</a></li>
-                </ul>
-            </div>
-    </div>
-    <script>
-            document.querySelector('.nav-btn').onclick = function(){
-
-                const navDom = document.querySelector('.nav-item-container')
-                if(navDom.className.indexOf('active') === -1){
-                        navDom.className = `nav-item-container active`
-                }else{
-                        navDom.className = `nav-item-container`
-                }
-            }
-    </script>
-</body>
-</html>
+                <div class="tools"><a href="javascript:;">收藏夹</a>|<a href="">我的产品</a>/<a href="">剪切板</a></div>
+                </div>
+        </div>
+        <div class="title pc">
+                <div class="center">
+                        <a href="index.html"><img src="../images/logo.png" alt=""></a>
+                        <div class="sign-wrap">
+                        <a href="../login.html"><img src="../images/user.png" alt="" class="mr10">登录</a>
+                        <a href="../register.html"><img src="../images/register.png" alt="" class="mr10">注册</a>
+                        <a href="../search.html"><img src="../images/search.png" alt="" class="mr10">搜索</a>
+                        </div>
+                </div>
+        </div>
+        <div class="nav-container mobile-nav mobile">
+        <div class="nav-btn-wrap">
+                <div class="title"><a href="index.html"><img src="../images/logo.png" alt=""></a></div>
+                <a href="javascript:;" class="nav-btn"><img src="../images/mobile-nav-btn.png" alt=""></a>
+        </div>
+        <ul class="nav-item-container">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../technical-support.html">技术支持</a></li>
+                <li><a href="javascript:;">论坛</a></li>
+                <li><a href="../submit-question.html">提交问题</a></li>
+        </ul>
+        </div>
+        <div class="head-nav-container pc">
+        <ul class="center" lay-filter="">
+                <li class="nav-item"><a href="../index.html" class="custom-hover">首页</a></li>
+                <li class="nav-item"><a href="../technical-support.html" class="custom-hover">技术支持</a></li>
+                <li class="nav-item"><a href="javascript:;" class="custom-hover">论坛</a></li>
+                <li class="nav-item"><a href="../submit-question.html" class="custom-hover">提交问题</a></li>
+        </ul>
+        </div>
+</div>

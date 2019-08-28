@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <title>新大陆自动识别</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <script src="./js/include.js"></script>
+  <style>
+      .content{padding-top: 40px;position: relative;padding-bottom: 20px;}
+      .content .center{width: 1200px;}
+      .content .top-message{line-height: 40px;padding-bottom: 20px;}
+      .content .top-message .module-name{font-size: 26px;color: #005bac;}
+      .content .nav-wrap{width: 400px;display: flex;justify-content: flex-end;align-items: center;}
+      .content .nav{width: 100px;}
+      .content .top-message,.content .top-message a{color: #7d7c7c;}
+      .content .form-wrap .layui-form-label{width: 120px;}
+      .form-wrap form{padding-top: 40px;background-color: #efefef;padding: 20px;width: 900px;}
+      .form-wrap .layui-input, .form-wrap .layui-textarea{width: 90%;}
+      .form-wrap .select-wrap{padding-right: 65px;}
+      .form-wrap .select-wrap .product-select-container{flex: 2;}
+      .form-wrap .select-wrap .question-select-container{flex: 3;}
+      .form-wrap .select-wrap .layui-input-block{margin-left: 120px;}
+      .form-wrap .select-wrap .layui-unselect{width: 100%;}
+      .form-wrap .select-wrap::after{display: none;}
+      .form-wrap .submit{width: 220px;margin-top: 20px;}
+      .silder{width: 260px;height: 790px;background-color: #efefef;}
+      .silder .top{height: 60px;background-color: #005bac;line-height: 60px;color: #fff;padding: 10px 10px 10px 30px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+      .silder .item{padding: 30px 10px 0 30px;}
+      .silder h4{font-size: 16px;color: #333;line-height: 48px;position: relative;}
+      .silder h4::after{content:" ";position: absolute;bottom: 0;left: 0;right: 200px;border-bottom: 2px solid #ccc;}
+      .silder ul li{line-height: 36px;list-style: disc;}
+      .silder a{color: #999;}
+      #page{height: 200px;line-height: 200px;}
+      @media screen and (max-width: 768px){
+        .content{padding: 20px 0 0 0;}
+        .center .top-message{padding-bottom: 20px;padding-left: 20px;justify-content: center;}
+        .silder{display: none;}
+        .content .form-wrap,.form-wrap form{width: 100%;}
+        .content .form-wrap .layui-form-label{width: 90px;}
+        .form-wrap .layui-input, .form-wrap .layui-textarea{width: 100%;}
+        .layui-input-block{margin-left: 100px;}
+        .content .center .btn-block .layui-form-label{display: none;}
+        .content .center .btn-block .layui-btn{width: 100%;}
+        .content .center .btn-block .layui-input-block{margin-left: 0;}
+      }
+  </style>
+   <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <include src="./compontents/header.html"></include>
+    <div class="inner-banner-wrap"></div>
+    <div class="content">
+        <div class="center flex-between">    
+                 <div class="form-wrap">
+                        <div class="top-message flex-between">
+                                        <div class="module-name">提交问题</div>
+                                        <div class="nav-wrap pc">
+                                                <img src="./images/home.png" alt="" class="mr10"></span>您所在的位置是:  <span class="nav flex-between"><a href="">首页</a>><a href="">提交科技</a></span>
+                                        </div>
+                        </div>
+                        <form action="" class="layui-form">
+                                <div class="layui-form-item flex-between select-wrap pc">
+                                        <div class="product-select-container">
+                                                <label class="layui-form-label">产品</label>
+                                                <div class="layui-input-block">
+                                                        <select name="product">
+                                                                <option value=""></option>
+                                                                <option value="PT85X">PT85X</option>
+                                                                <option value="PT80">PT80</option>
+                                                                <option value="PT98X">PT98X</option>
+                                                                <option value="PT30">PT30</option>
+                                                                <option value="MT60">MT60</option>
+                                                                <option value="MT70">MT70</option>
+                                                         </select>
+                                                </div>
+                                        </div>
+                                        <div class="question-select-container">
+                                                <label class="layui-form-label">提问内容</label>
+                                                <div class="layui-input-block">
+                                                        <select name="question">
+                                                                        <option value=""></option>
+                                                                        <option value="0">不能开机</option>
+                                                                        <option value="1">死机</option>
+                                                                        <option value="2">不能充电</option>
+                                                                        <option value="3">触摸失灵</option>
+                                                                        <option value="4">按键失灵</option>
+                                                                        <option value="5">USB接入电脑无反应</option>
+                                                        </select>
+                                                </div>
+                                        </div>          
+                                </div>
+                                <div class="layui-form-item mobile">
+                                                <label class="layui-form-label">产品</label>
+                                                <div class="layui-input-block">
+                                                        <select name="product">
+                                                                <option value=""></option>
+                                                                <option value="PT85X">PT85X</option>
+                                                                <option value="PT80">PT80</option>
+                                                                <option value="PT98X">PT98X</option>
+                                                                <option value="PT30">PT30</option>
+                                                                <option value="MT60">MT60</option>
+                                                                <option value="MT70">MT70</option>
+                                                        </select>
+                                                </div>
+                                </div>
+                                <div class="layui-form-item mobile">
+                                                <label class="layui-form-label">提问内容</label>
+                                                <div class="layui-input-block">
+                                                        <select name="question">
+                                                                        <option value=""></option>
+                                                                        <option value="0">不能开机</option>
+                                                                        <option value="1">死机</option>
+                                                                        <option value="2">不能充电</option>
+                                                                        <option value="3">触摸失灵</option>
+                                                                        <option value="4">按键失灵</option>
+                                                                        <option value="5">USB接入电脑无反应</option>
+                                                        </select>
+                                                </div>
+                                </div>
+                                <div class="layui-form-item">
+                                        <label class="layui-form-label">名称</label>
+                                        <div class="layui-input-block">
+                                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                        </div>
+                                </div>
+                                <div class="layui-form-item">
+                                        <label class="layui-form-label">电话号码</label>
+                                        <div class="layui-input-block">
+                                        <input type="tel" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                        </div>
+                                </div>
+                                <div class="layui-form-item">
+                                        <label class="layui-form-label">电子邮箱</label>
+                                        <div class="layui-input-block">
+                                        <input type="email" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                        </div>
+                                </div>
+                                <div class="layui-form-item layui-form-text">
+                                        <label class="layui-form-label">说明</label>
+                                        <div class="layui-input-block">
+                                        <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                                        </div>
+                                </div>
+                                <div class="layui-form-item layui-form-text">
+                                        <label class="layui-form-label">附件</label>
+                                        <div class="layui-input-block">
+                                                <button type="button" class="layui-btn layui-btn-primary" id="upload">
+                                                        <i class="layui-icon">&#xe67c;</i>上传附件
+                                                </button>
+                                                <span class="remark ml10 pc">支持格式：jpg，mp4，rar，word，pdf，excel</span>
+                                        </div>
+                                </div>
+                                <div class="layui-form-item layui-form-text btn-block">
+                                        <label class="layui-form-label"></label>
+                                        <div class="layui-input-block">
+                                                <button type="button" class="layui-btn submit">
+                                                        提交
+                                                </button>
+                                        </div>
+                                </div>
+                                </form>
+                </div>
+                <div class="silder">
+                        <div class="top flex-between">相关链接<img src="./images/play.png" alt=""></div>
+                        <div class="item">
+                            <h4>产品中心</h4>
+                            <ul>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                                <li><a href="javascript:;">便携式数据采集器</a></li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                                <h4>产品中心</h4>
+                                <ul>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                </ul>
+                            </div>
+                            <div class="item">
+                                    <h4>产品中心</h4>
+                                    <ul>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                        <li><a href="javascript:;">便携式数据采集器</a></li>
+                                    </ul>
+                                </div>
+                    </div>
+        </div>
+    </div>
+    <include src="./compontents/footer.html"></include>
+<script src="./layui/layui.all.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    
+
+   ;!function(){
+    var upload = layui.upload;
+   
+    //执行实例
+    var uploadInst = upload.render({
+        elem: '#upload' //绑定元素
+        ,url: '/upload/' //上传接口
+        ,done: function(res){
+        //上传完毕回调
+        }
+        ,error: function(){
+        //请求异常回调
+        }
+    });
+
+    var laypage = layui.laypage;
+  
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+        });
+   }()
+
+</script> 
+</body>
+</html>
