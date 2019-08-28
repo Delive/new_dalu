@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-   <script src="./js/include.js"></script>
   <style>
       .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover,.silder a:hover,.list-wrap a:not(.del-btn):hover{color: #005bac !important;}
       .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
@@ -51,7 +50,7 @@
   <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <include src="./compontents/header.html"></include>
+    <div id="header"></div>
     <div class="inner-banner-wrap"></div>
     <div class="tc member-title-wrap mobile">
         <div class="title fz18">会员中心</div>
@@ -157,8 +156,9 @@
             <div id="page" class="tc"></div>
         </div>
     </div>
-     <include src="./compontents/footer.html"></include>
+    <div id="footer"></div>
 <script src="./layui/layui.all.js"></script>
+<script src="./js/jquery-2.0.3.min.js"></script>
 <script src="./js/index.js"></script>
 <script>
     ;!function(){

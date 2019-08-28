@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-  <script src="./js/include.js"></script>
+  <!-- <script src="./js/include.js"></script> -->
   <style>
       .layui-carousel{height: 700px;}
       .layui-carousel img{height: 700px;width: auto;}
@@ -54,7 +54,7 @@
   <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <include src="./compontents/header.html"></include>
+    <div id="header"></div>
     <div class="layui-carousel" id="banner-wrap">
             <div carousel-item="">
                 <div><img src="./images/banner1.png" alt=""></div>
@@ -80,7 +80,7 @@
                             </div>
                              <div>
                                     <div class="layui-input-block">
-                                            <select name="city" lay-verify="required" class="w270">
+                                            <select name="test" lay-verify="required" class="w270">
                                               <option value=""></option>
                                               <option value="0">测试1</option>
                                               <option value="1">测试2</option>
@@ -315,9 +315,10 @@
                 </div>
             </div>  
         </div>
-    <include src="./compontents/footer.html"></include>
+        <div id="footer"></div>
     <!-- <iframe align="center" width="100%" height="310" src="footer.html"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> -->
 <script src="./layui/layui.all.js"></script>
+<script src="./js/jquery-2.0.3.min.js"></script>
 <script src="./js/index.js"></script>
 <script>
     ;!function(){

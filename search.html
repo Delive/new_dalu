@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-  <script src="./js/include.js"></script>
   <style>
       .content{padding-top: 40px;position: relative;padding-bottom: 20px;}
       .content .center{width: 1200px;}
@@ -82,7 +81,7 @@
    <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <include src="./compontents/header.html"></include>
+    <div id="header"></div>
     <div class="inner-banner-wrap"></div>
     <div class="content">
         <div class="center">
@@ -111,7 +110,7 @@
                                           <option value="1">测试2</option>
                                         </select>
                                         <div class="search-input w570">
-                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                                                 <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
                                         </div>
                                         <div class="w270 btn-wrap">
@@ -130,7 +129,7 @@
                          <div>
                                 <div class="layui-input-block">
                                         <div class="search-input w270">
-                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                                                 <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
                                         </div>
                                         <div class="w570 flex-between">
@@ -145,7 +144,7 @@
                                                         <input type="text" class="layui-input" id="date-end" placeholder="至">
                                                 </div>
                                         </div>
-                                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input w270">
+                                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input w270">
                                 </div>
                          </div>
                          <div class="tl cols-title flex-between mt20">
@@ -432,8 +431,9 @@
              </div>
         </div>
     </div>
-    <include src="./compontents/footer.html"></include>
+    <div id="footer"></div>
 <script src="./layui/layui.all.js"></script>
+<script src="./js/jquery-2.0.3.min.js"></script>
 <script src="./js/index.js"></script>
 <script>
     

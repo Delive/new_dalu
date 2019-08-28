@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-  <script src="./js/include.js"></script>
   <style>
       .content{padding-top: 40px;position: relative;padding-bottom: 20px;}
       .content .center{width: 1200px;}
@@ -35,7 +34,7 @@
       #page{height: 200px;line-height: 200px;}
       @media screen and (max-width: 768px){
         .content{padding: 20px 0 0 0;}
-        .center .top-message{padding-bottom: 20px;padding-left: 20px;justify-content: center;}
+        .center .top-message{padding-bottom: 20px;padding-left: 20px;}
         .silder{display: none;}
         .content .form-wrap,.form-wrap form{width: 100%;}
         .content .form-wrap .layui-form-label{width: 90px;}
@@ -49,7 +48,7 @@
    <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <include src="./compontents/header.html"></include>
+    <div id="header"></div>
     <div class="inner-banner-wrap"></div>
     <div class="content">
         <div class="center flex-between">    
@@ -57,7 +56,7 @@
                         <div class="top-message flex-between">
                                         <div class="module-name">提交问题</div>
                                         <div class="nav-wrap pc">
-                                                <img src="./images/home.png" alt="" class="mr10"></span>您所在的位置是:  <span class="nav flex-between"><a href="">首页</a>><a href="">提交科技</a></span>
+                                                <img src="./images/home.png" alt="" class="mr10"></span>您所在的位置是:  <span class="nav flex-between"><a href="">首页</a>><a href="">提交内容</a></span>
                                         </div>
                         </div>
                         <form action="" class="layui-form">
@@ -174,7 +173,7 @@
                             </ul>
                         </div>
                         <div class="item">
-                                <h4>产品中心</h4>
+                                <h4>行业应用</h4>
                                 <ul>
                                         <li><a href="javascript:;">便携式数据采集器</a></li>
                                         <li><a href="javascript:;">便携式数据采集器</a></li>
@@ -183,7 +182,7 @@
                                 </ul>
                             </div>
                             <div class="item">
-                                    <h4>产品中心</h4>
+                                    <h4>关于我们</h4>
                                     <ul>
                                         <li><a href="javascript:;">便携式数据采集器</a></li>
                                         <li><a href="javascript:;">便携式数据采集器</a></li>
@@ -194,8 +193,9 @@
                     </div>
         </div>
     </div>
-    <include src="./compontents/footer.html"></include>
+    <div id="footer"></div>
 <script src="./layui/layui.all.js"></script>
+<script src="./js/jquery-2.0.3.min.js"></script>
 <script src="./js/index.js"></script>
 <script>
     

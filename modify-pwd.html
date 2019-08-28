@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-  <script src="./js/include.js"></script>
   <style>
       .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover{color: #005bac !important;}
       .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
@@ -31,7 +30,7 @@
   <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-   <include src="./compontents/header.html"></include>
+   <div id="header"></div>
     <div class="inner-banner-wrap"></div>
     <div class="content">
             <div class="center tc">
@@ -54,8 +53,9 @@
             </form>
         </div>
     </div>
-     <include src="./compontents/footer.html"></include>
+    <div id="footer"></div>
 <script src="./layui/layui.all.js"></script>
+<script src="./js/jquery-2.0.3.min.js"></script>
 <script src="./js/index.js"></script>
 </body>
 </html>

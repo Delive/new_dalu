@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-   <script src="./js/include.js"></script>
   <style>
       .head .tools a:hover,.head .title a:hover,.content .top-message a:hover,.forget-pwd a:hover{color: #005bac !important;}
       .head .tools-wrap{height: 40px;background-color: #eee;line-height: 40px;}
@@ -37,7 +36,7 @@
    <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <include src="./compontents/header.html"></include>
+    <div id="header"></div>
     <div class="inner-banner-wrap"></div>
     <div class="content">
         <div class="center ">
@@ -92,7 +91,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">验证码</label>
                         <div class="layui-input-block auth-code-wrap flex-between">
-                            <input type="number" name="title" required  lay-verify="required" placeholder="请输入验证码" maxlength="6" autocomplete="off" class="layui-input auth-code">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入验证码" maxlength="6" autocomplete="off" class="layui-input auth-code">
                             <button class="layui-btn ml10">获取验证码</button>
                         </div>
                     </div>
@@ -133,8 +132,9 @@
             <img src="./images/mini.png" alt="" class="ml10">
         </div>
     </div>
-    <include src="./compontents/footer.html"></include>
+    <div id="footer"></div>
 <script src="./layui/layui.all.js"></script>
+<script src="./js/jquery-2.0.3.min.js"></script>
 <script src="./js/index.js"></script>
 </body>
 </html>
