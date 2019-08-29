@@ -27,6 +27,12 @@
       .content .form-wrap .layui-form-label{width: 120px;}
       .form-wrap{padding-top: 40px;background-color: #efefef;padding: 20px;}    
       .form-wrap .layui-input, .form-wrap .layui-textarea{width: 90%;}
+      .form-wrap .select-wrap{padding-right: 65px;}
+      .form-wrap .select-wrap .product-select-container{flex: 2;}
+      .form-wrap .select-wrap .question-select-container{flex: 3;}
+      .form-wrap .select-wrap .layui-input-block{margin-left: 120px;}
+      .form-wrap .select-wrap .layui-unselect{width: 100%;}
+      .form-wrap .select-wrap::after{display: none;}
       .form-wrap .submit{width: 220px;margin-top: 20px;}
       .silder{width: 260px;height: 790px;background-color: #efefef;}
       .silder .top{height: 60px;background-color: #005bac;line-height: 60px;color: #fff;padding: 10px 10px 10px 30px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
@@ -89,6 +95,64 @@
                 </div>
                 <div class="form-wrap">
                     <form action="" class="layui-form">
+                    <div class="layui-form-item flex-between select-wrap pc">
+                                        <div class="product-select-container">
+                                                <label class="layui-form-label">产品</label>
+                                                <div class="layui-input-block">
+                                                        <select name="product">
+                                                                <option value=""></option>
+                                                                <option value="PT85X">PT85X</option>
+                                                                <option value="PT80">PT80</option>
+                                                                <option value="PT98X">PT98X</option>
+                                                                <option value="PT30">PT30</option>
+                                                                <option value="MT60">MT60</option>
+                                                                <option value="MT70">MT70</option>
+                                                         </select>
+                                                </div>
+                                        </div>
+                                        <div class="question-select-container">
+                                                <label class="layui-form-label">提问内容</label>
+                                                <div class="layui-input-block">
+                                                        <select name="question">
+                                                                        <option value=""></option>
+                                                                        <option value="0">不能开机</option>
+                                                                        <option value="1">死机</option>
+                                                                        <option value="2">不能充电</option>
+                                                                        <option value="3">触摸失灵</option>
+                                                                        <option value="4">按键失灵</option>
+                                                                        <option value="5">USB接入电脑无反应</option>
+                                                        </select>
+                                                </div>
+                                        </div>          
+                                </div>
+                                <div class="layui-form-item mobile">
+                                                <label class="layui-form-label">产品</label>
+                                                <div class="layui-input-block">
+                                                        <select name="product">
+                                                                <option value=""></option>
+                                                                <option value="PT85X">PT85X</option>
+                                                                <option value="PT80">PT80</option>
+                                                                <option value="PT98X">PT98X</option>
+                                                                <option value="PT30">PT30</option>
+                                                                <option value="MT60">MT60</option>
+                                                                <option value="MT70">MT70</option>
+                                                        </select>
+                                                </div>
+                                </div>
+                                <div class="layui-form-item mobile">
+                                                <label class="layui-form-label">提问内容</label>
+                                                <div class="layui-input-block">
+                                                        <select name="question">
+                                                                        <option value=""></option>
+                                                                        <option value="0">不能开机</option>
+                                                                        <option value="1">死机</option>
+                                                                        <option value="2">不能充电</option>
+                                                                        <option value="3">触摸失灵</option>
+                                                                        <option value="4">按键失灵</option>
+                                                                        <option value="5">USB接入电脑无反应</option>
+                                                        </select>
+                                                </div>
+                                </div>
                         <div class="layui-form-item">
                                 <label class="layui-form-label">名称</label>
                                 <div class="layui-input-block">
