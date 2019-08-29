@@ -11,7 +11,7 @@
       .content .center{width: 900px;margin: 0;padding-left: 90px;}
       .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;margin-bottom: 20px;}
       .content .list-wrap li{padding: 20px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
-      .list-wrap .title{height: 36px;line-height: 36px;display: flex;justify-content:flex-start;color: #005bac;background-color: #efefef;padding-left: 20px;}
+      .list-wrap .title{line-height: 36px;display: flex;justify-content:flex-start;color: #005bac;background-color: #efefef;padding-left: 20px;}
       .list-wrap p{line-height: 30px;padding-left: 20px;display: flex;}
       .list-wrap p>.item-label{width: 100px;color: #7d7c7c;}
       .list-wrap p>.item-content{flex:1;}
@@ -30,8 +30,9 @@
       .download-file{color: #005bac;text-decoration: underline;}
       @media screen and (max-width: 768px){
         .content{padding-top: 20px;}
-        .content .center .top{margin-bottom: 0;border: none;}
+        .content .center .top{margin-bottom: 0;border-bottom: 1px solid #ccc;}
         .content .center{padding: 0 20px;}
+        .list-wrap .title{flex-direction: column;}
         .center .form-wrap{margin: 0 -20px;}
         .center .form-wrap .layui-form-item.mobile{display: flex !important;}
         .content .form-wrap .layui-form-label{width: 90px;}
@@ -69,11 +70,11 @@
         <div class="center">
             <div class="member-center-nav mobile">
                 <div class="mt20 btn-container">
-                        <a type="button" class="layui-btn layui-btn-primary" href="member-center.html">会员信息</a>
-                        <a type="button" class="layui-btn layui-btn-primary" href="my-collect.html">我的收藏</a>
-                        <a type="button" class="layui-btn layui-btn-primary" href="my-product.html">我的产品</a>
-                        <a type="button" class="layui-btn" href="my-question.html">我的提问</a>
-                        <a type="button" class="layui-btn layui-btn-primary" href="my-message.html">我的通知</a>
+                        <a type="button" class="layui-btn layui-btn-primary custom-hover" href="member-center.html">会员信息</a>
+                        <a type="button" class="layui-btn layui-btn-primary custom-hover" href="my-collect.html">我的收藏</a>
+                        <a type="button" class="layui-btn layui-btn-primary custom-hover" href="my-product.html">我的产品</a>
+                        <a type="button" class="layui-btn custom-hover" href="my-question.html">我的提问</a>
+                        <a type="button" class="layui-btn layui-btn-primary custom-hover" href="my-message.html">我的通知</a>
                         <a href="javaciript:;"></a>
                 </div>
             </div>
