@@ -52,7 +52,7 @@ a.custom-hover:hover{color: #aed9ff !important;}
 .member-center-nav{display: none;}
 .member-title-wrap{display: none;}
 .mobile{display: none;}
-.footer{display: none !important;}
+.footer{display: none;}
 @media screen and (max-width: 768px){
     /* 手机导航 */
      #header{height: 114px;}
