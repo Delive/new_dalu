@@ -16,7 +16,7 @@
       .document-wrap .form-wrap{height: 475px;background-color: #005bac;margin-top: 30px;padding: 25px;color: #fff;}
       .form-wrap .layui-input-block{margin: 0;text-align: left;color: #fff;display: flex;justify-content: space-between;}
       .form-wrap form:not(.mobile-form) .layui-input-block{align-items: flex-end;}
-      .form-wrap .search-btn{height: 50px;line-height: 50px;}
+      .form-wrap .search-btn{height: 50px;line-height: 50px;font-size: 16px;}
       .form-wrap .cols-title{line-height: 36px;}
       .form-wrap .layui-anim-upbit{color: #999;}
       .form-wrap .w570{width: 570px;}
@@ -60,9 +60,9 @@
     <div id="header"></div>
     <div class="layui-carousel" id="banner-wrap">
             <div carousel-item="">
-                <div><img src="./images/banner1.png" alt=""></div>
-                <div><img src="./images/banner1.png" alt=""></div>
-                <div><img src="./images/banner1.png" alt=""></div>
+                <div><img src="./images/banner1.jpg" alt=""></div>
+                <div><img src="./images/banner1.jpg" alt=""></div>
+                <div><img src="./images/banner1.jpg" alt=""></div>
             </div>
     </div>
     <div class="content">
@@ -111,12 +111,12 @@
                              <div>
                                     <div class="layui-input-block">
                                             <div class="search-input w270">
-                                                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                                    <input type="text" name="title" required  lay-verify="required" placeholder="全部" autocomplete="off" class="layui-input">
                                                     <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
                                             </div>
                                             <div class="w570 flex-between">
                                                     <select name="city" lay-verify="required" class="w270">
-                                                            <option value=""></option>
+                                                            <option value="">全部</option>
                                                             <option value="0">测试1</option>
                                                             <option value="1">测试2</option>
                                                     </select>
@@ -178,7 +178,7 @@
                             </div>
                             <div class="layui-input-block">
                                 <select name="city" lay-verify="required">
-                                        <option value=""></option>
+                                        <option value="">全部</option>
                                         <option value="0">测试1</option>
                                         <option value="1">测试2</option>
                                 </select>
@@ -198,13 +198,13 @@
                             </div>
                             <div class="layui-input-block">
                                     <select name="city" lay-verify="required">
-                                            <option value=""></option>
+                                            <option value="">全部</option>
                                             <option value="0">测试1</option>
                                             <option value="1">测试2</option>
                                     </select>
                             </div>
                             <div class="layui-input-block">
-                                     <button class="layui-btn layui-btn-normal mt20" type="button"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
+                                     <button class="layui-btn layui-btn-normal mt20 fz16" type="button"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
                             </div>
                              <div class="cols-title">
                                     <i class="layui-icon layui-icon-right mr10"></i>搜索产品

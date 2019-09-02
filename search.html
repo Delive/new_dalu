@@ -34,6 +34,9 @@
 
       .search-form{height: 350px;background-color: #005bac;margin-top: 30px;padding: 25px;color: #fff;}
       .search-form .layui-input-block{margin: 0;text-align: left;color: #fff;display: flex;justify-content: space-between;}
+      .search-form form:not(.mobile-form) .layui-input-block{align-items: flex-end;}
+      .search-form .search-btn{height: 50px;line-height: 50px;font-size: 16px;}
+      .search-form .layui-btn{background-color: #aed9ff;color: #024886;border-radius: 4px;}
       .search-form .cols-title{line-height: 36px;}
       .search-form .layui-anim-upbit{color: #999;}
       .search-form .w570{width: 570px;}
@@ -42,6 +45,7 @@
       .search-form .search-input a{position: absolute;right: 8px;top: 10px;font-size: 18px;color: #999;}
       .search-form .search-input{position: relative;}
       .search-form .btn-wrap{display: flex;justify-content: flex-end;}
+      .search-form .sub-title{position: relative;top: 10px;}
       .search-form .btn-wrap .layui-btn{background-color: #aed9ff;color: #000;border-radius: 4px;}
       .search-form .line{line-height: 38px;}
       #date-start,#date-end{width: 120px;position: relative;}
@@ -106,7 +110,8 @@
                                 </div>
                         </div>
                         <div class="tl cols-title">
-                            产品树图
+                             <span> 产品树图</span>
+                              <span class="w270"> 特别推荐</span>
                         </div>
                          <div>
                                 <div class="layui-input-block">
@@ -119,28 +124,30 @@
                                                 <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                                                 <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
                                         </div>
-                                        <div class="w270 btn-wrap">
-                                                <button type="button" class="layui-btn layui-btn-normal">删除所有筛选条件</button>
-                                        </div>
+                                       <select name="test" lay-verify="required" class="w270">
+                                                <option value="">全部</option>
+                                                <option value="0">测试1</option>
+                                                <option value="1">测试2</option>
+                                        </select>
                                 </div>
                          </div>
-                         <div class="tl cols-title flex-between mt20">
+                         <div class="tl cols-title flex-between sub-title mt20">
                                 <div class="w270">产品</div>
                                 <div class="w570 flex-between">
                                     <div class="w270">文档类型</div>
                                     <div class="w270">日期</div>
                                 </div>
-                                <div class="w270">特别推荐</div>
+                                <div class="w270"></div>
                          </div>
                          <div>
                                 <div class="layui-input-block">
                                         <div class="search-input w270">
-                                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                                <input type="text" name="title" required  lay-verify="required" placeholder="全部" autocomplete="off" class="layui-input">
                                                 <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
                                         </div>
                                         <div class="w570 flex-between">
                                                 <select name="city" lay-verify="required" class="w270">
-                                                        <option value=""></option>
+                                                        <option value="">全部</option>
                                                         <option value="0">测试1</option>
                                                         <option value="1">测试2</option>
                                                 </select>
@@ -150,16 +157,16 @@
                                                         <input type="text" class="layui-input" id="date-end" placeholder="至">
                                                 </div>
                                         </div>
-                                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input w270">
+                                        <button class="w270 layui-btn layui-btn-normal search-btn"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
                                 </div>
                          </div>
-                         <div class="tl cols-title flex-between mt20">
+                       <!--   <div class="tl cols-title flex-between mt20">
                                 <div class="w270"><i class="layui-icon layui-icon-right mr10"></i>搜索产品</div>
                                 <div class="w270 flex-between save-wrap">
                                     <a href="javascript:;" class="white"><img src="./images/save.png">保存筛选条件</a>
                                     <a href="javascript:;" class="white"><img src="./images/load.png">加载筛选条件</a>
                                 </div>
-                         </div>
+                         </div> -->
                     </form>
                     <form class="layui-form mobile-form" action="">
                                 <div class="layui-form-item radio-wrap layui-input-block">
@@ -198,7 +205,7 @@
                                 </div>
                                 <div class="layui-input-block">
                                     <select name="city" lay-verify="required">
-                                            <option value=""></option>
+                                            <option value="">全部</option>
                                             <option value="0">测试1</option>
                                             <option value="1">测试2</option>
                                     </select>
@@ -218,21 +225,15 @@
                                 </div>
                                 <div class="layui-input-block">
                                         <select name="city" lay-verify="required">
-                                                <option value=""></option>
+                                                <option value="">全部</option>
                                                 <option value="0">测试1</option>
                                                 <option value="1">测试2</option>
                                         </select>
                                 </div>
                                 <div class="layui-input-block">
-                                        <button type="button" class="layui-btn layui-btn-normal mt20">删除所有筛选条件</button>
+                                        <button class="layui-btn layui-btn-normal mt20 fz16" type="button"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
                                 </div>
-                                 <div class="layui-input-block">
-                                        <div class="flex-between save-wrap mt10">
-                                            <a href="javascript:;" class="white"><img src="./images/save.png">保存筛选条件</a>
-                                            <a href="javascript:;" class="white"><img src="./images/load.png">加载筛选条件</a>
-                                        </div>
-                                 </div>
-                                 <div class="cols-title">
+                               <!--   <div class="cols-title">
                                         <i class="layui-icon layui-icon-right mr10"></i>搜索产品
                                  </div>
                                  <div class="layui-input-block">
@@ -242,72 +243,84 @@
                                         <div class="content">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</div>
                                         <div class="nav-wrap"><a href="javascript:;">产品信息</a>><a href="javascript:;">全部产品</a>><a href="javascript:;">产品列表信息</a></div>
                                     </div>
-                                 </div>
+                                 </div> -->
                             </form>
             </div>
             <div class="search-result flex-between">
                 <div class="result-list">
                         <ul class="list-wrap pc">
-                                <li class="flex-between">
-                                    <div class="left">
-                                        <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
-                                        <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
-                                    </div>
-                                    <div class="right">
-                                            <p>2019年5月20日</p>
-                                            <p>ID：5956523523</p>
-                                    </div>
-                                </li>
-                                <li class="flex-between">
+                                <li>
+                                    <a href="technical-support.html" class="flex-between">
                                         <div class="left">
-                                            <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                                            <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
                                             <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
                                         </div>
                                         <div class="right">
                                                 <p>2019年5月20日</p>
                                                 <p>ID：5956523523</p>
                                         </div>
-                                    </li>
-                                    <li class="flex-between">
-                                            <div class="left">
-                                                <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
-                                                <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
-                                            </div>
-                                            <div class="right">
-                                                    <p>2019年5月20日</p>
-                                                    <p>ID：5956523523</p>
-                                            </div>
-                                        </li>
-                                        <li class="flex-between">
-                                                <div class="left">
-                                                    <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
-                                                    <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
-                                                </div>
-                                                <div class="right">
-                                                        <p>2019年5月20日</p>
-                                                        <p>ID：5956523523</p>
-                                                </div>
-                                            </li>
-                                            <li class="flex-between">
-                                                    <div class="left">
-                                                        <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
-                                                        <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
-                                                    </div>
-                                                    <div class="right">
-                                                            <p>2019年5月20日</p>
-                                                            <p>ID：5956523523</p>
-                                                    </div>
-                                                </li>
-                                                <li class="flex-between">
-                                                        <div class="left">
-                                                            <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
-                                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
-                                                        </div>
-                                                        <div class="right">
-                                                                <p>2019年5月20日</p>
-                                                                <p>ID：5956523523</p>
-                                                        </div>
-                                                </li>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="technical-support.html" class="flex-between">
+                                        <div class="left">
+                                            <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
+                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                        </div>
+                                        <div class="right">
+                                                <p>2019年5月20日</p>
+                                                <p>ID：5956523523</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="technical-support.html" class="flex-between">
+                                        <div class="left">
+                                            <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
+                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                        </div>
+                                        <div class="right">
+                                                <p>2019年5月20日</p>
+                                                <p>ID：5956523523</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="technical-support.html" class="flex-between">
+                                        <div class="left">
+                                            <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
+                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                        </div>
+                                        <div class="right">
+                                                <p>2019年5月20日</p>
+                                                <p>ID：5956523523</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="technical-support.html" class="flex-between">
+                                        <div class="left">
+                                            <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
+                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                        </div>
+                                        <div class="right">
+                                                <p>2019年5月20日</p>
+                                                <p>ID：5956523523</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="technical-support.html" class="flex-between">
+                                        <div class="left">
+                                            <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
+                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                        </div>
+                                        <div class="right">
+                                                <p>2019年5月20日</p>
+                                                <p>ID：5956523523</p>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                             <ul class="list-wrap mobile">
                                         <li>
