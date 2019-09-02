@@ -8,21 +8,24 @@
   <link rel="stylesheet" href="./layui/css/layui.css">
   <!-- <script src="./js/include.js"></script> -->
   <style>
-      .layui-carousel{height: 700px;}
-      .layui-carousel img{height: 700px;width: auto;}
+      .layui-carousel{height: 600px;}
+      .layui-carousel img{height: 600px;width: auto;}
       .content .document-wrap{height: 645px;padding-top: 55px;}
       .document-wrap h3,.product-wrap h3{font-size: 35px;color: #005bac;}
       .document-wrap .description,.product-wrap .description{font-size: 16px;color: #999;line-height: 36px;}
-      .document-wrap .form-wrap{height: 455px;background-color: #005bac;margin-top: 30px;padding: 25px;color: #fff;}
+      .document-wrap .form-wrap{height: 475px;background-color: #005bac;margin-top: 30px;padding: 25px;color: #fff;}
       .form-wrap .layui-input-block{margin: 0;text-align: left;color: #fff;display: flex;justify-content: space-between;}
+      .form-wrap form:not(.mobile-form) .layui-input-block{align-items: flex-end;}
+      .form-wrap .search-btn{height: 50px;line-height: 50px;}
       .form-wrap .cols-title{line-height: 36px;}
       .form-wrap .layui-anim-upbit{color: #999;}
       .form-wrap .w570{width: 570px;}
       .form-wrap .w270{width: 270px;}
       .form-wrap .search-input{position: relative;}
       .form-wrap .btn-wrap{display: flex;justify-content: flex-end;}
-      .form-wrap .layui-btn{background-color: #aed9ff;color: #000;border-radius: 4px;}
+      .form-wrap .layui-btn{background-color: #aed9ff;color: #024886;border-radius: 4px;}
       .form-wrap .line{line-height: 38px;}
+      .form-wrap .sub-title{position: relative;top: 10px;}
       .form-wrap .product-detail{height: 130px;width: 860px;background-color: #fff;border-radius: 5px;padding: 10px;display: flex;flex-direction: column;justify-content: space-between;}
       .product-detail h4{color: #005bac;font-size: 16px;}
       .product-detail .remark{font-size: 16px;color: #000;}
@@ -33,7 +36,6 @@
       .radio-wrap{width: 220px;}
       .more-title{display: flex;justify-content: space-between;margin-top: 20px;}
       #date-start,#date-end{width: 120px;position: relative;}
-      .save-wrap a{width: 120px;display: flex;align-items: center;justify-content: space-between;}
       .product-wrap{height: 728px;background: url(./images/product-bg.png) center no-repeat;padding-top: 55px;}
       .product-wrap .layui-row .item{display: flex;height: 156px;transition:all 1s;transition-property: left top;}
       /* .product-wrap .layui-row .item:hover .left,.product-wrap .layui-row .item:hover .right{position: relative;left: 2px;top: 2px;box-shadow: 2px 2px 2px #ccc;} */
@@ -43,6 +45,7 @@
       .product-wrap .layui-row .left .date{line-height: 25px;}
       .product-wrap .layui-row .right{flex: 1;background-color: #fff;padding: 10px;}
       .product-wrap .layui-row .right p{height: 70px;line-height: 24px;overflow: hidden;margin-top: 15px;color: #999;}
+      .product-wrap .layui-row .right p:hover{color: #005bac;}
       .product-wrap .layui-container{margin-top: 40px;}
       .product-wrap button{background-color: #eb9978;margin-top: 30px;border-radius: 4px;}
       .footer{display: block !important;}
@@ -75,8 +78,9 @@
                                         <input type="radio" name="sex" value="女" title="我的产品">
                                     </div>
                             </div>
-                            <div class="tl cols-title">
-                                产品树图
+                            <div class="tl cols-title flex-between">
+                                <span> 产品树图</span>
+                                <span class="w270"> 特别推荐</span>
                             </div>
                              <div>
                                     <div class="layui-input-block">
@@ -89,18 +93,20 @@
                                                     <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
                                                     <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
                                             </div>
-                                            <div class="w270 btn-wrap">
-                                                    <button type="button" class="layui-btn layui-btn-normal">删除所有筛选条件</button>
-                                            </div>
+                                            <select name="test" lay-verify="required" class="w270">
+                                                <option value="">全部</option>
+                                                <option value="0">测试1</option>
+                                                <option value="1">测试2</option>
+                                            </select>
                                     </div>
                              </div>
-                             <div class="tl cols-title flex-between mt20">
+                             <div class="tl cols-title flex-between mt20 sub-title">
                                     <div class="w270">产品</div>
                                     <div class="w570 flex-between">
                                         <div class="w270">文档类型</div>
                                         <div class="w270">日期</div>
                                     </div>
-                                    <div class="w270">特别推荐</div>
+                                    <div class="w270"></div>
                              </div>
                              <div>
                                     <div class="layui-input-block">
@@ -120,21 +126,17 @@
                                                             <input type="text" class="layui-input" id="date-end" placeholder="至">
                                                     </div>
                                             </div>
-                                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input w270">
+                                            <button class="w270 layui-btn layui-btn-normal search-btn"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
                                     </div>
                              </div>
-                             <div class="tl cols-title flex-between mt20">
+                             <div class="tl cols-title mt20">
                                     <div class="w270"><i class="layui-icon layui-icon-right mr10"></i>搜索产品</div>
-                                    <div class="w270 flex-between save-wrap">
-                                        <a href="javascript:;" class="white custom-hover"><img src="./images/save.png">保存筛选条件</a>
-                                        <a href="javascript:;" class="white custom-hover"><img src="./images/load.png">加载筛选条件</a>
-                                    </div>
                              </div>
                              <div class="layui-input-block">
                                 <div class="product-detail">
                                     <h4>3RK1005-0LB00-0AA0</h4>
                                     <div class="remark">IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</div>
-                                    <div class="content">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</div>
+                                    <div class="content"><a href="technical-support.html">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</a></div>
                                     <div class="nav-wrap"><a href="javascript:;">产品信息</a>><a href="javascript:;">全部产品</a>><a href="javascript:;">产品列表信息</a></div>
                                 </div>
                              </div>
@@ -149,7 +151,7 @@
                                     </div>
                             </div>
                             <div class="cols-title">
-                                产品树图
+                                <span> 产品树图</span>
                             </div>
                             <div class="layui-input-block">
                                     <div class="search-input mb10">
@@ -202,14 +204,8 @@
                                     </select>
                             </div>
                             <div class="layui-input-block">
-                                    <button type="button" class="layui-btn layui-btn-normal mt20">删除所有筛选条件</button>
+                                     <button class="layui-btn layui-btn-normal mt20" type="button"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
                             </div>
-                             <div class="layui-input-block">
-                                    <div class="flex-between save-wrap mt10">
-                                        <a href="javascript:;" class="white custom-hover"><img src="./images/save.png">保存筛选条件</a>
-                                        <a href="javascript:;" class="white custom-hover"><img src="./images/load.png">加载筛选条件</a>
-                                    </div>
-                             </div>
                              <div class="cols-title">
                                     <i class="layui-icon layui-icon-right mr10"></i>搜索产品
                              </div>
@@ -217,7 +213,7 @@
                                 <div class="product-detail">
                                     <h4>3RK1005-0LB00-0AA0</h4>
                                     <div class="remark">IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</div>
-                                    <div class="content">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</div>
+                                    <div class="content"><a href="technical-support.html">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</a></div>
                                     <div class="nav-wrap"><a href="javascript:;">产品信息</a>><a href="javascript:;">全部产品</a>><a href="javascript:;">产品列表信息</a></div>
                                 </div>
                              </div>
@@ -239,10 +235,12 @@
                             <div class="date">07-16<br>2019</div>
                         </div>
                         <div class="right">
-                            <h4 class="fz16">NLC-条码引擎订购</h4>
-                            <p>
-                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-                            </p>
+                            <a href="technical-support.html">
+                                <h4 class="fz16">NLC-条码引擎订购</h4>
+                                <p>
+                                  测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                               </p>
+                           </a>
                         </div>
                     </div>
                     <div class="layui-col-sm6 layui-col-xs12 item">
@@ -251,36 +249,12 @@
                             <div class="date">07-16<br>2019</div>
                         </div>
                         <div class="right">
-                            <h4 class="fz16">NLC-条码引擎订购</h4>
-                            <p>
-                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-row layui-col-space20">
-                    <div class="layui-col-sm6 layui-col-xs12 item">
-                        <div class="left tc white fz16">
-                            <div class="title">产品发布</div>
-                            <div class="date">07-16<br>2019</div>
-                        </div>
-                        <div class="right">
-                            <h4 class="fz16">NLC-条码引擎订购</h4>
-                            <p>
-                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-                            </p>
-                        </div>
-                    </div>
-                    <div class="layui-col-sm6 layui-col-xs12 item">
-                        <div class="left tc white fz16">
-                            <div class="title">产品发布</div>
-                            <div class="date">07-16<br>2019</div>
-                        </div>
-                        <div class="right">
-                            <h4 class="fz16">NLC-条码引擎订购</h4>
-                            <p>
-                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-                            </p>
+                            <a href="technical-support.html">
+                                <h4 class="fz16">NLC-条码引擎订购</h4>
+                                <p>
+                                  测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                               </p>
+                           </a>
                         </div>
                     </div>
                 </div>
@@ -291,10 +265,12 @@
                             <div class="date">07-16<br>2019</div>
                         </div>
                         <div class="right">
-                            <h4 class="fz16">NLC-条码引擎订购</h4>
-                            <p>
-                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-                            </p>
+                            <a href="technical-support.html">
+                                <h4 class="fz16">NLC-条码引擎订购</h4>
+                                <p>
+                                  测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                               </p>
+                           </a>
                         </div>
                     </div>
                     <div class="layui-col-sm6 layui-col-xs12 item">
@@ -303,10 +279,42 @@
                             <div class="date">07-16<br>2019</div>
                         </div>
                         <div class="right">
-                            <h4 class="fz16">NLC-条码引擎订购</h4>
-                            <p>
-                                测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-                            </p>
+                            <a href="technical-support.html">
+                                <h4 class="fz16">NLC-条码引擎订购</h4>
+                                <p>
+                                  测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                               </p>
+                           </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space20">
+                    <div class="layui-col-sm6 layui-col-xs12 item">
+                        <div class="left tc white fz16">
+                            <div class="title">产品发布</div>
+                            <div class="date">07-16<br>2019</div>
+                        </div>
+                        <div class="right">
+                           <a href="technical-support.html">
+                                <h4 class="fz16">NLC-条码引擎订购</h4>
+                                <p>
+                                  测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                               </p>
+                           </a>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-xs12 item">
+                        <div class="left tc white fz16">
+                            <div class="title">产品发布</div>
+                            <div class="date">07-16<br>2019</div>
+                        </div>
+                        <div class="right">
+                            <a href="technical-support.html">
+                                <h4 class="fz16">NLC-条码引擎订购</h4>
+                                <p>
+                                  测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+                               </p>
+                           </a>
                         </div>
                     </div>
                 </div>
@@ -326,7 +334,7 @@
             elem: '#banner-wrap'
             ,width: '100%' //设置容器宽度
             ,arrow: 'hover' //始终显示箭头
-            ,height: '700px'
+            ,height: '600px'
             //,anim: 'updown' //切换动画方式
         });
         layui.laydate.render({

@@ -14,7 +14,10 @@
       .content .center form .layui-btn{width: 100%;margin: 20px 0;}
       .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;}
       .content .list-wrap li{padding: 30px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
-      .content .list-wrap li .right{width: 200px;}
+      .content .list-wrap li .item-wrap{flex: 6;}
+      .content .list-wrap:not(.mobile) li .del-btn{flex: 1;}
+      .content .list-wrap li .item-wrap .left{flex: 3;}
+      .content .list-wrap li .item-wrap .right{flex: 1;}
       .silder{width: 240px;}
       .silder .top{height: 60px;background-color: #005bac;color: #fff;padding: 20px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
       .silder .item{padding: 30px 10px 0 30px;}
@@ -73,64 +76,64 @@
                         我的收藏
             </div>
             <ul class="list-wrap pc">
-                <li class="flex-between">
-                    <div class="left">
-                        <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
-                        <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
-                    </div>
-                    <div class="right flex-between">
-                        <div>
-                            <p>2019年5月20日</p>
-                            <p>ID：5956523523</p>
-                        </div>
-                        <div><a href="javascript:;" class="del-btn">删除</a></div>
-                    </div>
-                </li>
-                <li class="flex-between">
+                <li  class="flex-between">
+                    <a href="technical-support.html"  class="flex-between item-wrap">
                         <div class="left">
-                            <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                            <p><span  class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
                             <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
                         </div>
-                        <div class="right flex-between">
-                            <div>
+                        <div class="right">
                                 <p>2019年5月20日</p>
                                 <p>ID：5956523523</p>
-                            </div>
-                            <div><a href="javascript:;" class="del-btn">删除</a></div>
                         </div>
-                    </li>
-                    <li class="flex-between">
-                            <div class="left">
-                                <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
-                                <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
-                            </div>
-                            <div class="right flex-between">
-                                <div>
-                                    <p>2019年5月20日</p>
-                                    <p>ID：5956523523</p>
-                                </div>
-                                <div><a href="javascript:;" class="del-btn">删除</a></div>
-                            </div>
-                        </li>
-                        <li class="flex-between">
+                    </a>
+                    <a href="javascript:;" class="del-btn tr">删除</a>
+                </li>
+                <li class="flex-between">
+                              <a href="technical-support.html"  class="flex-between item-wrap">
                                 <div class="left">
-                                    <p><a class="gray mr10" href="javascript:;">软件下载</a>面向TIA PORTAL中硬件目录的支持包</p>
+                                    <p><span  class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
                                     <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
                                 </div>
-                                <div class="right flex-between">
-                                    <div>
+                                <div class="right">
                                         <p>2019年5月20日</p>
                                         <p>ID：5956523523</p>
-                                    </div>
-                                    <div><a href="javascript:;" class="del-btn">删除</a></div>
                                 </div>
+                            </a>
+                            <a href="javascript:;" class="del-btn tr">删除</a>
+                    </li>
+                    <li class="flex-between">
+                           <a href="technical-support.html"  class="flex-between item-wrap">
+                                    <div class="left">
+                                        <p><span  class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
+                                        <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                    </div>
+                                    <div class="right">
+                                            <p>2019年5月20日</p>
+                                            <p>ID：5956523523</p>
+                                    </div>
+                            </a>
+                            <a href="javascript:;" class="del-btn tr">删除</a>
+                        </li>
+                        <li class="flex-between">
+                                 <a href="technical-support.html"  class="flex-between item-wrap">
+                                    <div class="left">
+                                        <p><span  class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
+                                        <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
+                                    </div>
+                                    <div class="right">
+                                            <p>2019年5月20日</p>
+                                            <p>ID：5956523523</p>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="del-btn tr">删除</a>
                             </li>
             </ul>
             <ul class="list-wrap mobile">
                     <li>
                             <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
                             <div class="mt10">
-                                    面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                                    <a href="technical-support.html">面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</a>
                             </div>
                             <div class="flex-between mt10">
                                 <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
@@ -140,7 +143,7 @@
                     <li>
                             <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
                             <div class="mt10">
-                                    面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                                    <a href="technical-support.html">面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</a>
                             </div>
                             <div class="flex-between mt10">
                                 <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
@@ -150,7 +153,7 @@
                     <li>
                             <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
                             <div class="mt10">
-                                    面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                                    <a href="technical-support.html">面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</a>
                             </div>
                             <div class="flex-between mt10">
                                 <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
@@ -160,7 +163,7 @@
                     <li>
                             <div><a class="gray mr10" href="javascript:;">软件下载</a></div>
                             <div class="mt10">
-                                    面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载
+                                    <a href="technical-support.html">面向TIA PORTAL中硬件目录的支持包,随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</a>
                             </div>
                             <div class="flex-between mt10">
                                 <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
