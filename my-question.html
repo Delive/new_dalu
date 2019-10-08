@@ -102,7 +102,7 @@
                                                 </div>
                                         </div>
                                         <div class="question-select-container">
-                                                <label class="layui-form-label">提问内容</label>
+                                                <label class="layui-form-label">问题归属</label>
                                                 <div class="layui-input-block">
                                                         <select name="question">
                                                                         <option value=""></option>
@@ -112,6 +112,7 @@
                                                                         <option value="3">触摸失灵</option>
                                                                         <option value="4">按键失灵</option>
                                                                         <option value="5">USB接入电脑无反应</option>
+                                                                        <option value="6">其他</option>
                                                         </select>
                                                 </div>
                                         </div>          
@@ -131,7 +132,7 @@
                                                 </div>
                                 </div>
                                 <div class="layui-form-item mobile">
-                                                <label class="layui-form-label">提问内容</label>
+                                                <label class="layui-form-label">问题归属</label>
                                                 <div class="layui-input-block">
                                                         <select name="question">
                                                                         <option value=""></option>
@@ -141,11 +142,12 @@
                                                                         <option value="3">触摸失灵</option>
                                                                         <option value="4">按键失灵</option>
                                                                         <option value="5">USB接入电脑无反应</option>
+                                                                        <option value="6">其他</option>
                                                         </select>
                                                 </div>
                         </div>
                         <div class="layui-form-item">
-                                <label class="layui-form-label">名称</label>
+                                <label class="layui-form-label">真实姓名</label>
                                 <div class="layui-input-block">
                                 <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                                 </div>
@@ -153,7 +155,7 @@
                         <div class="layui-form-item">
                                 <label class="layui-form-label">电话号码</label>
                                 <div class="layui-input-block">
-                                <input type="number" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                <input type="tel" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                         <div class="layui-form-item">
@@ -162,11 +164,18 @@
                                 <input type="email" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                                 </div>
                         </div>
+                        <div class="layui-form-item">
+                                        <label class="layui-form-label">公司</label>
+                                        <div class="layui-input-block">
+                                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                        </div>
+                        </div>
                         <div class="layui-form-item layui-form-text">
-                                <label class="layui-form-label">说明</label>
-                                <div class="layui-input-block">
-                                  <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-                                </div>
+                                        <label class="layui-form-label">问题描述</label>
+                                        <div class="layui-input-block">
+                                                 <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                                                 <p class="remark ml10 pc mt10 question-describe">温馨提示：您提交的时候请标明：1、硬件版本号；2、软件版本号；3、应用场景及问题描述，以便我们能快速了解您的问题和回复。</p>
+                                        </div>
                         </div>
                         <div class="layui-form-item layui-form-text">
                                 <label class="layui-form-label">附件</label>

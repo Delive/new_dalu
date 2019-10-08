@@ -32,6 +32,7 @@ a.custom-hover:hover{color: #aed9ff !important;}
 .primary-color{color: #005bac;}
 .gray{color: #bdbdbd;}
 .remark{color: #999;}
+.warn{color: #c00;}
 .del-btn:hover{color: #FF5722 !important;}
 #upload{color: #005bac;}
 .inner-banner-wrap{height: 300px;width:100%;overflow: hidden;background: url(../images/technical-banner.png) center center no-repeat;background-size: cover} 
