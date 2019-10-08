@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "name": "条码识读引擎",
+      "open": true,
+      "children": [
+        {
+          "id": 2,
+          "name": "一维OEM",
+          "open": false,
+          "checked": true,
+          "children": [
+            {
+              "id": 22,
+              "name": "EM1300(CPU)",
+              "open": false,
+              "checked": true,
+              "children": [
+                {
+                  "id": 32,
+                  "name": "EM1300",
+                  "open": false,
+                  "checked": true
+                }
+              ]
+            },
+            {
+              "id": 23,
+              "name": "EM1365(CHIP)",
+              "open": false,
+              "checked": true,
+              "children": [
+                {
+                  "id": 3,
+                  "name": "EM1365",
+                  "open": false,
+                  "checked": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "checked": true
+    }
+  ]

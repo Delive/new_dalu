@@ -109,17 +109,15 @@
                                     <input type="radio" name="sex" value="女" title="我的产品">
                                 </div>
                         </div>
-                        <div class="tl cols-title">
+                        <div class="tl cols-title flex-between">
                              <span> 产品树图</span>
                               <span class="w270"> 特别推荐</span>
                         </div>
                          <div>
                                 <div class="layui-input-block">
-                                        <select name="city" lay-verify="required" class="w270">
-                                          <option value=""></option>
-                                          <option value="0">测试1</option>
-                                          <option value="1">测试2</option>
-                                        </select>
+                                        <div>
+                                               <input type="text" id="tree" lay-filter="tree" class="layui-input w270">
+                                         </div>
                                         <div class="search-input w570">
                                                 <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                                                 <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
@@ -146,11 +144,14 @@
                                                 <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
                                         </div>
                                         <div class="w570 flex-between">
-                                                <select name="city" lay-verify="required" class="w270">
+                                                <!-- <select name="city" lay-verify="required" class="w270">
                                                         <option value="">全部</option>
                                                         <option value="0">测试1</option>
                                                         <option value="1">测试2</option>
-                                                </select>
+                                                </select> -->
+                                                 <div>
+                                                         <input type="text" id="tree2" lay-filter="tree2" class="layui-input w270">
+                                                </div>
                                                 <div class="w270 flex-between">
                                                         <input type="text" class="layui-input" id="date-start" placeholder="从">
                                                         <span class="line">-</span>
@@ -185,11 +186,14 @@
                                                 <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
                                                 <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
                                         </div>
-                                        <select name="city" lay-verify="required">
+                                     <!--    <select name="city" lay-verify="required">
                                                 <option value=""></option>
                                                 <option value="0">测试1</option>
                                                 <option value="1">测试2</option>
-                                        </select>
+                                        </select> -->
+                                        <div>
+                                              <input type="text" id="tree3" lay-filter="tree" class="layui-input">
+                                        </div>
                                 </div>
                                 <div class="cols-title">
                                         产品
@@ -204,11 +208,14 @@
                                         文档类型
                                 </div>
                                 <div class="layui-input-block">
-                                    <select name="city" lay-verify="required">
+                                    <!-- <select name="city" lay-verify="required">
                                             <option value="">全部</option>
                                             <option value="0">测试1</option>
                                             <option value="1">测试2</option>
-                                    </select>
+                                    </select> -->
+                                       <div>
+                                              <input type="text" id="tree4" lay-filter="tree2" class="layui-input">
+                                        </div>
                                 </div>
                                 <div class="cols-title">
                                         日期
@@ -521,6 +528,7 @@
 <script src="./layui/layui.all.js"></script>
 <script src="./js/jquery-2.0.3.min.js"></script>
 <script src="./js/index.js"></script>
+<script src="./layui/lay/common.js"></script>
 <script>
     
 
@@ -549,5 +557,88 @@
    }()
 
 </script> 
+<script>
+    var is_mobi = navigator.userAgent.toLowerCase().match(/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;
+
+   layui.use(["treeSelect"], function () {
+    var treeSelect = layui.treeSelect;
+    treeSelect.render({
+        // 选择器
+        elem: is_mobi ? '#tree3' : '#tree',
+        // 数据
+        data: 'data/data3.json',
+        // 异步加载方式：get/post，默认get
+        type: 'get',
+        // 占位符
+        placeholder: '请选择',
+        // 是否开启搜索功能：true/false，默认false
+        search: true,
+        // 一些可定制的样式
+        style: {
+            folder: {
+                enable: false
+            },
+            line: {
+                enable: false
+            }
+        },
+        // 点击回调
+        click: function(d){
+            console.log(d);
+        },
+        // 加载完成后的回调函数
+        success: function (d) {
+            console.log(d);
+//                选中节点，根据id筛选
+            // treeSelect.checkNode('tree', 1);
+            console.log($('#tree').val());
+//                获取zTree对象，可以调用zTree方法
+           var treeObj = treeSelect.zTree('tree');
+           console.log(treeObj);
+//                刷新树结构
+           treeSelect.refresh('tree');
+        }
+    });
+
+
+     treeSelect.render({
+        // 选择器
+        elem: is_mobi ? '#tree4' : '#tree2',
+        // 数据
+        data: 'data/data2.json',
+        // 异步加载方式：get/post，默认get
+        type: 'get',
+        // 占位符
+        placeholder: '请选择',
+        // 是否开启搜索功能：true/false，默认false
+        search: true,
+        // 一些可定制的样式
+        style: {
+            folder: {
+                enable: false
+            },
+            line: {
+                enable: false
+            }
+        },
+        // 点击回调
+        click: function(d){
+            console.log(d);
+        },
+        // 加载完成后的回调函数
+        success: function (d) {
+            console.log(d);
+//                选中节点，根据id筛选
+            // treeSelect.checkNode('tree2', 1);
+            console.log($('#tree2').val());
+//                获取zTree对象，可以调用zTree方法
+           var treeObj = treeSelect.zTree('tree2');
+           console.log(treeObj);
+//                刷新树结构
+           treeSelect.refresh('tree2');
+        }
+    });
+});
+</script>
 </body>
 </html>

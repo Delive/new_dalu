@@ -55,6 +55,7 @@ a.custom-hover:hover{color: #aed9ff !important;}
 .member-title-wrap{display: none;}
 .mobile{display: none;}
 .footer{display: none;}
+
 @media screen and (max-width: 768px){
     /* 手机导航 */
      #header{height: 114px;}

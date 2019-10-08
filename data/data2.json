@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "name": "常见问题",
+      "open": true,
+      "children": [
+        {
+          "id": 2,
+          "name": "设计/安装",
+          "open": false,
+          "checked": true,
+          "children": [
+            {
+              "id": 22,
+              "name": "连接接口和线缆",
+              "open": false,
+              "checked": true,
+              "children": [
+                {
+                  "id": 32,
+                  "name": "连接接口和线缆",
+                  "open": false,
+                  "checked": true
+                }
+              ]
+            },
+            {
+              "id": 23,
+              "name": "设计/安装",
+              "open": false,
+              "checked": true,
+              "children": [
+                {
+                  "id": 3,
+                  "name": "连接硬件",
+                  "open": false,
+                  "checked": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "checked": true
+    }
+  ]
