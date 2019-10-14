@@ -56,6 +56,11 @@
       .result-list{width: 900px;}
       .content .search-result .list-wrap li{padding: 30px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
       .content .list-wrap.pc{min-height: 654px;}
+      .content .list-wrap li .item-wrap{flex: 6;}
+      .content .list-wrap li .item-wrap .left{flex: 3;}
+      .content .list-wrap:not(.mobile) li .collect-btn-wrap{flex: 1;text-align: right;}
+      .content .list-wrap li .item-wrap .right{flex: 1;}
+      .collect-btn {color: #005bac; border-color: #005bac; border-radius: 8px; height: 34px; line-height: 34px; padding: 0 12px; }
       .content .search-result .list-wrap li .right{width: 150px;}
       .silder{width: 260px;height: 790px;background-color: #efefef;}
       .silder .top{height: 60px;background-color: #005bac;line-height: 60px;color: #fff;padding: 10px 10px 10px 30px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
@@ -256,8 +261,8 @@
             <div class="search-result flex-between">
                 <div class="result-list">
                         <ul class="list-wrap pc">
-                                <li>
-                                    <a href="technical-support.html" class="flex-between">
+                                <li class="flex-between">
+                                    <a href="technical-support.html" class="flex-between item-wrap">
                                         <div class="left">
                                             <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
                                             <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
@@ -267,9 +272,10 @@
                                                 <p>ID：5956523523</p>
                                         </div>
                                     </a>
+                                    <a href="javascript:;" class="collect-btn-wrap"><button href="javascript:;" class="layui-btn layui-btn-primary collect-btn">收藏</button></a>
                                 </li>
-                                <li>
-                                    <a href="technical-support.html" class="flex-between">
+                                 <li class="flex-between">
+                                    <a href="technical-support.html" class="flex-between item-wrap">
                                         <div class="left">
                                             <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
                                             <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
@@ -279,9 +285,10 @@
                                                 <p>ID：5956523523</p>
                                         </div>
                                     </a>
+                                    <a href="javascript:;" class="collect-btn-wrap"><button href="javascript:;" class="layui-btn layui-btn-primary br8" disabled>已收藏</button></a>
                                 </li>
-                                 <li>
-                                    <a href="technical-support.html" class="flex-between">
+                               <li class="flex-between">
+                                    <a href="technical-support.html" class="flex-between item-wrap">
                                         <div class="left">
                                             <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
                                             <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
@@ -291,9 +298,10 @@
                                                 <p>ID：5956523523</p>
                                         </div>
                                     </a>
+                                    <a href="javascript:;" class="collect-btn-wrap"><button href="javascript:;" class="layui-btn layui-btn-primary collect-btn">收藏</button></a>
                                 </li>
-                                 <li>
-                                    <a href="technical-support.html" class="flex-between">
+                                 <li class="flex-between">
+                                    <a href="technical-support.html" class="flex-between item-wrap">
                                         <div class="left">
                                             <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
                                             <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
@@ -303,9 +311,10 @@
                                                 <p>ID：5956523523</p>
                                         </div>
                                     </a>
+                                    <a href="javascript:;" class="collect-btn-wrap"><button href="javascript:;" class="layui-btn layui-btn-primary collect-btn">收藏</button></a>
                                 </li>
-                                 <li>
-                                    <a href="technical-support.html" class="flex-between">
+                                <li class="flex-between">
+                                    <a href="technical-support.html" class="flex-between item-wrap">
                                         <div class="left">
                                             <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
                                             <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
@@ -315,18 +324,7 @@
                                                 <p>ID：5956523523</p>
                                         </div>
                                     </a>
-                                </li>
-                                 <li>
-                                    <a href="technical-support.html" class="flex-between">
-                                        <div class="left">
-                                            <p><span class="gray mr10">软件下载</span>面向TIA PORTAL中硬件目录的支持包</p>
-                                            <p>随时的适用于多种TIA PORTAL版本的最新支持包，可提供下载</p>
-                                        </div>
-                                        <div class="right">
-                                                <p>2019年5月20日</p>
-                                                <p>ID：5956523523</p>
-                                        </div>
-                                    </a>
+                                    <a href="javascript:;" class="collect-btn-wrap"><button href="javascript:;" class="layui-btn layui-btn-primary collect-btn">收藏</button></a>
                                 </li>
                             </ul>
                             <ul class="list-wrap mobile">
@@ -337,7 +335,7 @@
                                                 </div>
                                                 <div class="flex-between mt10">
                                                     <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
-                                                    <a  class="del-btn" javascript="javaciript:;">删除</a>
+                                                    <a  class="del-btn" javascript="javaciript:;"><button href="javascript:;" class="layui-btn layui-btn-primary collect-btn">收藏</button></a>
                                                 </div>
                                         </li>
                                         <li>
@@ -347,7 +345,7 @@
                                                 </div>
                                                 <div class="flex-between mt10">
                                                     <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
-                                                    <a  class="del-btn" javascript="javaciript:;">删除</a>
+                                                    <a  class="del-btn" javascript="javaciript:;"><button href="javascript:;"  class="layui-btn layui-btn-primary br8" disabled>已收藏</button></a>
                                                 </div>
                                         </li>
                                         <li>
@@ -357,7 +355,7 @@
                                                 </div>
                                                 <div class="flex-between mt10">
                                                     <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
-                                                    <a  class="del-btn" javascript="javaciript:;">删除</a>
+                                                    <a  class="del-btn" javascript="javaciript:;"><button href="javascript:;" class="layui-btn layui-btn-primary collect-btn">收藏</button></a>
                                                 </div>
                                         </li>
                                         <li>
@@ -367,7 +365,7 @@
                                                 </div>
                                                 <div class="flex-between mt10">
                                                     <div class="gray"><span>2019年5月20日</span><span>ID：5956523523</span></div>
-                                                    <a  class="del-btn" javascript="javaciript:;">删除</a>
+                                                    <a  class="del-btn" javascript="javaciript:;"><button href="javascript:;" class="layui-btn layui-btn-primary collect-btn">收藏</button></a>
                                                 </div>
                                         </li>
                                 </ul>
@@ -510,6 +508,43 @@
                                             <i class="layui-icon">&#xe67c;</i>上传附件
                                    </button>
                                    <span class="remark ml10 pc">支持格式：jpg，mp4，rar，word，pdf，excel</span>
+                                   <ul class="file-wrap">
+                                       <li>
+                                            <i class="del-btn"></i>
+                                            <img src="./images/JPG.png" alt="">
+                                            <span class="file-name">文件名</span>
+                                       </li>
+                                        <li>
+                                            <i class="del-btn"></i>
+                                            <img src="./images/MP4.png" alt="">
+                                            <span class="file-name">文件名</span>
+                                       </li>
+                                        <li>
+                                            <i class="del-btn"></i>
+                                            <img src="./images/RAR.png" alt="">
+                                            <span class="file-name">文件名</span>
+                                       </li>
+                                        <li>
+                                            <i class="del-btn"></i>
+                                            <img src="./images/word.png" alt="">
+                                            <span class="file-name">文件名</span>
+                                       </li>
+                                        <li>
+                                            <i class="del-btn"></i>
+                                            <img src="./images/PDF.png" alt="">
+                                            <span class="file-name">文件名</span>
+                                       </li>
+                                        <li>
+                                            <i class="del-btn"></i>
+                                            <img src="./images/EXCEL.png" alt="">
+                                            <span class="file-name">文件名</span>
+                                       </li>
+                                        <li>
+                                            <i class="del-btn"></i>
+                                            <img src="./images/tongyong.png" alt="">
+                                            <span class="file-name">文件名</span>
+                                       </li>
+                                   </ul>
                            </div>
                     </div>
                     <div class="layui-form-item layui-form-text btn-block">
@@ -559,7 +594,6 @@
 </script> 
 <script>
     var is_mobi = navigator.userAgent.toLowerCase().match(/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;
-
    layui.use(["treeSelect"], function () {
     var treeSelect = layui.treeSelect;
     treeSelect.render({

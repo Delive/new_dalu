@@ -13,4 +13,8 @@ window.onload = function (){
         }
     });
     $('#footer').load('../compontents/footer.html');
+
+    $('.file-wrap .del-btn').click(function(){
+        $(this).parent().remove();
+     })
 }

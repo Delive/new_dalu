@@ -19,6 +19,7 @@ html,body{width: 100%;overflow-x:hidden;background-color: #fff;}
 .tr{text-align: right;}
 .fb{font-weight: bold;}
 .br8{border-radius: 8px;}
+.pr{position: relative;}
 .w200{width: 200px;}
 a:not(.custom-hover):hover{color:#005bac !important;}
 a.custom-hover:hover{color: #aed9ff !important;}
@@ -55,7 +56,12 @@ a.custom-hover:hover{color: #aed9ff !important;}
 .member-title-wrap{display: none;}
 .mobile{display: none;}
 .footer{display: none;}
-
+.file-wrap{padding: 20px;display: flex;}
+.file-wrap li{display: flex;flex-direction:column;width: 60px;align-items:center;position: relative;}
+.file-wrap li+li{margin-left: 10px;}
+.file-wrap img{width: 34px;height: 40px;}
+.file-wrap li .file-name{font-size: 12px;color: #939393;margin-top: 10px;}
+.file-wrap li .del-btn{position: absolute;right: 8px;top: -5px;width: 16px;height: 16px;background: url('../images/del-file.png') 0 0 no-repeat;cursor: pointer;}
 @media screen and (max-width: 768px){
     /* 手机导航 */
      #header{height: 114px;}
@@ -94,4 +100,6 @@ a.custom-hover:hover{color: #aed9ff !important;}
     .member-center-nav .layui-btn+.layui-btn{margin-left: 0;}
     .member-center-nav .btn-container{height: 70px;display: flex;justify-content: space-between;align-content: space-between;flex-wrap: wrap;}
     .member-center-nav .btn-container>a{width: 100px;height: 30px;line-height: 30px;font-size: 13px;}
+    .file-wrap{padding: 20px 0 0 0;flex-wrap:wrap;}
+    .file-wrap li{margin-left: 0 !important;}
 }
