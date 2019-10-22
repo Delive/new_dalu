@@ -10,14 +10,15 @@
       .content{padding: 45px 0 20px;display: flex;justify-content: center;}
       .content .center{width: 900px;margin: 0;padding-left: 90px;}
       .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;margin-bottom: 20px;}
-      .content .list-wrap>li{padding: 20px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
+      .content .list-wrap>li{padding: 20px 0;line-height: 24px;}
       .list-wrap .title{line-height: 36px;display: flex;justify-content:flex-start;color: #005bac;background-color: #efefef;padding-left: 20px;}
-      .list-wrap p{line-height: 30px;padding-left: 20px;display: flex;}
-      .list-wrap p>.item-label{width: 100px;color: #7d7c7c;}
-      .list-wrap p>.item-content{flex:1;}
+      .list-wrap .item-wrap{line-height: 30px;padding-left: 20px;display: flex;}
+      .list-wrap .item-wrap>.item-label{width: 100px;color: #7d7c7c;}
+      .list-wrap .item-wrap>.item-content{flex:1;}
       .list-wrap .file-item{height: 60px;line-height: 60px;}
       .list-wrap .title>span{flex:1;}
       .list-wrap .title .question-content{text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+      .answer-wrap{border-top: 1px dashed #ccc;margin-top: 20px;padding-top: 20px;}
       .silder{width: 240px;}
       .silder .top{height: 60px;background-color: #005bac;color: #fff;padding: 20px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
       .silder .item{padding: 30px 10px 0 30px;}
@@ -30,7 +31,7 @@
       .list-wrap{margin-bottom: 15px;}
       .download-file{color: #005bac;text-decoration: underline;}
       .file-item{position: relative;}
-      .file-wrap{position: absolute;bottom: 0;left: 100px;padding: 0  !important;}
+      /*.file-wrap{position: absolute;bottom: 0;left: 100px;padding: 0  !important;}*/
       @media screen and (max-width: 768px){
         .content{padding-top: 20px;}
         .content .center .top{margin-bottom: 0;border-bottom: 1px solid #ccc;}
@@ -87,51 +88,75 @@
             <ul class="list-wrap">
                 <li class="pr">
                         <div class="title mb20"><span>产品：PT85X</span><span class="question-content">提问内容：不能开机</span></div>
-                        <p><span class="item-label">名称：</span><span class="item-content">陈一发</span></p>
-                        <p><span class="item-label">电话号码：</span><span class="item-content">13559939290</span></p>
-                        <p><span class="item-label">电子邮件：</span><span class="item-content">8888@qq.com</span></p>
-                        <p><span class="item-label">说明：</span><span class="item-content">该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。</span></p>
-                        <p class=" file-item"><span class="item-label">附件：</span><span class="item-content"></span></p>
-                        <ul class="file-wrap">
-                                       <li>
-                                            <i class="del-btn"></i>
-                                            <img src="./images/JPG.png" alt="">
-                                            <span class="file-name">文件名</span>
-                                       </li>
-                                        <li>
-                                            <i class="del-btn"></i>
-                                            <img src="./images/MP4.png" alt="">
-                                            <span class="file-name">文件名</span>
-                                       </li>
-                                        <li>
-                                            <i class="del-btn"></i>
-                                            <img src="./images/RAR.png" alt="">
-                                            <span class="file-name">文件名</span>
-                                       </li>
-                                        <li>
-                                            <i class="del-btn"></i>
-                                            <img src="./images/word.png" alt="">
-                                            <span class="file-name">文件名</span>
-                                       </li>
-                                        <li>
-                                            <i class="del-btn"></i>
-                                            <img src="./images/PDF.png" alt="">
-                                            <span class="file-name">文件名</span>
-                                       </li>
-                                        <li>
-                                            <i class="del-btn"></i>
-                                            <img src="./images/EXCEL.png" alt="">
-                                            <span class="file-name">文件名</span>
-                                       </li>
-                                        <li>
-                                            <i class="del-btn"></i>
-                                            <img src="./images/tongyong.png" alt="">
-                                            <span class="file-name">文件名</span>
-                                       </li>
-                                   </ul>
+                        <p class="item-wrap"><span class="item-label">时间：</span><span class="item-content">2019-10-28</span></p>
+                        <p class="item-wrap"><span class="item-label">名称：</span><span class="item-content">陈一发</span></p>
+                        <p class="item-wrap"><span class="item-label">电话号码：</span><span class="item-content">13559939290</span></p>
+                        <p class="item-wrap"><span class="item-label">电子邮件：</span><span class="item-content">8888@qq.com</span></p>
+                        <p class="item-wrap"><span class="item-label">说明：</span><span class="item-content">该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。该产品使用出现故障，需要更换。</span></p>
+                        <div class="item-wrap"><span class="item-label">附件：</span><span class="item-content">
+                             <ul class="file-wrap">
+                                         <li>
+                                              <img src="./images/JPG.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                          <li>
+                                              <img src="./images/MP4.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                          <li>
+                                              <img src="./images/RAR.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                          <li>
+                                              <img src="./images/word.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                          <li>
+                                              <img src="./images/PDF.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                          <li>
+                                              <img src="./images/EXCEL.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                          <li>
+                                              <img src="./images/tongyong.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                     </ul>
+                        </span></div>
+                        <div class="answer-wrap">
+                               <p class="item-wrap"><span class="item-label">回复时间：</span><span class="item-content">2019-10-28</span></p>
+                               <p class="item-wrap"><span class="item-label">回复内容：</span><span class="item-content">客服回复内容</span></p>
+                                <div class="item-wrap"><span class="item-label">附件：</span><span class="item-content">
+                             <ul class="file-wrap">
+                                         <li>
+                                              <img src="./images/JPG.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                          <li>
+                                              <img src="./images/MP4.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                          <li>
+                                              <img src="./images/RAR.png" alt="">
+                                              <span class="file-name">文件名</span>
+                                              <i class="del-btn"></i>
+                                         </li>
+                                     </ul>
+                        </span></div>
+                        </div>
                 </li>
             </ul>
-            <div id="page" class="tc"></div>
         </div>
     </div>
     <div id="footer"></div>
