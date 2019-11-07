@@ -61,6 +61,7 @@ a.custom-hover:hover{color: #aed9ff !important;}
 .file-wrap li .file-name{font-size: 12px;color: #005bac;margin-top: 10px;}
 .file-wrap li:hover .del-btn{display: inline-block;}
 .file-wrap li .del-btn{width: 16px;height: 16px;background: url('../images/del-file.png') 0 0 no-repeat;cursor: pointer;vertical-align: middle;display: none;}
+.layui-treeSelect .ztree li span.button.ico_open,.layui-treeSelect .ztree li span.button.ico_close{display: none !important;}
 @media screen and (max-width: 768px){
     /* 手机导航 */
      #header{height: 114px;}

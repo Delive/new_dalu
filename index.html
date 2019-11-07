@@ -6,16 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
   <title>新大陆自动识别</title>
   <link rel="stylesheet" href="./layui/css/layui.css">
-  <!-- <script src="./js/include.js"></script> -->
   <style>
       .layui-carousel{height: 600px;}
       .layui-carousel img{height: 600px;width: auto;}
-      .content .document-wrap{height: 645px;padding-top: 55px;}
+      .content .document-wrap{padding-top: 55px;}
       .document-wrap h3,.product-wrap h3{font-size: 35px;color: #005bac;}
       .document-wrap .description,.product-wrap .description{font-size: 16px;color: #999;line-height: 36px;}
-      .document-wrap .form-wrap{height: 475px;background-color: #005bac;margin-top: 30px;padding: 25px;color: #fff;}
+      .document-wrap .form-wrap{background-color: #005bac;margin-top: 30px;padding: 25px;color: #fff;}
       .form-wrap .layui-input-block{margin: 0;text-align: left;color: #fff;display: flex;justify-content: space-between;}
       .form-wrap form:not(.mobile-form) .layui-input-block{align-items: flex-end;}
+
+      .form-wrap .simple-search-wrap{justify-content: center;}
+      .form-wrap .simple-search-wrap button{margin-left: 20px;}
+      .form-wrap .mixin-search-btn{width: 270px;}
+      .form-wrap .mixin-search-btn select,.form-wrap .mixin-search-btn button,.form-wrap .mixin-search-btn .layui-select-title{width: 130px;}
+      .form-wrap .mixin-wrap{display: none;}
+      .form-wrap .toggle-search-type{width: 270px;text-align: left;cursor: pointer;margin: 10px 0;}
+      .form-wrap .toggle-search-type span{display: inline-block;transition:all .5s;}
+      .form-wrap .toggle-search-type span.ismixin{transform:rotateZ(180deg);}
+      
       .form-wrap .search-btn{height: 50px;line-height: 50px;font-size: 16px;}
       .form-wrap .cols-title{line-height: 36px;}
       .form-wrap .layui-anim-upbit{color: #999;}
@@ -26,8 +35,8 @@
       .form-wrap .layui-btn{background-color: #aed9ff;color: #024886;border-radius: 4px;}
       .form-wrap .line{line-height: 38px;}
       .form-wrap .sub-title{position: relative;top: 10px;}
-      .form-wrap .product-detail{height: 130px;width: 860px;background-color: #fff;border-radius: 5px;padding: 10px;display: flex;flex-direction: column;justify-content: space-between;}
-      .product-detail h4{color: #005bac;font-size: 16px;}
+      .form-wrap .product-detail{width: 860px;background-color: #fff;border-radius: 5px;padding: 10px;}
+      .product-detail h4{color: #005bac;font-size: 16px;line-height: 24px;}
       .product-detail .remark{font-size: 16px;color: #000;}
       .product-detail .content{color: #9f9f9f;margin-top: 5px;overflow: hidden;}
       .product-detail .nav-wrap{color: #9f9f9f;width: 250px;display: flex;justify-content: space-between;height: 20px;line-height: 20px;}
@@ -50,6 +59,7 @@
       .product-wrap button{background-color: #eb9978;margin-top: 30px;border-radius: 4px;}
       .footer{display: block !important;}
       .layui-treeSelect .ztree li{line-height: normal !important;}
+
       @media screen and (max-width: 768px){
         .layui-carousel {height: 137px !important;}
         .layui-carousel img { height: 137px;width: 100%;}
@@ -73,62 +83,48 @@
                 <p class="description">DOCUMENT SCREENING CRITERIA</p>
                 <div class="form-wrap center">
                         <form class="layui-form pc-form" action="">
-                            <div class="layui-form-item radio-wrap">
+                            <div class="layui-input-block simple-search-wrap">
+                                          <input type="text" name="title"  placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                          <button class="layui-btn layui-btn-normal">搜索</button>
+                            </div>
+                            <div class="toggle-search-type"><span class="mr10"><i class="layui-icon layui-icon-triangle-d"></i></span>精准搜索</div>
+                            <div class="layui-form-item radio-wrap mixin-wrap">
                                     <div class="layui-input-block">
                                         <input type="radio" name="sex" value="男" title="全部产品" checked>
                                         <input type="radio" name="sex" value="女" title="我的产品">
                                     </div>
                             </div>
-                            <div class="tl cols-title flex-between">
-                                <span> 产品树图</span>
-                                <span class="w270"> 特别推荐</span>
+                            <div class="mixin-wrap">
+                                <div class="tl cols-title flex-between">
+                                    <span class="w270"> 产品树图</span>
+                                    <div class="w570 flex-between">
+                                            <div class="w270">文档类型</div>
+                                            <div class="w270">日期</div>
+                                    </div>
+                                    <span class="w270"> 特别推荐</span>
+                                </div>
                             </div>
-                             <div>
+                             <div class="mixin-wrap">
                                     <div class="layui-input-block">
                                             <div>
                                                <input type="text" id="tree" lay-filter="tree" class="layui-input w270">
                                             </div>
-                                            <div class="search-input w570">
-                                                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
-                                                    <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
+                                             <div>
+                                                 <input type="text" id="tree3" lay-filter="tree2" class="layui-input w270">
                                             </div>
-                                            <select name="test" lay-verify="required" class="w270">
-                                                <option value="">全部</option>
-                                                <option value="0">测试1</option>
-                                                <option value="1">测试2</option>
-                                            </select>
-                                    </div>
-                             </div>
-                             <div class="tl cols-title flex-between mt20 sub-title">
-                                    <div class="w270">产品</div>
-                                    <div class="w570 flex-between">
-                                        <div class="w270">文档类型</div>
-                                        <div class="w270">日期</div>
-                                    </div>
-                                    <div class="w270"></div>
-                             </div>
-                             <div>
-                                    <div class="layui-input-block">
-                                            <div class="search-input w270">
-                                                    <input type="text" name="title" required  lay-verify="required" placeholder="全部" autocomplete="off" class="layui-input">
-                                                    <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
+                                            <div class="w270 flex-between">
+                                                    <input type="text" class="layui-input" id="date-start" placeholder="从">
+                                                    <span class="line">-</span>
+                                                    <input type="text" class="layui-input" id="date-end" placeholder="至">
                                             </div>
-                                            <div class="w570 flex-between">
-                                                   <!--  <select name="city" lay-verify="required" class="w270">
-                                                            <option value="">全部</option>
-                                                            <option value="0">测试1</option>
-                                                            <option value="1">测试2</option>
-                                                    </select> -->
-                                                    <div>
-                                                         <input type="text" id="tree2" lay-filter="tree2" class="layui-input w270">
-                                                    </div>
-                                                    <div class="w270 flex-between">
-                                                            <input type="text" class="layui-input" id="date-start" placeholder="从">
-                                                            <span class="line">-</span>
-                                                            <input type="text" class="layui-input" id="date-end" placeholder="至">
-                                                    </div>
+                                            <div class="w270 mixin-search-btn  flex-between">
+                                                    <select name="test" lay-verify="required">
+                                                          <option value="">全部</option>
+                                                          <option value="0">测试1</option>
+                                                          <option value="1">测试2</option>
+                                                     </select>
+                                                    <button class="w270 layui-btn layui-btn-normal"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
                                             </div>
-                                            <button class="w270 layui-btn layui-btn-normal search-btn"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
                                     </div>
                              </div>
                              <div class="tl cols-title mt20">
@@ -137,82 +133,74 @@
                              <div class="layui-input-block">
                                 <div class="product-detail">
                                     <h4>3RK1005-0LB00-0AA0</h4>
-                                    <div class="remark">IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</div>
-                                    <div class="content"><a href="technical-support.html">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</a></div>
+                                    <h4>3RK1005-0LB00-0AA0</h4>
                                     <div class="nav-wrap"><a href="javascript:;">产品信息</a>><a href="javascript:;">全部产品</a>><a href="javascript:;">产品列表信息</a></div>
                                 </div>
                              </div>
                         </form>
+
+                        <!-- 手机版 -->
                         <form class="layui-form mobile-form" action="">
-                            <div class="layui-form-item radio-wrap layui-input-block">
+                            <div class="mobile-simple-search">
+                                  <div class="cols-title">
+                                      <span> 搜索</span>
+                                  </div>
+                                  <div class="layui-input-block">
+                                          <div class="search-input mb10">
+                                                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
+                                                  <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
+                                          </div>
+                                  </div>
+                            </div>
+                            <div class="toggle-search-type"><span class="mr10"><i class="layui-icon layui-icon-triangle-d"></i></span>精准搜索</div>
+                            <div class="mixin-wrap">
+                                    <div class="layui-form-item radio-wrap layui-input-block">
+                                        <div class="layui-input-block">
+                                           <div>
+                                                <input type="radio" name="sex" value="男" title="全部产品" checked>
+                                                <input type="radio" name="sex" value="女" title="我的产品">
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="cols-title">
+                                        <span> 产品树图</span>
+                                    </div>
                                     <div class="layui-input-block">
-                                       <div>
-                                            <input type="radio" name="sex" value="男" title="全部产品" checked>
-                                            <input type="radio" name="sex" value="女" title="我的产品">
-                                        </div>
+                                             <div>
+                                                      <input type="text" id="tree2" lay-filter="tree" class="layui-input">
+                                                </div>
                                     </div>
-                            </div>
-                            <div class="cols-title">
-                                <span> 产品树图</span>
-                            </div>
-                            <div class="layui-input-block">
-                                    <div class="search-input mb10">
-                                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
-                                            <a href="search.html"><i class="layui-icon layui-icon-search"></i></a>
+                                    <div class="cols-title">
+                                            文档类型
                                     </div>
-                                    <!-- <select name="city" lay-verify="required">
-                                            <option value=""></option>
-                                            <option value="0">测试1</option>
-                                            <option value="1">测试2</option>
-                                    </select> -->
-                                     <div>
-                                              <input type="text" id="tree3" lay-filter="tree" class="layui-input">
-                                        </div>
-                            </div>
-                            <div class="cols-title">
-                                    产品
-                            </div>
-                             <div class="layui-input-block">
-                                    <div class="search-input">
-                                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索关键词" autocomplete="off" class="layui-input">
-                                            <a href="javascript:;"><i class="layui-icon layui-icon-search"></i></a>
+                                    <div class="layui-input-block">
+                                         <div>
+                                                      <input type="text" id="tree4" lay-filter="tree2" class="layui-input">
+                                                </div>
                                     </div>
-                            </div>
-                            <div class="cols-title">
-                                    文档类型
-                            </div>
-                            <div class="layui-input-block">
-                                <!-- <select name="city" lay-verify="required">
-                                        <option value="">全部</option>
-                                        <option value="0">测试1</option>
-                                        <option value="1">测试2</option>
-                                </select> -->
-                                 <div>
-                                              <input type="text" id="tree4" lay-filter="tree2" class="layui-input">
-                                        </div>
-                            </div>
-                            <div class="cols-title">
-                                    日期
-                            </div>
-                            <div class="layui-input-block">
-                                    <div class="flex-between">
-                                            <input type="text" class="layui-input" id="date-start" placeholder="从">
-                                            <span class="line">-</span>
-                                            <input type="text" class="layui-input" id="date-end" placeholder="至">
+                                    <div class="cols-title">
+                                            日期
                                     </div>
-                            </div>
-                            <div class="cols-title">
-                                    特别推荐
-                            </div>
-                            <div class="layui-input-block">
-                                    <select name="city" lay-verify="required">
-                                            <option value="">全部</option>
-                                            <option value="0">测试1</option>
-                                            <option value="1">测试2</option>
-                                    </select>
-                            </div>
-                            <div class="layui-input-block">
-                                     <button class="layui-btn layui-btn-normal mt20 fz16" type="button"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
+                                    <div class="layui-input-block">
+                                            <div class="flex-between">
+                                                    <input type="text" class="layui-input" id="date-start" placeholder="从">
+                                                    <span class="line">-</span>
+                                                    <input type="text" class="layui-input" id="date-end" placeholder="至">
+                                            </div>
+                                    </div>
+                                    <div class="cols-title">
+                                            特别推荐
+                                    </div>
+                                    <div class="layui-input-block">
+                                            <select name="city" lay-verify="required">
+                                                    <option value="">全部</option>
+                                                    <option value="0">测试1</option>
+                                                    <option value="1">测试2</option>
+                                            </select>
+                                    </div>
+                                    <div class="layui-input-block">
+                                             <button class="layui-btn layui-btn-normal mt20 fz16" type="button"><i class="layui-icon layui-icon-search mr10"></i>搜索</button>
+                                    </div>
                             </div>
                              <div class="cols-title">
                                     <i class="layui-icon layui-icon-right mr10"></i>搜索产品
@@ -220,8 +208,7 @@
                              <div class="layui-input-block">
                                 <div class="product-detail">
                                     <h4>3RK1005-0LB00-0AA0</h4>
-                                    <div class="remark">IO-LINK MASTER FOR SIRIDFHD DSFHASUIBASD</div>
-                                    <div class="content"><a href="technical-support.html">SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC MADYLEDOISHD 200S,4SI SIRIUS, 4POINT-TOP-SIMATIC DP,ELECTRONIC</a></div>
+                                    <h4>3RK1005-0LB00-0AA0</h4>
                                     <div class="nav-wrap"><a href="javascript:;">产品信息</a>><a href="javascript:;">全部产品</a>><a href="javascript:;">产品列表信息</a></div>
                                 </div>
                              </div>
@@ -357,52 +344,12 @@
     
 </script> 
 <script>
- var is_mobi = navigator.userAgent.toLowerCase().match(/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;
-
    layui.use(["treeSelect"], function () {
     var treeSelect = layui.treeSelect;
-    treeSelect.render({
-        // 选择器
-        elem: is_mobi ? '#tree3' : '#tree',
-        // 数据
-        data: 'data/data3.json',
-        // 异步加载方式：get/post，默认get
-        type: 'get',
-        // 占位符
-        placeholder: '请选择',
-        // 是否开启搜索功能：true/false，默认false
-        search: true,
-        // 一些可定制的样式
-        style: {
-            folder: {
-                enable: false
-            },
-            line: {
-                enable: false
-            }
-        },
-        // 点击回调
-        click: function(d){
-            console.log(d);
-        },
-        // 加载完成后的回调函数
-        success: function (d) {
-            console.log(d);
-//                选中节点，根据id筛选
-            // treeSelect.checkNode('tree', 1);
-            console.log($('#tree').val());
-//                获取zTree对象，可以调用zTree方法
-           var treeObj = treeSelect.zTree('tree');
-           console.log(treeObj);
-//                刷新树结构
-           treeSelect.refresh('tree');
-        }
-    });
-
-
+    var treeD = is_mobi ? '#tree4' : '#tree3';
      treeSelect.render({
         // 选择器
-        elem: is_mobi ? '#tree4' : '#tree2',
+        elem: is_mobi ? '#tree4' : '#tree3',
         // 数据
         data: 'data/data2.json',
         // 异步加载方式：get/post，默认get
@@ -429,7 +376,7 @@
             console.log(d);
 //                选中节点，根据id筛选
             // treeSelect.checkNode('tree2', 1);
-            console.log($('#tree2').val());
+            console.log($('treeD').val());
 //                获取zTree对象，可以调用zTree方法
            var treeObj = treeSelect.zTree('tree2');
            console.log(treeObj);

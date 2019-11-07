@@ -10,7 +10,9 @@
       .content{padding: 45px 0 20px;display: flex;justify-content: center;}
       .content .center{width: 900px;margin: 0;padding-left: 90px;}
       .content .center .top{font-size: 26px;color: #005bac;line-height: 64px;border-bottom: 1px solid #ccc;text-align: left;margin-bottom: 20px;}
-      .content .list-wrap li{padding: 20px 0;border-bottom: 1px dashed #ccc;line-height: 24px;}
+      .content .list-wrap li{padding: 20px;border-bottom: 1px dashed #ccc;line-height: 24px;}
+      .content .list-wrap li a{position: relative;}
+      .content .list-wrap li a.active::before{content:" ";position: absolute;width: 8px;height: 8px;top: 4px;left: -15px;border-radius: 4px;background-color: #FF5722;}
       .silder{width: 240px;}
       .silder .top{height: 60px;background-color: #005bac;color: #fff;padding: 20px;align-items: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
       .silder .item{padding: 30px 10px 0 30px;}
@@ -91,15 +93,7 @@
                                         <div class="product-select-container">
                                                 <label class="layui-form-label">产品</label>
                                                 <div class="layui-input-block">
-                                                        <select name="product">
-                                                                <option value=""></option>
-                                                                <option value="PT85X">PT85X</option>
-                                                                <option value="PT80">PT80</option>
-                                                                <option value="PT98X">PT98X</option>
-                                                                <option value="PT30">PT30</option>
-                                                                <option value="MT60">MT60</option>
-                                                                <option value="MT70">MT70</option>
-                                                         </select>
+                                                         <input type="text" id="tree" lay-filter="tree" class="layui-input">
                                                 </div>
                                         </div>
                                         <div class="question-select-container">
@@ -121,15 +115,7 @@
                                 <div class="layui-form-item mobile">
                                                 <label class="layui-form-label">产品</label>
                                                 <div class="layui-input-block">
-                                                        <select name="product">
-                                                                <option value=""></option>
-                                                                <option value="PT85X">PT85X</option>
-                                                                <option value="PT80">PT80</option>
-                                                                <option value="PT98X">PT98X</option>
-                                                                <option value="PT30">PT30</option>
-                                                                <option value="MT60">MT60</option>
-                                                                <option value="MT70">MT70</option>
-                                                        </select>
+                                                        <input type="text" id="tree2" lay-filter="tree" class="layui-input">
                                                 </div>
                                 </div>
                                 <div class="layui-form-item mobile">
@@ -244,20 +230,24 @@
             </div>
             <ul class="list-wrap">
                 <li>
-                        <a class="fb" href="question-detail.html">关于TIA PORATL硬件安装失败原因</a>
+                        <a class="fb active" href="question-detail.html">关于TIA PORATL硬件安装失败原因</a>
                         <p>为什么安装失败?</p>
+                        <p class="gray">2019-10-25</p>
                 </li>
                 <li>
                        <a class="fb" href="question-detail.html">关于TIA PORATL硬件安装失败原因</a>
                         <p>为什么安装失败?</p>
+                        <p class="gray">2019-10-25</p>
                 </li>
                 <li>
-                        <a class="fb" href="question-detail.html">关于TIA PORATL硬件安装失败原因</a>
+                        <a class="fb active" href="question-detail.html">关于TIA PORATL硬件安装失败原因</a>
                         <p>为什么安装失败?</p>
+                        <p class="gray">2019-10-25</p>
                 </li>
                 <li>
                        <a class="fb" href="question-detail.html">关于TIA PORATL硬件安装失败原因</a>
                         <p>为什么安装失败?</p>
+                        <p class="gray">2019-10-25</p>
                 </li>
             </ul>
             <div id="page" class="tc"></div>
@@ -266,6 +256,7 @@
     <div id="footer"></div>
 <script src="./layui/layui.all.js"></script>
 <script src="./js/jquery-2.0.3.min.js"></script>
+<script src="./layui/lay/common.js"></script>
 <script src="./js/index.js"></script>
 <script>
     ;!function(){
