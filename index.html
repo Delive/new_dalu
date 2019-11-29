@@ -90,8 +90,8 @@
                             <div class="toggle-search-type"><span class="mr10"><i class="layui-icon layui-icon-triangle-d"></i></span>精准搜索</div>
                             <div class="layui-form-item radio-wrap mixin-wrap">
                                     <div class="layui-input-block">
-                                        <input type="radio" name="sex" value="男" title="全部产品" checked>
-                                        <input type="radio" name="sex" value="女" title="我的产品">
+                                        <input type="radio" name="product" value="all" title="全部产品" checked>
+                                        <input type="radio" name="product" value="my" title="我的产品">
                                     </div>
                             </div>
                             <div class="mixin-wrap">
@@ -344,9 +344,10 @@
     
 </script> 
 <script>
-   layui.use(["treeSelect"], function () {
+   layui.use(["treeSelect","form"], function () {
     var treeSelect = layui.treeSelect;
     var treeD = is_mobi ? '#tree4' : '#tree3';
+    var form = layui.form;
      treeSelect.render({
         // 选择器
         elem: is_mobi ? '#tree4' : '#tree3',
@@ -384,6 +385,16 @@
            treeSelect.refresh('tree2');
         }
     });
+
+      form.on("radio", function (data) {
+         console.log(data)
+          var sex = data.value;
+          if (this.value == 'all') { 
+           alert("这是选择全部"); 
+          } else if (this.value == 'my') { 
+           alert("这是选择我的"); 
+          } 
+         });
 });
 </script>
 </body>
