@@ -26,6 +26,13 @@
       .qrcode-wrap{position: absolute;bottom: 10px;right: 50px;}
       .content form .auth-code-wrap .auth-code{flex: 3;}
       .content form .auth-code-wrap .layui-btn{flex: 2;}
+      .more-btn{
+        text-align: center;
+        color: #666;
+        cursor: pointer;
+      }
+      .more-btn img{width: 12px;height: 12px;vertical-align: middle;margin-left: 5px;transition: all .5s;}
+      .more-btn img.cu{transform: rotateZ(180deg)}
       @media screen and (max-width: 768px){
         .content .center{padding: 0 20px;}
         .content .center .btn-block .layui-form-label{display: none;}
@@ -81,36 +88,44 @@
                             <input type="text" name="title" required  lay-verify="required" placeholder="请输入论坛昵称" autocomplete="off" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">手机号</label>
-                        <div class="layui-input-block">
-                            <input type="tel" name="title" required  lay-verify="required" placeholder="请输入手机号" maxlength="11" autocomplete="off" class="layui-input">
+                    <div class="show-more" style="display: none;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">手机号</label>
+                            <div class="layui-input-block">
+                                <input type="tel" name="title" required  lay-verify="required" placeholder="请输入手机号" maxlength="11" autocomplete="off" class="layui-input">
+                            </div>
+                            <span class="gray ml10 pc">留下正确的联系方式，方便我们联系您</span>
                         </div>
-                        <span class="gray ml10 pc">留下正确的联系方式，方便我们联系您</span>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">验证码</label>
+                            <div class="layui-input-block auth-code-wrap flex-between">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入验证码" maxlength="6" autocomplete="off" class="layui-input auth-code">
+                                <button class="layui-btn ml10">获取验证码</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">公司</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入公司" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">邮政编码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在地邮政编码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                                <label class="layui-form-label">国家</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在国家" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">验证码</label>
-                        <div class="layui-input-block auth-code-wrap flex-between">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入验证码" maxlength="6" autocomplete="off" class="layui-input auth-code">
-                            <button class="layui-btn ml10">获取验证码</button>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">公司</label>
+                            <label class="layui-form-label"></label>
                         <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入公司" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">邮政编码</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在地邮政编码" autocomplete="off" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                            <label class="layui-form-label">国家</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入所在国家" autocomplete="off" class="layui-input">
+                            <div class="more-btn"><span class="text">其他信息</span></span><img src="./images/more-icon.png" alt="显示更多"></div>
                         </div>
                     </div>
                     <div class="layui-form-item btn-block">
@@ -137,5 +152,20 @@
 <script src="./layui/layui.all.js"></script>
 <script src="./js/jquery-2.0.3.min.js"></script>
 <script src="./js/index.js"></script>
+<script>
+    var isShowMore = false;
+    $('.more-btn').click(function(){
+        isShowMore = !isShowMore;
+        if(isShowMore){
+            $('.show-more').show();
+            text = '收起';
+        }else{
+            $('.show-more').hide();
+            text = '其他信息';
+        }
+        $('.more-btn .text').text(text);
+        $('.more-btn img').toggleClass('cu');
+    })
+</script>
 </body>
 </html>
